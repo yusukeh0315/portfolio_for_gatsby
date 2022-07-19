@@ -409,17 +409,22 @@ img {
   padding-top: 100%;
   overflow: hidden;
   box-shadow: 2px 2px 4px #979797;
+  max-height: 100%;
+  height: 0px;
 }
 
-.c-card-works__img-wrapper > img {
+/* .c-card-works__img-wrapper > img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100% !important;
   height: 100% !important;
-}
+} */
 
 .c-card-works__img {
+  position: absolute;
+  top: 0;
+  left: 0;
   transition: 0.5s;
   object-fit: cover;
   object-position: top;
@@ -427,7 +432,8 @@ img {
 
 .c-card-works__img:hover {
   opacity: 0.8;
-  transform: scale(1.1, 1.1);
+  cursor: pointer;
+  /* transform: scale(1.05, 1.05); */
 }
 
 .c-card-works__link {

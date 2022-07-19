@@ -1,6 +1,8 @@
 import React from "react"
+import { graphql } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 
-const Home = (props) => (
+const Home = ({ data }) => (
   <div>
     <header className="l-header">
       <div className="l-header__inner">
@@ -35,7 +37,9 @@ const Home = (props) => (
           <div className="p-cards-service__item c-card-service">
             <h3 className="c-card-service__title">デザイン</h3>
             <h4 className="c-card-service__sub-title">Design</h4>
-            <figure className="c-card-service__icon-wrapper"><img className="c-card-service__icon" src="/images/pen-fancy-solid.svg" alt="" /></figure>
+            <figure className="c-card-service__icon-wrapper">
+              <img className="c-card-service__icon" src={data.pen.publicURL} alt="" />
+            </figure>
             <div className="card__body">
               <p className="c-card-service__text">デザインは目的を達成するための手段であり、大きな効果をもたらす役割りを担います。使う人の立場を常に考え、目的を達成するための論理的なデザインを提案させていただきます。</p>
             </div>
@@ -43,7 +47,9 @@ const Home = (props) => (
           <div className="p-cards-service__item c-card-service">
             <h3 className="c-card-service__title">Web制作</h3>
             <h4 className="c-card-service__sub-title">Web Coding</h4>
-            <figure className="c-card-service__icon-wrapper"><img className="c-card-service__icon" src="/images/laptop-code-solid.svg" alt="" /></figure>
+            <figure className="c-card-service__icon-wrapper">
+              <img className="c-card-service__icon" src={data.laptop.publicURL} alt="" />
+            </figure>
             <div className="c-card-service__body">
               <p className="c-card-service__text">デザインの意図を理解し、動きや効果を適切に使用したWebサイトを提供します。レスポンシブ対応やWordPressなど更新性の高いサイトなど様々なコーディングを対応いたします。</p>
             </div>
@@ -51,7 +57,9 @@ const Home = (props) => (
           <div className="p-cards-service__item c-card-service">
             <h3 className="c-card-service__title">業務効率化</h3>
             <h4 className="c-card-service__sub-title">Business efficiency</h4>
-            <figure className="c-card-service__icon-wrapper"><img className="c-card-service__icon" src="/images/robot-solid.svg" alt="" /></figure>
+            <figure className="c-card-service__icon-wrapper">
+              <img className="c-card-service__icon" src={data.robot.publicURL} alt="" />
+            </figure>
             <div className="c-card-service__body">
               <p className="c-card-service__text">日々の決まったルーティーンや大量の情報の取得、操作など、マンパワーが必要とされる業務を自動化することで、コストの削減、利益拡大へとつなげるソリューションを提供します。</p>
             </div>
@@ -66,23 +74,112 @@ const Home = (props) => (
         </div>
         {/* /.section__title-wrapper*/}
         <div className="p-cards-works p-cards-works--col3">
-          <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal01">
-              <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="/images/portfolio.png" /></figure></a></div>
+          <div className="p-cards-works__item c-card-works">
+            <a className="c-card-works__link js-modal__open" href data-target="modal01">
+              <figure className="c-card-works__img-wrapper">
+                  <GatsbyImage
+                    className="c-card-works__img"
+                    alt="写真：実績"
+                    image={data.portfolio.childImageSharp.gatsbyImageData}
+                    imgStyle={{
+                      objectFit: "cover",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+              </figure>
+            </a>
+          </div>
           {/* /.c-card-works*/}
-          <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal02">
-              <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="/images/coding01.png" /></figure></a></div>
+          <div className="p-cards-works__item c-card-works">
+            <a className="c-card-works__link js-modal__open" href data-target="modal02">
+            <figure className="c-card-works__img-wrapper">
+                  <GatsbyImage
+                    className="c-card-works__img"
+                    alt="写真：実績"
+                    image={data.coding01.childImageSharp.gatsbyImageData}
+                    imgStyle={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+              </figure>
+
+            </a>
+          </div>
           {/* /.c-card-works*/}
-          <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal03">
-              <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="/images/coding02.png" /></figure></a></div>
+          <div className="p-cards-works__item c-card-works">
+            <a className="c-card-works__link js-modal__open" href data-target="modal03">
+            <figure className="c-card-works__img-wrapper">
+                  <GatsbyImage
+                    className="c-card-works__img"
+                    alt="写真：実績"
+                    image={data.coding02.childImageSharp.gatsbyImageData}
+                    imgStyle={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+              </figure>
+
+            </a>
+          </div>
           {/* /.c-card-works*/}
-          <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal04">
-              <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="/images/wpcustom-thumbnail.png" /></figure></a></div>
+          <div className="p-cards-works__item c-card-works">
+            <a className="c-card-works__link js-modal__open" href data-target="modal04">
+            <figure className="c-card-works__img-wrapper">
+                  <GatsbyImage
+                    className="c-card-works__img"
+                    alt="写真：実績"
+                    image={data.wpcustom.childImageSharp.gatsbyImageData}
+                    imgStyle={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+              </figure>
+
+            </a>
+          </div>
           {/* /.c-card-works*/}
-          <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal05">
-              <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="/images/coding04.png" /></figure></a></div>
+          <div className="p-cards-works__item c-card-works">
+            <a className="c-card-works__link js-modal__open" href data-target="modal05">
+            <figure className="c-card-works__img-wrapper">
+                  <GatsbyImage
+                    className="c-card-works__img"
+                    alt="写真：実績"
+                    image={data.coding04.childImageSharp.gatsbyImageData}
+                    imgStyle={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+              </figure>
+
+            </a>
+          </div>
           {/* /.c-card-works*/}
-          <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal06">
-              <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="/images/sample_thumbnail.png" /></figure></a></div>
+          <div className="p-cards-works__item c-card-works">
+            <a className="c-card-works__link js-modal__open" href data-target="modal06">
+            <figure className="c-card-works__img-wrapper">
+                  <GatsbyImage
+                    className="c-card-works__img"
+                    alt="写真：実績"
+                    image={data.rpa.childImageSharp.gatsbyImageData}
+                    imgStyle={{
+                      objectFit: "contain",
+                      width: "100%",
+                      height: "100%",
+                    }}
+                  />
+              </figure>
+
+            </a>
+          </div>
           {/* /.c-card-works*/}
           {/* /.p-cards-works*/}
           {/* /.main-works__inner*/}
@@ -278,7 +375,7 @@ const Home = (props) => (
       {/* jQuery Cookie*/}
       {/* js-file*/}
       {/* /body*/}
-      <div
+      {/* <div
         key={`body`}
         id="___gatsby"
         dangerouslySetInnerHTML={{ __html: props.body }}
@@ -287,14 +384,60 @@ const Home = (props) => (
       <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-      <script src="/javascripts/main.js"></script>
+      <script src="/javascripts/main.js"></script> */}
     </footer>
   </div>
 
 )
 
-// export default function Home() {
-//   return <div>Hello world!</div>
-// }
+export const query = graphql`
+query {
+  pen: file(relativePath: {eq: "pen-fancy-solid.svg"}) {
+    publicURL
+  }
+  laptop: file(relativePath: {eq: "laptop-code-solid.svg"}) {
+    publicURL
+  }
+  robot: file(relativePath: {eq: "robot-solid.svg"}) {
+    publicURL
+  }
+  portfolio: file(relativePath: {eq: "portfolio.png"}) {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
+    }
+  }
+  coding01: file(relativePath: {eq: "coding01.png"}) {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
+    }
+  }
+  coding02: file(relativePath: {eq: "coding02.png"}) {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
+    }
+  }
+  wpcustom: file(relativePath: {eq: "wpcustom-thumbnail.png"}) {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
+    }
+  }
+  coding04: file(relativePath: {eq: "coding04.png"}) {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
+    }
+  }
+  rpa: file(relativePath: {eq: "sample_thumbnail.png"}) {
+    relativePath
+    childImageSharp {
+      gatsbyImageData(width: 400, layout: CONSTRAINED)
+    }
+  }
+}
+`
 
 export default Home
