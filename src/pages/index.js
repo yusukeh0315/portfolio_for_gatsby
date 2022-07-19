@@ -2,22 +2,12 @@ import React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 
+import Layout from "../components/layout"
+
 const Home = ({ data }) => (
   <div>
-    <header className="l-header">
-      <div className="l-header__inner">
-        <div className="p-header-logo"><a className="p-header-logo__link" href="index.html">VIT Works</a></div>
-        <nav className="p-header-nav">
-          <ul className="p-header-nav__list">
-            <li className="p-header-nav__item"><a className="p-header-nav__link" href="about.html">About</a></li>
-            <li className="p-header-nav__item"><a className="p-header-nav__link" href="works.html">Works</a></li>
-            <li className="p-header-nav__item"><a className="p-header-nav__link" href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    {/* Google Tag Manager (noscript)*/}
-    {/* End Google Tag Manager (noscript)*/}
+    <Layout>
+
     <section className="l-fv">
       <div className="l-fv__inner">
         <div className="p-fv__title-wrapper">
@@ -280,29 +270,7 @@ const Home = ({ data }) => (
     </div>
     {/* /#modal06*/}
     {/* ./modal*/}
-    <footer className="l-footer">
-      <div className="l-footer__inner">
-        <p className="p-footer">© 2022 HASEGAWA . All rights reserved.</p>
-      </div>
-      {/* /.footer__inner*/}
-      {/* ============= JS ===============*/}
-      {/* jQuery*/}
-      {/* shuffle-text*/}
-      {/* vivus*/}
-      {/* jQuery Cookie*/}
-      {/* js-file*/}
-      {/* /body*/}
-      {/* <div
-        key={`body`}
-        id="___gatsby"
-        dangerouslySetInnerHTML={{ __html: props.body }}
-      />
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-      <script src="/javascripts/main.js"></script> */}
-    </footer>
+    </Layout>
   </div>
 
 )
