@@ -428,6 +428,7 @@ img {
 .c-card-works__img:hover {
   opacity: 0.8;
   transform: scale(1.1, 1.1);
+  cursor: pointer;
 }
 
 .c-card-works__link {
@@ -652,6 +653,7 @@ body.fixed {
   color: #333333;
   font-weight: bold;
   font-size: 1.125rem;
+  cursor: pointer;
 }
 
 .c-modal__close:hover, .c-modal__close:focus, .c-modal__close:active, .c-modal__close:visited, .c-modal__close:link {
