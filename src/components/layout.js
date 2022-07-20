@@ -4,7 +4,7 @@ import React from "react"
 
 import Header from "../components/header"
 import Footer from "../components/footer"
-import Javascript from "../components/javascript"
+// import Javascript from "../components/javascript"
 
 import "./layout.css"
 
@@ -15,7 +15,7 @@ const Layout = ({ children }) => (
         {children}
 
         <Footer />
-        <Javascript />
+        {/* <Javascript /> */}
         {/* <Helmet>
             <script src={withPrefix('https://code.jquery.com/jquery-3.4.1.min.js')} type="text/javascript" />
             <script src={withPrefix('https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js')} type="text/javascript" />
