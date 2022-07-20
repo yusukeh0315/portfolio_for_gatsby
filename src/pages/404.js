@@ -1,10 +1,16 @@
 import React from "react"
 
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
-const NotFound = () => (
+const NotFound = ({ location }) => (
   <div>
     <Layout>
+      <Seo
+        pagetitle="Not Found"
+        pagedesc="ページが見つかりません"
+        pagepath={location.pathname}
+      />
 
       <h1 style={{
         padding: "20vh 0",

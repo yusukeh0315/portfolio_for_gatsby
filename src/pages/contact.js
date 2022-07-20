@@ -3,10 +3,16 @@ import { graphql } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
-const Contact = ({ data }) => (
+const Contact = ({ data, location }) => (
   <div>
     <Layout>
+      <Seo
+        pagetitle="Contact"
+        pagedesc="お問い合わせ"
+        pagepath={location.pathname}
+      />
 
       <section className="l-contact">
         <div className="l-contact__inner">
