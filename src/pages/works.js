@@ -22,7 +22,7 @@ const Works = props => (
             </div>
             {/* /.section__title-wrapper*/}
             <div className="p-cards-works p-cards-works--col3">
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal01">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal01">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/portfolio.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">Portfolio</p>
@@ -31,7 +31,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal02">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal02">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding01.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
@@ -40,7 +40,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal03">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal03">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding02.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
@@ -49,7 +49,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal04">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal04">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/wpcustom-thumbnail.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">WordPress会員ログイン機能の追加</p>
@@ -58,7 +58,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal05">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal05">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding04.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">CMSを利用した動的サイト</p>
@@ -67,7 +67,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal06">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal06">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/sample_thumbnail.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">オートメーション化の事例</p>
@@ -76,7 +76,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal07">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal07">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding03.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
@@ -85,7 +85,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal08">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal08">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/design01.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">コーポレートサイトデザイン</p>
@@ -94,7 +94,7 @@ const Works = props => (
                 {/* /.c-card-works__body*/}
                 {/* /.card*/}
               </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href="#" data-target="modal09">
+              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal09">
                   <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/design02.png" /></figure></a>
                 <div className="c-card-works__body">
                   <p className="c-card-works__title">ショッピングサイトデザイン</p>
