@@ -1,9 +1,7 @@
-
-
 /*===========================================================*/
 /* 入力必須項目が全て埋まったら送信ボタンを有効化する */
 /*===========================================================*/
-window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
+$(document).ready(function () {
   const $submitBtn = $('#js-submit')
   $('#form input, #form textarea').on('change', function () {
       if (
@@ -12,10 +10,10 @@ window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
           $('#form textarea[id="message"]').val() !== ""
       ) {
           $submitBtn.prop('disabled', false);
-          $submitBtn.removeClass('c-submit-button--disabled');
+          $submitBtn.removeClass('submit-button--disabled');
       } else {
           $submitBtn.prop('disabled', true);
-          $submitBtn.addClass('c-submit-button--disabled');
+          $submitBtn.addClass('submit-button--disabled');
       }
   });
 });
@@ -23,7 +21,7 @@ window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
 /*===========================================================*/
 /* 入力内容をGoogleFormに送信する */
 /*===========================================================*/
-window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
+$(document).ready(function () {
 
   $('#form').submit(function (event) {
       var formData = $('#form').serialize();
@@ -35,7 +33,7 @@ window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
           statusCode: {
               0: function () {
                   $(".end-message").slideDown();
-                  $(".c-submit-button").fadeOut();
+                  $(".submit-button").fadeOut();
               },
               200: function () {
                   $(".false-message").slideDown();
@@ -52,7 +50,7 @@ window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
 /*===========================================================*/
 var scrollPosition;
 
-$('.js-modal__open').each("turbolinks:load", function () {
+$('.js-modal__open').each(function () {
 
   $(this).on('click', function () {
       scrollPosition = $(window).scrollTop(); //topからのスクロール位置を格納
@@ -72,7 +70,7 @@ $('.js-modal__open').each("turbolinks:load", function () {
 /*===========================================================*/
 /* モーダルウィンドウを閉じる */
 /*===========================================================*/
-$('.js-modal__close').on("turbolinks:load", 'click', function () {
+$('.js-modal__close').on('click', function () {
 
   $('.js-modal').fadeOut(300);
 
@@ -87,8 +85,8 @@ $('.js-modal__close').on("turbolinks:load", 'click', function () {
 /*===========================================================*/
 /* サムネイルをクリックして表示させる */
 /*===========================================================*/
-const thumbs = document.querySelectorAll('.c-modal__thumb');
-thumbs.forEach("turbolinks:load", function (item, index) {
+const thumbs = document.querySelectorAll('.modal__thumb');
+thumbs.forEach(function (item, index) {
   item.onclick = function () {
       this.parentNode.parentNode.previousElementSibling.children[0].src = this.dataset.image;
   }
@@ -100,13 +98,13 @@ thumbs.forEach("turbolinks:load", function (item, index) {
 var arr = []
 //初期値の設定
 function TypingInit() {
-  $('.js_typing').each("turbolinks:load", function (i) { //js_typingクラスを全て処理をおこなう
+  $('.js_typing').each(function (i) { //js_typingクラスを全て処理をおこなう
       arr[i] = new ShuffleText(this); //動作させるテキストを配列に格納
   });
 }
 //スクロールした際のアニメーションの設定
 function TypingAnime() {
-  $(".js_typing").each("turbolinks:load", function (i) {
+  $(".js_typing").each(function (i) {
       var elemPos = $(this).offset().top - 50; //要素より、50px上の
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
@@ -127,13 +125,13 @@ function TypingAnime() {
 /*===========================================================*/
 
 // 画面をスクロールをしたら動かしたい場合の記述
-$(window).scroll("turbolinks:load", function () {
+$(window).scroll(function () {
   TypingInit(); // アルファベットがランダムに変化して出現 初期設定
   TypingAnime(); // アルファベットがランダムに変化して出現の関数を呼ぶ
 });
 
 // ページが読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', "turbolinks:load", function () {
+$(window).on('load', function () {
   TypingInit(); // アルファベットがランダムに変化して出現 初期設定
   TypingAnime(); // アルファベットがランダムに変化して出現
 }); // ここまでページが読み込まれたらすぐに動かしたい場合の記述
