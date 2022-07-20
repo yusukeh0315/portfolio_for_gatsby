@@ -85,7 +85,7 @@ $('.js-modal__close').on('click', function () {
 /*===========================================================*/
 /* サムネイルをクリックして表示させる */
 /*===========================================================*/
-const thumbs = document.querySelectorAll('.modal__thumb');
+const thumbs = document.querySelectorAll('.c-modal__thumb');
 thumbs.forEach(function (item, index) {
   item.onclick = function () {
       this.parentNode.parentNode.previousElementSibling.children[0].src = this.dataset.image;
