@@ -3,7 +3,7 @@
 /*===========================================================*/
 /* 入力必須項目が全て埋まったら送信ボタンを有効化する */
 /*===========================================================*/
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
   const $submitBtn = $('#js-submit')
   $('#form input, #form textarea').on('change', function () {
       if (
@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', function(){
 /*===========================================================*/
 /* 入力内容をGoogleFormに送信する */
 /*===========================================================*/
-window.addEventListener('DOMContentLoaded', function(){
+window.addEventListener('DOMContentLoaded', "turbolinks:load", function(){
 
   $('#form').submit(function (event) {
       var formData = $('#form').serialize();
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', function(){
 /*===========================================================*/
 var scrollPosition;
 
-$('.js-modal__open').each(function () {
+$('.js-modal__open').each("turbolinks:load", function () {
 
   $(this).on('click', function () {
       scrollPosition = $(window).scrollTop(); //topからのスクロール位置を格納
@@ -72,7 +72,7 @@ $('.js-modal__open').each(function () {
 /*===========================================================*/
 /* モーダルウィンドウを閉じる */
 /*===========================================================*/
-$('.js-modal__close').on('click', function () {
+$('.js-modal__close').on("turbolinks:load", 'click', function () {
 
   $('.js-modal').fadeOut(300);
 
@@ -88,7 +88,7 @@ $('.js-modal__close').on('click', function () {
 /* サムネイルをクリックして表示させる */
 /*===========================================================*/
 const thumbs = document.querySelectorAll('.c-modal__thumb');
-thumbs.forEach(function (item, index) {
+thumbs.forEach("turbolinks:load", function (item, index) {
   item.onclick = function () {
       this.parentNode.parentNode.previousElementSibling.children[0].src = this.dataset.image;
   }
@@ -100,13 +100,13 @@ thumbs.forEach(function (item, index) {
 var arr = []
 //初期値の設定
 function TypingInit() {
-  $('.js_typing').each(function (i) { //js_typingクラスを全て処理をおこなう
+  $('.js_typing').each("turbolinks:load", function (i) { //js_typingクラスを全て処理をおこなう
       arr[i] = new ShuffleText(this); //動作させるテキストを配列に格納
   });
 }
 //スクロールした際のアニメーションの設定
 function TypingAnime() {
-  $(".js_typing").each(function (i) {
+  $(".js_typing").each("turbolinks:load", function (i) {
       var elemPos = $(this).offset().top - 50; //要素より、50px上の
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
@@ -127,13 +127,13 @@ function TypingAnime() {
 /*===========================================================*/
 
 // 画面をスクロールをしたら動かしたい場合の記述
-$(window).scroll(function () {
+$(window).scroll("turbolinks:load", function () {
   TypingInit(); // アルファベットがランダムに変化して出現 初期設定
   TypingAnime(); // アルファベットがランダムに変化して出現の関数を呼ぶ
 });
 
 // ページが読み込まれたらすぐに動かしたい場合の記述
-$(window).on('load', function () {
+$(window).on('load', "turbolinks:load", function () {
   TypingInit(); // アルファベットがランダムに変化して出現 初期設定
   TypingAnime(); // アルファベットがランダムに変化して出現
 }); // ここまでページが読み込まれたらすぐに動かしたい場合の記述
