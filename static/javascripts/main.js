@@ -10,6 +10,7 @@ function sleep(waitMsec) {
 /* 入力必須項目が全て埋まったら送信ボタンを有効化する */
 /*===========================================================*/
 $(document).ready(function () {
+  sleep(3000);
   const $submitBtn = $('#js-submit')
   $('#form input, #form textarea').on('change', function () {
       if (
@@ -30,7 +31,7 @@ $(document).ready(function () {
 /* 入力内容をGoogleFormに送信する */
 /*===========================================================*/
 $(document).ready(function () {
-
+  sleep(3000);
   $('#form').submit(function (event) {
       var formData = $('#form').serialize();
       $.ajax({
@@ -60,6 +61,7 @@ var scrollPosition;
 
 // $(window).on('load', function () {
 $(document).ready(function () {
+  sleep(3000);
   $('.js-modal__open').each(function () {
 
     $(this).on('click', function () {
@@ -83,6 +85,7 @@ $(document).ready(function () {
 /*===========================================================*/
 // $(window).on('load', function () {
 $(document).ready(function () {
+  sleep(3000);
   $('.js-modal__close').on('click', function () {
 
     $('.js-modal').fadeOut(300);
