@@ -57,6 +57,8 @@ const Seo = props => {
                 <meta property="og:image:height" content={imgh} />
                 <meta name="twitter:card" content="summary_large_image" />
 
+                <link rel="stylesheet" type="text/css" href={'https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/css/modaal.min.css'} />
+
             </Helmet>
 
         </div>

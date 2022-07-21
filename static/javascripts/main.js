@@ -1,3 +1,11 @@
+// ビジーwaitを使う方法
+function sleep(waitMsec) {
+  var startMsec = new Date();
+
+  // 指定ミリ秒間だけループさせる（CPUは常にビジー状態）
+  while (new Date() - startMsec < waitMsec);
+}
+
 /*===========================================================*/
 /* 入力必須項目が全て埋まったら送信ボタンを有効化する */
 /*===========================================================*/
@@ -45,45 +53,67 @@ $(document).ready(function () {
 
 });
 
+
 /*===========================================================*/
 /* モーダルウィンドウを開く */
 /*===========================================================*/
-var scrollPosition;
-
-// $(window).on('load', function () {
-$('.js-modal__open').each(function () {
-
-  $(this).on('click', function () {
-      scrollPosition = $(window).scrollTop(); //topからのスクロール位置を格納
-      $('.content').fadeIn(); //モーダルをフェードイン
-
-      var target = $(this).data('target');
-      var modal = document.getElementById(target);
-      $(modal).fadeIn(300);
-
-      $('body').addClass('fixed').css({
-          top: -scrollPosition
-      }); //背景固定
-      return false;
-  });
+// $(document).ready(function () {
+$(".info").modaal({
+  overlay_close:true,//モーダル背景クリック時に閉じるか
+  before_open:function(){// モーダルが開く前に行う動作
+    $('html').css('overflow-y','hidden');/*縦スクロールバーを出さない*/
+  },
+  after_close:function(){// モーダルが閉じた後に行う動作
+    $('html').css('overflow-y','scroll');/*縦スクロールバーを出す*/
+  }
 });
+// });
+
+/*===========================================================*/
+/* モーダルウィンドウを開く */
+/*===========================================================*/
+// var scrollPosition;
+
+// // $(window).on('load', function () {
+// $(document).ready(function () {
+//   sleep(3000);
+//   console.log('start modal window')
+//   $('.js-modal__open').each(function () {
+
+//     $(this).on('click', function () {
+//         scrollPosition = $(window).scrollTop(); //topからのスクロール位置を格納
+//         $('.content').fadeIn(); //モーダルをフェードイン
+
+//         var target = $(this).data('target');
+//         var modal = document.getElementById(target);
+//         $(modal).fadeIn(300);
+
+//         $('body').addClass('fixed').css({
+//             top: -scrollPosition
+//         }); //背景固定
+//         return false;
+//     });
+//   });
 // });
 
 /*===========================================================*/
 /* モーダルウィンドウを閉じる */
 /*===========================================================*/
 // $(window).on('load', function () {
-$('.js-modal__close').on('click', function () {
+// $(document).ready(function () {
+//   sleep(3000);
+//   console.log('start modal window')
+//   $('.js-modal__close').on('click', function () {
 
-  $('.js-modal').fadeOut(300);
+//     $('.js-modal').fadeOut(300);
 
-  $('body').removeClass('fixed').css({
-      top: 0
-  }); //背景固定を解除
-  $(window).scrollTop(scrollPosition); //元の位置までスクロール
+//     $('body').removeClass('fixed').css({
+//         top: 0
+//     }); //背景固定を解除
+//     $(window).scrollTop(scrollPosition); //元の位置までスクロール
 
-  return false;
-});
+//     return false;
+//   });
 // });
 
 /*===========================================================*/

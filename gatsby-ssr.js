@@ -25,6 +25,11 @@ export const onRenderBody = ({ setPostBodyComponents }) => {
         defer
         />,
         <script
+        key="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"
+        src="https://cdnjs.cloudflare.com/ajax/libs/Modaal/0.4.4/js/modaal.min.js"
+        defer
+        />,
+        <script
         key="/javascripts/main.js"
         src="/javascripts/main.js"
         defer
