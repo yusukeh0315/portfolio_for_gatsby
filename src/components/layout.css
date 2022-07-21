@@ -428,12 +428,12 @@ img {
 .c-card-works__img:hover {
   opacity: 0.8;
   transform: scale(1.1, 1.1);
-  cursor: pointer;
 }
 
 .c-card-works__link {
   width: 100%;
   height: 100%;
+  cursor: pointer;
 }
 
 .c-card-works__title {

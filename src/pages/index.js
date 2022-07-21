@@ -273,7 +273,7 @@ const Home = props => (
       </div>
       {/* /#modal06*/}
       {/* ./modal*/}
-      <div
+      {/* <div
             key={`body`}
             id="___gatsby"
             dangerouslySetInnerHTML={{ __html: props.body }}
@@ -282,7 +282,7 @@ const Home = props => (
       <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-      <script src="/javascripts/main.js"></script>
+      <script src="/javascripts/main.js"></script> */}
     </Layout>
   </div>
 

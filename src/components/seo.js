@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+// import { GatsbyImage } from "gatsby-plugin-image"
 
 const Seo = props => {
     const data = useStaticQuery(graphql`
