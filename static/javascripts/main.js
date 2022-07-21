@@ -18,10 +18,10 @@ $(document).ready(function () {
           $('#form textarea[id="message"]').val() !== ""
       ) {
           $submitBtn.prop('disabled', false);
-          $submitBtn.removeClass('submit-button--disabled');
+          $submitBtn.removeClass('c-submit-button--disabled');
       } else {
           $submitBtn.prop('disabled', true);
-          $submitBtn.addClass('submit-button--disabled');
+          $submitBtn.addClass('c-submit-button--disabled');
       }
   });
 });
@@ -41,7 +41,7 @@ $(document).ready(function () {
           statusCode: {
               0: function () {
                   $(".end-message").slideDown();
-                  $(".submit-button").fadeOut();
+                  $(".c-submit-button").fadeOut();
               },
               200: function () {
                   $(".false-message").slideDown();
@@ -60,8 +60,6 @@ var scrollPosition;
 
 // $(window).on('load', function () {
 $(document).ready(function () {
-  sleep(3000);
-  console.log('start modal window')
   $('.js-modal__open').each(function () {
 
     $(this).on('click', function () {
@@ -85,8 +83,6 @@ $(document).ready(function () {
 /*===========================================================*/
 // $(window).on('load', function () {
 $(document).ready(function () {
-  sleep(3000);
-  console.log('start modal window')
   $('.js-modal__close').on('click', function () {
 
     $('.js-modal').fadeOut(300);
