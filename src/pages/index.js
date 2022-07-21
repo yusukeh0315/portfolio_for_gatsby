@@ -5,6 +5,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
+import { Helmet } from "react-helmet"
+import { withPrefix } from "gatsby"
+
 const Home = props => (
   <div>
     <Layout>
@@ -275,16 +278,15 @@ const Home = props => (
       {/* ./modal*/}
 
     </Layout>
-    <div
-      key={`body`}
-      id="___gatsby"
-      dangerouslySetInnerHTML={{ __html: props.body }}
-    />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <script src="/javascripts/main.js"></script>
+
+    <Helmet>
+        <script src={'https://code.jquery.com/jquery-3.4.1.min.js'} type="text/javascript" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous" />
+        <script src={'https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js'} type="text/javascript" />
+        <script src={'https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js'} type="text/javascript" />
+        <script src={'https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js'} type="text/javascript" />
+        <script src={withPrefix('/javascripts/main.js')} type="text/javascript" />
+    </Helmet>
+
   </div>
 
 )
