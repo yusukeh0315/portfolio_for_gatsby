@@ -59,23 +59,23 @@ $(document).ready(function () {
 /*===========================================================*/
 var scrollPosition;
 
-// $(window).on('load', function () {
 $(document).ready(function () {
-  sleep(3000);
-  $('.js-modal__open').each(function () {
 
-    $(this).on('click', function () {
-        scrollPosition = $(window).scrollTop(); //topからのスクロール位置を格納
-        $('.content').fadeIn(); //モーダルをフェードイン
+  $('.l-main-works').on('click', '.js-modal__open', function(){
+    $('.js-modal__open').each(function () {
+      $(this).on('click', function () {
+          scrollPosition = $(window).scrollTop(); //topからのスクロール位置を格納
+          $('.content').fadeIn(); //モーダルをフェードイン
 
-        var target = $(this).data('target');
-        var modal = document.getElementById(target);
-        $(modal).fadeIn(300);
+          var target = $(this).data('target');
+          var modal = document.getElementById(target);
+          $(modal).fadeIn(300);
 
-        $('body').addClass('fixed').css({
-            top: -scrollPosition
-        }); //背景固定
-        return false;
+          $('body').addClass('fixed').css({
+              top: -scrollPosition
+          }); //背景固定
+          return false;
+      });
     });
   });
 });
