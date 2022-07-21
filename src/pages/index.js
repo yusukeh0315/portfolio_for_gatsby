@@ -71,23 +71,6 @@ const Home = props => (
           <div className="p-section__title-wrapper">
             <h2 className="p-section__title js_typing">Works</h2>
           </div>
-          {/*テキストを含む一般的なモーダル*/}
-          <ul className="info-list">
-            <li><a href="#info-1" className="info">
-                <dl><dt>2019.5.12</dt><dd>→ お知らせ1のタイトル</dd></dl>
-              </a></li>
-            <li><a href="#info-2" className="info">
-                <dl><dt>2019.5.12</dt><dd>→ お知らせ2のタイトル</dd></dl>
-              </a></li>
-          </ul>
-          <section id="info-1" className="hide-area">
-            <h2>お知らせ1</h2>
-            <p>おしらせの内容が入ります。</p>
-          </section>
-          <section id="info-2" className="hide-area">
-            <h2>お知らせ2</h2>
-            <p>おしらせの内容が入ります。</p>
-          </section>
           {/* /.section__title-wrapper*/}
           <div className="p-cards-works p-cards-works--col3">
             <div className="p-cards-works__item c-card-works"><a className="c-card-works__link js-modal__open" href data-target="modal01">
