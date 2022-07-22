@@ -1,117 +1,128 @@
-import React from "react"
+import React, { useState } from 'react'
 import { graphql } from "gatsby"
-// import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const Works = props => (
-  <div>
-    <Layout>
-      <Seo
-        pagetitle="Works"
-        pagedesc="事業実績など"
-        pagepath={props.location.pathname}
-      />
+import { motion } from "framer-motion"
+import Modal from "../components/modal"
 
-      <div>
-        <section className="l-works">
-          <div className="l-works__inner">
-            <div className="p-section__title-wrapper">
-              <h2 className="p-section__title js_typing">Works</h2>
+const Works = props => {
+
+  // モーダルの表示状態と切り替える為にState(props)を準備
+  // false = 非表示、数値 = 表示しているModalの番目とする
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  //どのモーダルを表示するのか操作するために関数を準備
+  const handleOpenModal = (num) => {
+      setIsOpen(num)
+  }
+
+  return (
+    <div>
+      <Layout>
+        <Seo
+          pagetitle="Works"
+          pagedesc="事業実績など"
+          pagepath={props.location.pathname}
+        />
+
+        <div>
+          <section className="l-works">
+            <div className="l-works__inner">
+              <div className="p-section__title-wrapper">
+                <h2 className="p-section__title js_typing">Works</h2>
+              </div>
+              {/* /.section__title-wrapper*/}
+              <div className="p-cards-works p-cards-works--col3">
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(0)} className="c-card-works__link js-modal__open" href data-target="modal01">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/portfolio.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">Portfolio</p>
+                    <p className="c-card-works__text">HTML / CSS / Javascript</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(1)} className="c-card-works__link js-modal__open" href data-target="modal02">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding01.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
+                    <p className="c-card-works__text">HTML / CSS / Javascript</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(2)} className="c-card-works__link js-modal__open" href data-target="modal03">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding02.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
+                    <p className="c-card-works__text">HTML / CSS / Javascript / WordPress / PHP</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(3)} className="c-card-works__link js-modal__open" href data-target="modal04">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/wpcustom-thumbnail.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">WordPress会員ログイン機能の追加</p>
+                    <p className="c-card-works__text">WordPress / PHP</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(4)} className="c-card-works__link js-modal__open" href data-target="modal05">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding04.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">CMSを利用した動的サイト</p>
+                    <p className="c-card-works__text">Design</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(5)} className="c-card-works__link js-modal__open" href data-target="modal06">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/sample_thumbnail.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">オートメーション化の事例</p>
+                    <p className="c-card-works__text">Python / PAD / Ui Path</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(6)} className="c-card-works__link js-modal__open" href data-target="modal07">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding03.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
+                    <p className="c-card-works__text">HTML / CSS / Javascript</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(7)} className="c-card-works__link js-modal__open" href data-target="modal08">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/design01.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">コーポレートサイトデザイン</p>
+                    <p className="c-card-works__text">Design</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                </div>
+                <div className="p-cards-works__item card"><motion.a onClick={() => handleOpenModal(8)} className="c-card-works__link js-modal__open" href data-target="modal09">
+                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/design02.png" /></figure></motion.a>
+                  <div className="c-card-works__body">
+                    <p className="c-card-works__title">ショッピングサイトデザイン</p>
+                    <p className="c-card-works__text">Design</p>
+                  </div>
+                  {/* /.c-card-works__body*/}
+                  {/* /.card*/}
+                  {/* /.main-works-cards*/}
+                  {/* /.main-works__inner*/}
+                </div>
+              </div>
             </div>
-            {/* /.section__title-wrapper*/}
-            <div className="p-cards-works p-cards-works--col3">
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal01">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/portfolio.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">Portfolio</p>
-                  <p className="c-card-works__text">HTML / CSS / Javascript</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal02">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding01.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
-                  <p className="c-card-works__text">HTML / CSS / Javascript</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal03">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding02.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
-                  <p className="c-card-works__text">HTML / CSS / Javascript / WordPress / PHP</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal04">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/wpcustom-thumbnail.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">WordPress会員ログイン機能の追加</p>
-                  <p className="c-card-works__text">WordPress / PHP</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal05">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding04.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">CMSを利用した動的サイト</p>
-                  <p className="c-card-works__text">Design</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal06">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/sample_thumbnail.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">オートメーション化の事例</p>
-                  <p className="c-card-works__text">Python / PAD / Ui Path</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal07">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/coding03.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">Javascriptを利用した静的サイト</p>
-                  <p className="c-card-works__text">HTML / CSS / Javascript</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal08">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/design01.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">コーポレートサイトデザイン</p>
-                  <p className="c-card-works__text">Design</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-              </div>
-              <div className="p-cards-works__item card"><a className="c-card-works__link js-modal__open" href data-target="modal09">
-                  <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src="../images/design02.png" /></figure></a>
-                <div className="c-card-works__body">
-                  <p className="c-card-works__title">ショッピングサイトデザイン</p>
-                  <p className="c-card-works__text">Design</p>
-                </div>
-                {/* /.c-card-works__body*/}
-                {/* /.card*/}
-                {/* /.main-works-cards*/}
-                {/* /.main-works__inner*/}
-              </div>
-            </div>
-          </div>
-        </section>
-        {/* modal*/}
-        <div className="c-modal js-modal" id="modal01">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </section>
+          {/* modal*/}
+          <Modal modalIsOpen={modalIsOpen === 0} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="http://yusukeh0315.html.xdomain.jp/portfolio/"><img className="c-modal__img" id="bigimg" alt="写真：実績" src="../images/portfolio.png" /></a>
                 <ul className="c-modal__thumbs-list">
@@ -133,17 +144,11 @@ const Works = props => (
                   今後はもう少し動きのある効果を盛り込んで改修していきたいと思っています。
                 </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal01*/}
-        <div className="c-modal c-modal--single-page js-modal" id="modal02">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
-            <div className="c-modal__inner">
+          </Modal>
+          {/* /#modal01*/}
+          <Modal modalIsOpen={modalIsOpen === 1} onClose={() => setIsOpen(false)}>
+            <div className="c-modal__inner c-modal__inner--single-page">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="http://yusukeh0315.html.xdomain.jp/yourcoding/"><img className="c-modal__img" alt="写真：実績" src="../images/coding01.png" /></a></div>
               {/* /.c-modal__images*/}
               <div className="c-modal__body">
@@ -157,16 +162,10 @@ const Works = props => (
                   そのほか、AOS.jsやSwiper.jsなどのJavascriptのライブラリを利用した動きのあるWebサイトになっています。<br /><br />                        ※ 架空サイトのため、Basic認証を設定しています。ID: guest / Password: guest123 を入力してご覧ください。
                 </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal02*/}
-        <div className="c-modal js-modal" id="modal03">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </Modal>
+          {/* /#modal02*/}
+          <Modal modalIsOpen={modalIsOpen === 2} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="http://yusukeh0315.html.xdomain.jp/ishiikadan/"><img className="c-modal__img" alt="写真：実績" src="../images/coding02.png" /></a>
                 <ul className="c-modal__thumbs-list">
@@ -189,16 +188,10 @@ const Works = props => (
                   そのほか、AOS.jsやSwiper.jsなどのJavascriptのライブラリを利用した動きのあるWebサイトになっています。<br /><br />                        ※ 架空サイトのため、Basic認証を設定しています。ID: guest / Password: guest123 を入力してご覧ください。
                 </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal03*/}
-        <div className="c-modal js-modal" id="modal04">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </Modal>
+          {/* /#modal03*/}
+          <Modal modalIsOpen={modalIsOpen === 3} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images">
                 <p className="c-modal__img-wrapper"><img className="c-modal__img" alt="写真：実績" src="../images/wpcustom-thumbnail.png" /></p>
@@ -216,16 +209,10 @@ const Works = props => (
                 <p className="c-modal__item">実装期間： 5日</p>
                 <p className="c-modal__text">運用中のWordPressを使ったWebサイトに、プラグインWP-Membersを利用した会員ログイン機能追加を行いました。<br /><br />                        プラグインの導入のみでは、まかなえない機能、カスタマイズはWordPressのfunction.phpを使って要望に合わせてメールの配信やメールの内容、パスワードリセットの方式を実装しました。<br /><br /></p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal04*/}
-        <div className="c-modal js-modal" id="modal05">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </Modal>
+          {/* /#modal04*/}
+          <Modal modalIsOpen={modalIsOpen === 4} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="http://yusukeh0315.wp.xdomain.jp/"><img className="c-modal__img" alt="写真：実績" src="../images/coding04.png" /></a>
                 <ul className="c-modal__thumbs-list">
@@ -247,16 +234,10 @@ const Works = props => (
                   メールベースであれば、支払機能を除き、予約を受け付けるところまでを実装しています。<br /><br />                        ※ 架空サイトのため、Basic認証を設定しています。ID: guest / Password: guest123 を入力してご覧ください。
                 </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal05*/}
-        <div className="c-modal js-modal" id="modal06">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </Modal>
+          {/* /#modal05*/}
+          <Modal modalIsOpen={modalIsOpen === 5} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images">
                 <p className="c-modal__img-wrapper"><img className="c-modal__img" alt="写真：実績" src="../images/sample01.png" /></p>
@@ -277,17 +258,11 @@ const Works = props => (
                   何らかの制約によって実装不可能なケースもあります。<br /><br /><span className="item">事例参考リンク</span><br /><a className="link" target="_blank" rel="noopener noreferrer" href="https://support.switch-bot.com/hc/ja/articles/1500011319922-SwitchBot%E9%96%8B%E9%96%89%E3%82%BB%E3%83%B3%E3%82%B5%E3%83%BC-%E5%87%BA%E3%82%8B%E3%83%A2%E3%83%BC%E3%83%89%E3%81%A8%E5%85%A5%E3%82%8B%E3%83%A2%E3%83%BC%E3%83%89">SwitchBot開閉センサー出るモード</a><br /><a className="link" target="_blank" rel="noopener noreferrer" href="https://jp.candyhouse.co/">セサミ スマートロック</a><br /><br />
                 </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal06*/}
-        <div className="c-modal c-modal--single-page js-modal" id="modal07">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
-            <div className="c-modal__inner">
+          </Modal>
+          {/* /#modal06*/}
+          <Modal modalIsOpen={modalIsOpen === 6} onClose={() => setIsOpen(false)}>
+            <div className="c-modal__inner c-modal__inner--single-page">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="http://yusukeh0315.html.xdomain.jp/samplecorp/"><img className="c-modal__img" alt="写真：実績" src="../images/coding03.png" /></a></div>
               {/* /.c-modal__images*/}
               <div className="c-modal__body">
@@ -301,16 +276,10 @@ const Works = props => (
                   そのほか、ResultsのセクションではJavascriptのライブラリSwiper.jsを利用し、ページネーション（スライドが何枚あって、何枚目かを表示するパーツ）のカスタマイズを行っています。<br /><br />                        ※ 架空サイトのため、Basic認証を設定しています。ID: guest / Password: guest123 を入力してご覧ください。
                 </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal07*/}
-        <div className="c-modal js-modal" id="modal08">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </Modal>
+          {/* /#modal07*/}
+          <Modal modalIsOpen={modalIsOpen === 7} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/Anksf2MwlHQj06dO1miQKc/Portfolio_desgin01?node-id=0%3A1"><img className="c-modal__img" alt="写真：実績" src="../images/design01.png" /></a>
                 <ul className="c-modal__thumbs-list">
@@ -327,16 +296,10 @@ const Works = props => (
                 <p className="c-modal__item">実装期間： 2日</p>
                 <p className="c-modal__text">以下の架空の案件を想定してPC表示、スマートフォン表示のデザインを行いました。<br /><br /><span className="item">案件</span><br />                        今回のクライアントはフリーランスの活用をコンサルする東フリコンサルです。ITに疎い企業さんを手助けするためにフリーランスのエンジニアやデザイナーを紹介、活用支援を行なっている会社です。<br /><span className="item">ターゲット</span><br />                        設立から5年以上経っている営業会社、人材会社、IT事業を始めようと思っている企業です。クライアントは40代以上の男性が多く、みなさんITは全くわからないそうです。<br /><span className="item">サイトに求めること</span><br />                        web上での集客を強めたいのが今回の目的。アニメーションなどは必要なく、ミニマムの物であれば良い。<br /><span className="item">デザインイメージ</span><br />                        歴史あるコンサル会社を感じさせるきっちりした雰囲気のサイトが欲しい。</p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
-        </div>
-        {/* /#modal08*/}
-        <div className="c-modal js-modal" id="modal09">
-          <div className="c-modal__bg js-modal__close" />
-          <div className="c-modal__content">
+          </Modal>
+          {/* /#modal08*/}
+          <Modal modalIsOpen={modalIsOpen === 8} onClose={() => setIsOpen(false)}>
             <div className="c-modal__inner">
               <div className="c-modal__images"><a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href="https://www.figma.com/file/C3bSbI7sDNqA5Ic6ibnRWq/Portfolio_design02?node-id=0%3A1"><img className="c-modal__img" alt="写真：実績" src="../images/design02.png" /></a>
                 <ul className="c-modal__thumbs-list">
@@ -353,43 +316,18 @@ const Works = props => (
                 <p className="c-modal__item">実装期間： 3日</p>
                 <p className="c-modal__text">以下の架空の案件を想定してPC表示、スマートフォン表示のデザインを行いました。<br /><br /><span className="item">案件</span><br />                        女性向けのプロテインのECサイトです。TOKYO PROTEINのオリジナルプロテインを販売するECサイトです。<br /><span className="item">ターゲット</span><br />                        20代～30代の女性で、コンスタントにトレーニングし、しっかり体を鍛えている人をターゲットとしています。<br /><span className="item">サイトに求めること</span><br />                        プロテインを購入していただきたい。<br /></p><a className="js-modal__close c-modal__close" href><span>×</span></a>
               </div>
-              {/* /.c-modal__body*/}
-              {/* /.c-modal__inner*/}
-              {/* /.c-modal__content*/}
             </div>
-          </div>
+          </Modal>
+          {/* /#modal09*/}
+          {/* ./modal*/}
         </div>
-        {/* /#modal09*/}
-        {/* ./modal*/}
-      </div>
 
-      {/* <div
-            key={`body`}
-            id="___gatsby"
-            dangerouslySetInnerHTML={{ __html: props.body }}
-        />
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-        <script src="/javascripts/main.js"></script> */}
+      </Layout>
 
-    </Layout>
+    </div>
 
-    <div
-      key={`body`}
-      id="___gatsby"
-      dangerouslySetInnerHTML={{ __html: props.body }}
-    />
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/shuffle-text@0.3.0/build/shuffle-text.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
-    <script src="/javascripts/main.js"></script>
-
-  </div>
-
-)
+  )
+}
 
 export const query = graphql`
 query {
