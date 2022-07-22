@@ -4,6 +4,11 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+//環境変数を使うために必要
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -39,5 +44,20 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: "gatsby-source-microcms",
+      options: {
+        apiKey: process.env.microCMS_API_KEY.replace(/\"/g, ''),
+        serviceId: "vit-works",
+        apis: [
+          {
+            endpoint: "works",
+          },
+          {
+            endpoint: "skills",
+          },
+        ],
+      },
+    },
   ],
 }
