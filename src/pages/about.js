@@ -84,7 +84,7 @@ const About = ({ data, location }) => (
 
             return (
 
-              <div className="p-cards-skills__item c-card">
+              <div className="p-cards-skills__item c-card-skills">
                 { node.skillIcon &&
                   <div className="c-card-skills__logo-wrapper"><img className="c-card-skills__logo" src={node.skillIcon.url} alt="画像：ロゴ" /></div>
                 }
@@ -114,7 +114,7 @@ const About = ({ data, location }) => (
 
 export const query = graphql`
   query {
-    allMicrocmsSkills {
+    allMicrocmsSkills(sort: {fields: skillId, order: ASC}) {
       edges {
         node {
           category

@@ -38,7 +38,7 @@ const Works = ({ data, location }) => {
               <div className="p-cards-works p-cards-works--col3">
                 {data.allMicrocmsWorks.edges.map(({ node }, index) => (
 
-                  <div className="p-cards-works__item card" key={node.id}><motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
+                  <div className="p-cards-works__item card-works" key={node.id}><motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
                     <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src={node.thumbnail.url} /></figure></motion.a>
                     <div className="c-card-works__body">
                       <p className="c-card-works__title">{node.title} </p>
@@ -79,7 +79,7 @@ const Works = ({ data, location }) => {
 
 export const query = graphql`
   query {
-    allMicrocmsWorks {
+    allMicrocmsWorks(sort: {fields: workId, order: ASC}) {
       edges {
         node {
           id
