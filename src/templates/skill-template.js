@@ -8,6 +8,8 @@ import { motion } from "framer-motion"
 import Modal from "../components/modal"
 import Card from "../components/card"
 
+import { ImgixGatsbyImage } from "@imgix/gatsby"
+
 const Skills = ({ data, location, pageContext }) => {
 
   // モーダルの表示状態と切り替える為にState(props)を準備
@@ -34,7 +36,9 @@ const Skills = ({ data, location, pageContext }) => {
               <div className="p-section__title-wrapper">
                 <h2 className="p-section__title js_typing">
                 { pageContext.skillicon &&
-                  <div className="c-card-skills__logo-wrapper"><img className="c-card-skills__logo" src={pageContext.skillicon} alt="画像：ロゴ" /></div>
+                  <div className="c-card-skills__logo-wrapper">
+                    <img className="c-card-skills__logo" src={pageContext.skillicon} alt="画像：ロゴ" />
+                  </div>
                 }
                 {pageContext.skillname}
                 </h2>
@@ -44,8 +48,22 @@ const Skills = ({ data, location, pageContext }) => {
               <div className="p-cards-works p-cards-works--col3">
                 {data.allMicrocmsWorks.edges.map(({ node }, index) => (
 
-                  <div className="p-cards-works__item card-works" key={node.id}><motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
-                    <figure className="c-card-works__img-wrapper"><img className="c-card-works__img" alt="写真：実績" src={node.thumbnail.url} /></figure></motion.a>
+                  <div className="p-cards-works__item card-works" key={node.id}>
+                    <motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
+                      <figure className="c-card-works__img-wrapper">
+                        <ImgixGatsbyImage
+                          src={node.thumbnail.url}
+                          imgixParams={{ aut: ["format", "compress"]}}
+                          layout="constrained"
+                          width={319}
+                          sourceWidth={node.thumbnail.width}
+                          sourceHeight={node.thumbnail.height}
+                          style={{ height: "100%" }}
+                          className="c-card-works__img"
+                          alt="写真：実績"
+                        />
+                      </figure>
+                    </motion.a>
                     <div className="c-card-works__body">
                       <p className="c-card-works__title">{node.title} </p>
 
@@ -102,18 +120,28 @@ export const query = graphql`
           period
           thumbnail {
             url
+            width
+            height
           }
           image01 {
             url
+            width
+            height
           }
           image02 {
             url
+            width
+            height
           }
           image03 {
             url
+            width
+            height
           }
           image04 {
             url
+            width
+            height
           }
           site_url
         }

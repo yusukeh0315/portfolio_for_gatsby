@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from "gatsby"
 
+import { ImgixGatsbyImage } from "@imgix/gatsby"
+
 const Card = ({ node }) => {
 
     var url, inner_class_name, top_image;
 
     if (node.image01 && node.image02 && node.image03 && node.image04) {
         inner_class_name = "c-modal__inner";
-        top_image = node.image01.url;
+        top_image = node.image01;
     } else {
         inner_class_name = "c-modal__inner c-modal__inner--single-page";
-        top_image = node.thumbnail.url;
+        top_image = node.thumbnail;
     }
 
     if (node.site_url){
@@ -27,23 +29,92 @@ const Card = ({ node }) => {
 
         <div className={inner_class_name}>
             <div className="c-modal__images">
-            <a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href={url}><img className="c-modal__img" id="bigimg" alt="写真：実績" src={srcUrl} /></a>
+            <a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href={url}>
+                <ImgixGatsbyImage
+                    src={srcUrl.url}
+                    imgixParams={{ aut: ["format", "compress"]}}
+                    layout="constrained"
+                    width={740}
+                    sourceWidth={srcUrl.width}
+                    sourceHeight={srcUrl.height}
+                    style={{ height: "100%" }}
+                    className="c-modal__img"
+                    id="bigimg"
+                    alt="写真：実績"
+                />
+            </a>
             <ul className="c-modal__thumbs-list">
 
                 { node.image01 &&
-                <li className="c-modal__thumb-wrapper"><img className="c-modal__thumb" src={node.image01.url} alt="サムネイル" data-image={node.image01.url} onKeyDown={() => changeMainImage(node.image01.url)} onClick={() => changeMainImage(node.image01.url)} /></li>
+                    <li className="c-modal__thumb-wrapper">
+                        <img
+                            src={node.image01.url}
+                            imgixParams={{ aut: ["format", "compress"]}}
+                            layout="constrained"
+                            width={740}
+                            sourceWidth={node.image01.width}
+                            sourceHeight={node.image01.height}
+                            style={{ height: "100%" }}
+                            className="c-modal__thumb"
+                            alt="サムネイル"
+                            onKeyDown={() => changeMainImage(node.image01)}
+                            onClick={() => changeMainImage(node.image01)}
+                            />
+                    </li>
                 }
 
                 { node.image02 &&
-                <li className="c-modal__thumb-wrapper"><img className="c-modal__thumb" src={node.image02.url} alt="サムネイル" data-image={node.image02.url} onKeyDown={() => changeMainImage(node.image02.url)} onClick={() => changeMainImage(node.image02.url)} /></li>
+                    <li className="c-modal__thumb-wrapper">
+                    <img
+                        src={node.image02.url}
+                        imgixParams={{ aut: ["format", "compress"]}}
+                        layout="constrained"
+                        width={740}
+                        sourceWidth={node.image02.width}
+                        sourceHeight={node.image02.height}
+                        style={{ height: "100%" }}
+                        className="c-modal__thumb"
+                        alt="サムネイル"
+                        onKeyDown={() => changeMainImage(node.image02)}
+                        onClick={() => changeMainImage(node.image02)}
+                        />
+                    </li>
                 }
 
                 { node.image03 &&
-                <li className="c-modal__thumb-wrapper"><img className="c-modal__thumb" src={node.image03.url} alt="サムネイル" data-image={node.image03.url} onKeyDown={() => changeMainImage(node.image03.url)} onClick={() => changeMainImage(node.image03.url)} /></li>
+                    <li className="c-modal__thumb-wrapper">
+                    <img
+                        src={node.image03.url}
+                        imgixParams={{ aut: ["format", "compress"]}}
+                        layout="constrained"
+                        width={740}
+                        sourceWidth={node.image03.width}
+                        sourceHeight={node.image03.height}
+                        style={{ height: "100%" }}
+                        className="c-modal__thumb"
+                        alt="サムネイル"
+                        onKeyDown={() => changeMainImage(node.image03)}
+                        onClick={() => changeMainImage(node.image03)}
+                        />
+                    </li>
                 }
 
                 { node.image04 &&
-                <li className="c-modal__thumb-wrapper"><img className="c-modal__thumb" src={node.image04.url} alt="サムネイル" data-image={node.image04.url} onKeyDown={() => changeMainImage(node.image04.url)} onClick={() => changeMainImage(node.image04.url)} /></li>
+                    <li className="c-modal__thumb-wrapper">
+                    <img
+                        src={node.image04.url}
+                        imgixParams={{ aut: ["format", "compress"]}}
+                        layout="constrained"
+                        width={740}
+                        sourceWidth={node.image04.width}
+                        sourceHeight={node.image04.height}
+                        style={{ height: "100%" }}
+                        className="c-modal__thumb"
+                        alt="サムネイル"
+                        onKeyDown={() => changeMainImage(node.image04)}
+                        onClick={() => changeMainImage(node.image04)}
+                        />
+                    </li>
                 }
 
             </ul>

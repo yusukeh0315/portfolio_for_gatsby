@@ -14,6 +14,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@imgix/gatsby": "^2.0.3",
     "framer-motion": "^6.5.1",
     "gatsby": "^4.18.2",
     "gatsby-plugin-image": "^2.18.1",
