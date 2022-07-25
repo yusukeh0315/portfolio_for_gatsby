@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "gatsby"
 
 const Card = ({ node }) => {
 
@@ -53,7 +54,8 @@ const Card = ({ node }) => {
             <p className="c-modal__item">使用言語など：
 
                 {node.skills.map( skill => (
-                <span>{skill.category} </span>
+                    <Link to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
+                // <span>{skill.category} </span>
                 ))}
 
             </p>

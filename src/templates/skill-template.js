@@ -8,7 +8,7 @@ import { motion } from "framer-motion"
 import Modal from "../components/modal"
 import Card from "../components/card"
 
-const Works = ({ data, location }) => {
+const Skills = ({ data, location, pageContext }) => {
 
   // モーダルの表示状態と切り替える為にState(props)を準備
   // false = 非表示、数値 = 表示しているModalの番目とする
@@ -32,7 +32,13 @@ const Works = ({ data, location }) => {
           <section className="l-works">
             <div className="l-works__inner">
               <div className="p-section__title-wrapper">
-                <h2 className="p-section__title js_typing">Works</h2>
+                <h2 className="p-section__title js_typing">
+                { pageContext.skillicon &&
+                  <div className="c-card-skills__logo-wrapper"><img className="c-card-skills__logo" src={pageContext.skillicon} alt="画像：ロゴ" /></div>
+                }
+                {pageContext.skillname}
+                </h2>
+                <p className="c-card-skills__text">{pageContext.skilldesc}</p>
               </div>
 
               <div className="p-cards-works p-cards-works--col3">
@@ -79,8 +85,11 @@ const Works = ({ data, location }) => {
 }
 
 export const query = graphql`
-  query {
-    allMicrocmsWorks(sort: {fields: workId, order: ASC}) {
+  query($skillid: String!) {
+    allMicrocmsWorks(
+      sort: {fields: workId, order: ASC}
+      filter: {skills: {elemMatch: {id: {eq: $skillid }}}}
+      ) {
       edges {
         node {
           id
@@ -110,7 +119,8 @@ export const query = graphql`
         }
       }
     }
+
   }
 `
 
-export default Works
+export default Skills
