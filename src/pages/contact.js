@@ -24,9 +24,20 @@ const Contact = ({ data, location }) => (
             <p className="p-contact__lead">制作の依頼、ご質問などお問い合わせください。<br />                    下記のフォームより、記入お願いします。</p>
           </div>
           {/* /.contact__lead-wrapper*/}
-          <div className="p-contact__main">
+          <form method="post"
+                action="https://www.flexyform.com/f/6b68836a9cdc6e7f2a5f1f7d39e6b4ac8ba8c6cd">
+              <p>
+                  <label>Fullname</label>
+                  <input type="text" name="fullname" />
+              </p>
+              <p>
+                  <label>Email</label>
+                  <input type="email" name="_reply_to" />
+              </p>
+              <button type="submit">Send</button>
+          </form>
+          {/* <div className="p-contact__main">
             <form className="p-contact__form" id="form" method="post" action="https://www.flexyform.com/f/6b68836a9cdc6e7f2a5f1f7d39e6b4ac8ba8c6cd">
-            {/* <form className="p-contact__form" id="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdVU-b0hA1-syOOU06l5lhQGn2mcVVXOYUYWW-l9x9ggR6Huw/formResponse"> */}
               <div className="p-contact__item">
                 <label className="p-contact__label" htmlFor="name">氏名<span className="c-require-label">必須</span></label>
                 <input className="p-contact__input" id="name" type="text" name="entry.1318927522" placeholder="氏名" />
@@ -51,7 +62,7 @@ const Contact = ({ data, location }) => (
             </form>
             <p className="end-message contact-main__end-message">お問い合わせありがとうございました。</p>
             <p className="false-message contact-main__false-message">送信失敗しました。</p>
-          </div>
+          </div> */}
           {/* /.p-contact__main*/}
           {/* /.p-contact__inner*/}
         </div>
