@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+// import { graphql } from "gatsby"
 // import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -25,7 +25,8 @@ const Contact = ({ data, location }) => (
           </div>
           {/* /.contact__lead-wrapper*/}
           <div className="p-contact__main">
-            <form className="p-contact__form" id="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdVU-b0hA1-syOOU06l5lhQGn2mcVVXOYUYWW-l9x9ggR6Huw/formResponse">
+            <form className="p-contact__form" id="form" method="post" action="https://www.flexyform.com/f/6b68836a9cdc6e7f2a5f1f7d39e6b4ac8ba8c6cd">
+            {/* <form className="p-contact__form" id="form" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdVU-b0hA1-syOOU06l5lhQGn2mcVVXOYUYWW-l9x9ggR6Huw/formResponse"> */}
               <div className="p-contact__item">
                 <label className="p-contact__label" htmlFor="name">氏名<span className="c-require-label">必須</span></label>
                 <input className="p-contact__input" id="name" type="text" name="entry.1318927522" placeholder="氏名" />
@@ -46,7 +47,7 @@ const Contact = ({ data, location }) => (
                 <label className="p-contact__label" htmlFor="message">お問い合わせ内容<span className="c-require-label">必須</span></label>
                 <textarea className="p-contact__message" id="message" name="entry.195281403" placeholder="お問い合わせ内容" defaultValue={""} />
               </div>
-              <input className="c-submit-button c-submit-button--disabled" id="js-submit" disabled type="submit" />
+              <input className="c-submit-button" id="js-submit" disabled type="submit" />
             </form>
             <p className="end-message contact-main__end-message">お問い合わせありがとうございました。</p>
             <p className="false-message contact-main__false-message">送信失敗しました。</p>
@@ -61,55 +62,5 @@ const Contact = ({ data, location }) => (
   </div>
 
 )
-
-export const query = graphql`
-query {
-  pen: file(relativePath: {eq: "pen-fancy-solid.svg"}) {
-    publicURL
-  }
-  laptop: file(relativePath: {eq: "laptop-code-solid.svg"}) {
-    publicURL
-  }
-  robot: file(relativePath: {eq: "robot-solid.svg"}) {
-    publicURL
-  }
-  portfolio: file(relativePath: {eq: "portfolio.png"}) {
-    relativePath
-    childImageSharp {
-      gatsbyImageData(width: 400, layout: CONSTRAINED)
-    }
-  }
-  coding01: file(relativePath: {eq: "coding01.png"}) {
-    relativePath
-    childImageSharp {
-      gatsbyImageData(width: 400, layout: CONSTRAINED)
-    }
-  }
-  coding02: file(relativePath: {eq: "coding02.png"}) {
-    relativePath
-    childImageSharp {
-      gatsbyImageData(width: 400, layout: CONSTRAINED)
-    }
-  }
-  wpcustom: file(relativePath: {eq: "wpcustom-thumbnail.png"}) {
-    relativePath
-    childImageSharp {
-      gatsbyImageData(width: 400, layout: CONSTRAINED)
-    }
-  }
-  coding04: file(relativePath: {eq: "coding04.png"}) {
-    relativePath
-    childImageSharp {
-      gatsbyImageData(width: 400, layout: CONSTRAINED)
-    }
-  }
-  rpa: file(relativePath: {eq: "sample_thumbnail.png"}) {
-    relativePath
-    childImageSharp {
-      gatsbyImageData(width: 400, layout: CONSTRAINED)
-    }
-  }
-}
-`
 
 export default Contact
