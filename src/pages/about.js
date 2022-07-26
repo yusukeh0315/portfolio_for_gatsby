@@ -29,13 +29,15 @@ const About = ({ data, location }) => {
     if ( node.categorySlug === 'git' || node.categorySlug ==='infra' ) {
       return (
         <>
-          {skillCardContent(node, level_star)}
+          <div className="c-card-skills">
+            {skillCardContent(node, level_star)}
+          </div>
         </>
       )
     } else {
       return (
         <>
-          <Link to={`/skills/${node.categorySlug}`}>
+          <Link className="c-card-skills" to={`/skills/${node.categorySlug}`}>
             {skillCardContent(node, level_star)}
           </Link>
         </>
@@ -82,13 +84,28 @@ const About = ({ data, location }) => {
             {/* /.section__title-wrapper*/}
             <div className="p-skills__lead-wrapper">
               <p className="p-skills__lead">スキルレベルの目安は次の通りです。</p>
-              <ul>
-                <li><span className="num">1:</span>知識がある、軽く使用した程度</li>
-                <li><span className="num">2:</span>実務レベルで使用できるがもう少し習熟が必要</li>
-                <li><span className="num">3:</span>実務レベルの実装が可能</li>
-                <li><span className="num">4:</span>既存実務をカスタマイズして実装が可能</li>
-                <li><span className="num">5:</span>経験を体系化し先進的なやり方を工夫・開発が可能</li>
-              </ul>
+                <table className="p-skill-table">
+                  <tr>
+                    <td className="p-skill-table__1col">1:</td>
+                    <td>知識がある、軽く使用した程度</td>
+                  </tr>
+                  <tr>
+                    <td className="p-skill-table__1col">2:</td>
+                    <td>実務レベルで使用できるがもう少し習熟が必要</td>
+                  </tr>
+                  <tr>
+                    <td className="p-skill-table__1col">3:</td>
+                    <td>実務レベルの実装が可能</td>
+                  </tr>
+                  <tr>
+                    <td className="p-skill-table__1col">4:</td>
+                    <td>既存実務をカスタマイズして実装が可能</td>
+                  </tr>
+                  <tr>
+                    <td className="p-skill-table__1col">5:</td>
+                    <td>経験を体系化し先進的なやり方を工夫・開発が可能</td>
+                  </tr>
+                </table>
             </div>
             {/* /.skills__lead-wrapper*/}
             <div className="p-cards-skills p-cards-skills--col2">
@@ -122,7 +139,7 @@ const About = ({ data, location }) => {
 
               return (
 
-                <div className="p-cards-skills__item c-card-skills">
+                <div className="p-cards-skills__item">
                   {skillCardContentLink(node, level_star)}
                 </div>
               )
