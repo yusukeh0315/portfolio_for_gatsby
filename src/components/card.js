@@ -132,7 +132,9 @@ const Card = ({ node }) => {
             </p>
             <p className="c-modal__item">実装期間： {node.period}</p>
             <p className="c-modal__text">
-                {node.desc}
+                <div dangerouslySetInnerHTML={{ __html:
+                    node.content
+                }} />
             </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
             </div>
         </div>

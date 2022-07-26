@@ -105,7 +105,7 @@ export const query = graphql`
             category
             categorySlug
           }
-          desc
+          content
           period
           thumbnail {
             url
