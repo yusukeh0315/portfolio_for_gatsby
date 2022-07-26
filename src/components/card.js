@@ -5,21 +5,21 @@ import { ImgixGatsbyImage } from "@imgix/gatsby"
 
 const Card = ({ node }) => {
 
-    var url, inner_class_name, top_image;
+    var url, inner_class_name, first_image;
 
-    if (node.image01 && node.image02 && node.image03 && node.image04) {
+    if (node.image02 && node.image03 && node.image04) {
         inner_class_name = "c-modal__inner";
-        top_image = node.image01;
+        first_image = node.image01;
     } else {
         inner_class_name = "c-modal__inner c-modal__inner--single-page";
-        top_image = node.thumbnail;
+        first_image = null;
     }
 
     if (node.site_url){
         url = node.site_url;
     }
 
-    const [ srcUrl, setSrcUrl ] = useState(top_image);
+    const [ srcUrl, setSrcUrl ] = useState(node.image01);
 
     const changeMainImage = (imgUrl) => {
         setSrcUrl(imgUrl);
@@ -45,20 +45,20 @@ const Card = ({ node }) => {
             </a>
             <ul className="c-modal__thumbs-list">
 
-                { node.image01 &&
+                { first_image &&
                     <li className="c-modal__thumb-wrapper">
                         <img
-                            src={node.image01.url}
+                            src={first_image.url}
                             imgixParams={{ aut: ["format", "compress"]}}
                             layout="constrained"
                             width={740}
-                            sourceWidth={node.image01.width}
-                            sourceHeight={node.image01.height}
+                            sourceWidth={first_image.width}
+                            sourceHeight={first_image.height}
                             style={{ height: "100%" }}
                             className="c-modal__thumb"
                             alt="サムネイル"
-                            onKeyDown={() => changeMainImage(node.image01)}
-                            onClick={() => changeMainImage(node.image01)}
+                            onKeyDown={() => changeMainImage(first_image)}
+                            onClick={() => changeMainImage(first_image)}
                             />
                     </li>
                 }
