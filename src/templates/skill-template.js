@@ -25,8 +25,8 @@ const Skills = ({ data, location, pageContext }) => {
     <div>
       <Layout>
         <Seo
-          pagetitle="Works"
-          pagedesc="事業実績など"
+          pagetitle={pageContext.skillname}
+          pagedesc={`${pageContext.skillname}のレベルと実績について`}
           pagepath={location.pathname}
         />
 
