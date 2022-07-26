@@ -34,11 +34,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `VIT Works ヴィットワークス`,
+        name: `VIT Works`,
         short_name: `VIT Works`,
         start_url: `/`,
         background_color: `#ffffff`,
-        theme_color: `#477294`,
+        theme_color: `#0C4579`,
         display: `standalone`,
         icon: `src/images/icon.png`,
       },
