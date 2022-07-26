@@ -25,13 +25,13 @@
     }
 
     &--disabled {
-        background-color: global.$color-lightgray;
+        background-color: global.$color-hovergray;
         color: global.$color-gray;
         cursor: default;
 
         &:hover, &:focus, &:active {
             border: 1px solid global.$color-black;
-            background-color: global.$color-lightgray;
+            background-color: global.$color-hovergray;
             color: global.$color-gray;
             cursor: default;
         }

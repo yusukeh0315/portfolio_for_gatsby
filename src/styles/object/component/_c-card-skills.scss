@@ -2,6 +2,23 @@
 
 .c-card-skills {
     display: flex;
+    height: 180px;
+    padding: 1rem;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+
+    &__nolink{
+        display: flex;
+        height: 180px;
+        padding: 1rem;
+    }
+
+    &:hover{
+        background: global.$color-hovergray;
+        border-radius: 8px;
+    }
 
     &__logo-wrapper {
         flex-basis: 15%;

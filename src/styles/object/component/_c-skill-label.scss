@@ -18,8 +18,8 @@
     border-radius: 5px;
 
     &:hover, &:focus, &:active {
-        border: 1px solid global.$color-white;
-        background-color: global.$color-black;
-        color: global.$color-white;
+        border: 1px solid global.$color-gray;
+        background-color: global.$color-white;
+        color: global.$color-gray;
     }
 }

@@ -29,7 +29,7 @@ const About = ({ data, location }) => {
     if ( node.categorySlug === 'git' || node.categorySlug ==='infra' ) {
       return (
         <>
-          <div className="c-card-skills">
+          <div className="c-card-skills__nolink">
             {skillCardContent(node, level_star)}
           </div>
         </>
