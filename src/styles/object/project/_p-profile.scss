@@ -1,0 +1,53 @@
+@use "../../global" as global;
+
+.p-profile {
+    padding: 30px 0 0 40px;
+
+    &__name {
+        margin-bottom: 1rem;
+        font-size: global.rem(18);
+        line-height: calc(27/18);
+    }
+
+    &__address {
+        font-size: global.rem(16);
+        line-height: calc(24/16);
+    }
+
+    &__contact {
+        font-size: global.rem(16);
+        line-height: calc(24/16);
+    }
+
+    &__business_dsc {
+        font-size: global.rem(16);
+        line-height: calc(24/16);
+    }
+}
+
+@include global.media(sp) {
+    .p-profile {
+        padding-left: 0;
+
+        &__name {
+            margin-bottom: 1rem;
+            font-size: global.rem(16);
+            line-height: calc(24/16);
+        }
+
+        &__address {
+            font-size: global.rem(16);
+            line-height: calc(21/16);
+        }
+
+        &__contact {
+            font-size: global.rem(16);
+            line-height: calc(21/16);
+        }
+
+        &__business_dsc {
+            font-size: global.rem(16);
+            line-height: calc(21/16);
+        }
+    }
+}

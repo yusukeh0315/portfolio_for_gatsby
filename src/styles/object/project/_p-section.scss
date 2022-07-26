@@ -1,0 +1,28 @@
+@use "../../global" as global;
+
+.p-section {
+    &__title-wrapper {
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-weight: 100;
+        font-size: global.rem(42);
+        font-family: global.$font-base-en;
+
+        &--skill {
+            display: flex;
+            margin-bottom: 1rem;
+
+        }
+    }
+}
+
+@include global.media(sp) {
+    .p-section {
+        &__title--skill {
+            display: block;
+            margin-bottom: 1rem;
+        }
+    }
+}

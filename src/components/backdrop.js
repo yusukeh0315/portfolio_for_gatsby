@@ -8,7 +8,7 @@ const BackDrop = ({ children, onClick }) => {
         <div>
 
             <motion.div
-                className="backdrop"
+                className="c-modal__backdrop"
                 onClick={onClick}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}

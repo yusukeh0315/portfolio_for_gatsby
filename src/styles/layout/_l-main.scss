@@ -1,0 +1,124 @@
+@use "../global" as global;
+
+.l-fv {
+    height: 100vh;
+
+    &__inner {
+        @include global.inner(global.$width-base);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        padding: 0 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-fv {
+        height: 100vh;
+    }
+}
+
+.l-service {
+    $col_num: 3;
+    $card_margin: 60px;
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 60px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-service {
+        $col_num: 1;
+        $card_margin: 60px;
+        &__inner {
+            padding: 40px 60px;
+        }
+    }
+}
+
+.l-main-works {
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 40px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .main-works {
+        &__inner {
+            padding: 40px 60px;
+        }
+    }
+}
+
+.l-about {
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 160px 20px 80px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-about {
+        &__inner {
+            @include global.inner(global.$width-inner);
+            height: 100%;
+            padding-top: 190px;
+        }
+    }
+}
+
+.l-skills {
+
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 0 20px 160px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-skills {
+
+        &__inner {
+            padding: 0 20px 80px 20px;
+        }
+    }
+}
+
+.l-works {
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 160px 20px 80px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-works {
+        &__inner {
+            padding-top: 190px;
+        }
+    }
+}
+
+.l-contact {
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 160px 20px 80px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .contact {
+        &__inner {
+            padding-top: 190px;
+        }
+    }
+}

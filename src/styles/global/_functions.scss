@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+// ==========================================================================
+// Functions
+// ==========================================================================
+
+@use "./variables" as global;
+
+// font-size
+@function rem($pixels, $context: global.$baseFontSize) {
+    @return calc($pixels / $context) * 1rem;
+}
+
+// half-reading
+@function negativeMargin($font-size, $line-height) {
+    @return calc(($line-height - $font-size) / 2px);
+}
+

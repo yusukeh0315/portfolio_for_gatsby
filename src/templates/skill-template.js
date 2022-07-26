@@ -36,7 +36,7 @@ const Skills = ({ data, location, pageContext }) => {
               <div className="p-section__title-wrapper">
                 <h2 className="p-section__title p-section__title--skill js_typing">
                 { pageContext.skillicon &&
-                  <div className="c-card-skills__logo-wrapper">
+                  <div className="c-card-skills__logo-wrapper c-card-skills__logo-wrapper--skill">
                     <img className="c-card-skills__logo" src={pageContext.skillicon} alt="画像：ロゴ" />
                   </div>
                 }
@@ -69,7 +69,7 @@ const Skills = ({ data, location, pageContext }) => {
 
                       <p className="c-card-works__text">
                         {node.skills.map( skill => (
-                          <Link className="c-card-works__skill" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
+                          <Link className="c-skill-lable" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
                           // <span>{skill.category} </span>
                         ))}
                       </p>

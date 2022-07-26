@@ -61,7 +61,7 @@ const Works = ({ data, location }) => {
 
                       <p className="c-card-works__text">
                         {node.skills.map( skill => (
-                          <Link className="c-card-works__skill" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
+                          <Link className="c-skill-lable" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
                         ))}
                       </p>
 
