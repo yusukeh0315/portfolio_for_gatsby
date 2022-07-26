@@ -1413,3 +1413,54 @@ a:hover {
   background: #ffffff;
 }
 
+@media only screen and (max-width:1023px) {
+  .c-modal__content {
+    width: 90%;
+    height: 90vh;
+  }
+}
+
+.p-section__title--skill {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.p-section__title--skill .c-card-skills__logo-wrapper {
+  flex-basis: 8%;
+  padding: 0;
+}
+
+@media only screen and (max-width:1023px) {
+  .p-section__title--skill {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .p-section__title--skill .c-card-skills__logo-wrapper {
+    padding-bottom: 0.5rem;
+  }
+}
+
+.c-card-works__skill {
+  font-size: 0.8rem;
+  display: inline-block;
+  padding: 2px 5px 2px 5px;
+  margin: 0 5px 5px 0;
+  border: 1px solid #333333;
+  background-color: #ffffff;
+  color: #333333;
+  font-weight: bold;
+  font-weight: normal;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.25s;
+  border-radius: 5px;
+
+}
+
+.c-card-works__skill:hover, .c-card-works__skill:focus, .c-card-works__skill:active {
+  border: 1px solid #ffffff;
+  background-color: #333333;
+  color: #ffffff;
+}

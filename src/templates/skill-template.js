@@ -34,7 +34,7 @@ const Skills = ({ data, location, pageContext }) => {
           <section className="l-works">
             <div className="l-works__inner">
               <div className="p-section__title-wrapper">
-                <h2 className="p-section__title js_typing">
+                <h2 className="p-section__title p-section__title--skill js_typing">
                 { pageContext.skillicon &&
                   <div className="c-card-skills__logo-wrapper">
                     <img className="c-card-skills__logo" src={pageContext.skillicon} alt="画像：ロゴ" />

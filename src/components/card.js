@@ -125,7 +125,7 @@ const Card = ({ node }) => {
             <p className="c-modal__item">使用言語など：
 
                 {node.skills.map( skill => (
-                    <Link to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
+                    <Link className="c-card-works__skill" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
                 // <span>{skill.category} </span>
                 ))}
 
