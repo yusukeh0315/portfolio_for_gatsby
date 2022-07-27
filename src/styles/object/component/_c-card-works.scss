@@ -5,13 +5,11 @@
     flex-direction: column;
     align-items: center;
 
-    &__img-wrapper {
-        @include global.rwd-image(1, 1);
-        overflow: hidden;
-        box-shadow: 2px 2px 4px global.$color-gray;
-        max-height: 100%;
-        display: block;
-    }
+    // &__img-wrapper {
+    //     @include global.rwd-image(1, 1);
+    //     overflow: hidden;
+    //     box-shadow: 2px 2px 4px global.$color-gray;
+    // }
 
     &__img {
         position: absolute;
