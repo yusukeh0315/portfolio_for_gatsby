@@ -45,7 +45,7 @@ const Works = ({ data, location }) => {
                       <figure className="c-card-works__img-wrapper">
                         <ImgixGatsbyImage
                           src={node.thumbnail.url}
-                          imgixParams={{ aut: ["format", "compress"]}}
+                          imgixParams={{ auto: ["format", "compress"]}}
                           layout="constrained"
                           width={319}
                           sourceWidth={node.thumbnail.width}

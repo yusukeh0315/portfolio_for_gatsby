@@ -29,10 +29,10 @@ const Card = ({ node }) => {
 
         <div className={inner_class_name}>
             <div className="c-modal__images">
-            <a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href={url}>
+            <a className="c-modal__img-wrapper u-effect-fadein" target="_blank" rel="noopener noreferrer" href={url}>
                 <ImgixGatsbyImage
                     src={srcUrl.url}
-                    imgixParams={{ aut: ["format", "compress"]}}
+                    imgixParams={{ auto: ["format", "compress"]}}
                     layout="constrained"
                     width={740}
                     sourceWidth={srcUrl.width}
@@ -49,7 +49,7 @@ const Card = ({ node }) => {
                     <li className="c-modal__thumb-wrapper">
                         <img
                             src={first_image.url}
-                            imgixParams={{ aut: ["format", "compress"]}}
+                            imgixParams={{ auto: ["format", "compress"]}}
                             layout="constrained"
                             width={740}
                             sourceWidth={first_image.width}
@@ -67,7 +67,7 @@ const Card = ({ node }) => {
                     <li className="c-modal__thumb-wrapper">
                     <img
                         src={node.image02.url}
-                        imgixParams={{ aut: ["format", "compress"]}}
+                        imgixParams={{ auto: ["format", "compress"]}}
                         layout="constrained"
                         width={740}
                         sourceWidth={node.image02.width}
@@ -85,7 +85,7 @@ const Card = ({ node }) => {
                     <li className="c-modal__thumb-wrapper">
                     <img
                         src={node.image03.url}
-                        imgixParams={{ aut: ["format", "compress"]}}
+                        imgixParams={{ auto: ["format", "compress"]}}
                         layout="constrained"
                         width={740}
                         sourceWidth={node.image03.width}
@@ -103,7 +103,7 @@ const Card = ({ node }) => {
                     <li className="c-modal__thumb-wrapper">
                     <img
                         src={node.image04.url}
-                        imgixParams={{ aut: ["format", "compress"]}}
+                        imgixParams={{ auto: ["format", "compress"]}}
                         layout="constrained"
                         width={740}
                         sourceWidth={node.image04.width}
