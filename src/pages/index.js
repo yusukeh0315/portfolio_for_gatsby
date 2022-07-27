@@ -10,8 +10,6 @@ import Card from "../components/card"
 
 import { ImgixGatsbyImage } from "@imgix/gatsby"
 
-import styled from 'styled-components'
-
 const Home = ({ data }) => {
 
   // モーダルの表示状態と切り替える為にState(props)を準備
@@ -22,15 +20,6 @@ const Home = ({ data }) => {
   const handleOpenModal = (num) => {
       setIsOpen(num)
   }
-
-  const CardWorksWrapper = styled.figure`
-    position: relative;
-    padding-top: 100%;
-    overflow: hidden;
-    box-shadow: 2px 2px 4px #979797;
-    max-height: 100%;
-    display: block;
-  `
 
   return (
     <div>
@@ -102,9 +91,8 @@ const Home = ({ data }) => {
             {/* /.section__title-wrapper*/}
             <div className="p-cards-works p-cards-works--col3">
               {data.allMicrocmsWorks.edges.map(({ node }, index) => (
-                <div className="p-cards-works__item c-card-works key={node.id}">
-                  <motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
-                    <CardWorksWrapper>
+                <div className="p-cards-works__item c-card-works key={node.id}"><motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
+                    <figure className="c-card-works__img-wrapper">
                       <ImgixGatsbyImage
                         src={node.thumbnail.url}
                         imgixParams={{ aut: ["format", "compress"]}}
@@ -116,9 +104,7 @@ const Home = ({ data }) => {
                         className="c-card-works__img"
                         alt="写真：実績"
                       />
-                    </CardWorksWrapper>
-                  </motion.a>
-                </div>
+                    </figure></motion.a></div>
               ))}
             </div>
           </div>

@@ -42,9 +42,16 @@
 // Responsive Image
 @mixin rwd-image($width: 16, $height: 9) {
     position: relative;
-    padding-top: percentage(calc($height / $width));
+    width: 100%;
 
-    > img {
+    ::before {
+        content: '';
+        display: block;
+        padding-top: percentage(calc($height / $width));
+
+    }
+
+    .img {
         position: absolute;
         top: 0;
         left: 0;
