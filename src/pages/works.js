@@ -73,21 +73,20 @@ const Works = ({ data, location }) => {
               </div>
             </div>
           </section>
-
-          {/* modal*/}
-          {data.allMicrocmsWorks.edges.map(({ node }, index) => {
-
-            return (
-              <Modal modalIsOpen={modalIsOpen === index} onClose={() => setIsOpen(false)}>
-                <Card node={node} />
-              </Modal>
-            )
-          })}
-
         </div>
 
       </Layout>
 
+      {/* modal*/}
+      {data.allMicrocmsWorks.edges.map(({ node }, index) => {
+
+        return (
+          <Modal modalIsOpen={modalIsOpen === index} onClose={() => setIsOpen(false)}>
+            <Card node={node} />
+          </Modal>
+        )
+      })}
+      
     </div>
 
   )
