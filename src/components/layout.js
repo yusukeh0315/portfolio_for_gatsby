@@ -9,7 +9,7 @@ const Layout = ({ children }) => (
     <div>
         <Header />
 
-        {children}
+        <div className="u-effect-fadein">{children}</div>
 
         <Footer />
     </div>

@@ -1,0 +1,28 @@
+@use "../../global" as global;
+
+.u-effect-fadein {
+    @include global.z-index(modal);
+    animation-name: fadeInAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    position: relative;
+    top: 80px;
+    @include global.z-index(header);
+}
+
+@include global.media(sp) {
+    .u-effect-fadein {
+        top: 150px;
+    }
+}
+
+@keyframes fadeInAnime{
+    from {
+    opacity: 0;
+    }
+
+    to {
+    opacity: 1;
+    }
+}
