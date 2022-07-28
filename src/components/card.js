@@ -5,14 +5,16 @@ import { ImgixGatsbyImage } from "@imgix/gatsby"
 
 const Card = ({ node }) => {
 
-    var url, inner_class_name, first_image;
+    let url, inner_class_name, first_image, is_single_page;
 
     if (node.image02 && node.image03 && node.image04) {
         inner_class_name = "c-modal__inner";
         first_image = node.image01;
+        is_single_page = false
     } else {
         inner_class_name = "c-modal__inner c-modal__inner--single-page";
         first_image = null;
+        is_single_page = true
     }
 
     if (node.site_url){
@@ -24,6 +26,8 @@ const Card = ({ node }) => {
     const changeMainImage = (imgUrl) => {
         setSrcUrl(imgUrl);
     }
+
+    const thumbnailImages = [first_image, node.image02, node.image03, node.image04, ]
 
     return (
 
@@ -44,88 +48,30 @@ const Card = ({ node }) => {
             </a>
             <ul className="c-modal__thumbs-list">
 
-                { first_image &&
-                    <button
-                        className="c-modal__thumb-wrapper"
-                        onKeyDown={() => changeMainImage(first_image)}
-                        onClick={() => changeMainImage(first_image)}
-                    >
-                        <ImgixGatsbyImage
-                            src={first_image.url}
-                            imgixParams={{ auto: ["format", "compress"]}}
-                            layout="constrained"
-                            width={740}
-                            sourceWidth={first_image.width}
-                            sourceHeight={first_image.height}
-                            style={{ height: "100%" }}
-                            className="c-modal__thumb"
-                            alt="Thumbnail"
+                { !is_single_page &&
+                    thumbnailImages.map((image) => {
+                        return (
+                            <button
+                                className="c-modal__thumb-wrapper"
+                                onKeyDown={() => changeMainImage(image)}
+                                onClick={() => changeMainImage(image)}
+                            >
+                                <ImgixGatsbyImage
+                                    src={image.url}
+                                    imgixParams={{ auto: ["format", "compress"]}}
+                                    layout="constrained"
+                                    width={740}
+                                    sourceWidth={image.width}
+                                    sourceHeight={image.height}
+                                    style={{ height: "100%" }}
+                                    className="c-modal__thumb"
+                                    alt="Thumbnail"
 
-                            />
-                    </button>
+                                    />
+                            </button>
+                        )
+                    })
                 }
-
-                { node.image02 &&
-                    <button
-                        className="c-modal__thumb-wrapper"
-                        onKeyDown={() => changeMainImage(node.image02)}
-                        onClick={() => changeMainImage(node.image02)}
-                    >
-                    <ImgixGatsbyImage
-                        src={node.image02.url}
-                        imgixParams={{ auto: ["format", "compress"]}}
-                        layout="constrained"
-                        width={740}
-                        sourceWidth={node.image02.width}
-                        sourceHeight={node.image02.height}
-                        style={{ height: "100%" }}
-                        className="c-modal__thumb"
-                        alt="Thumbnail"
-
-                        />
-                    </button>
-                }
-
-                { node.image03 &&
-                    <button
-                        className="c-modal__thumb-wrapper"
-                        onKeyDown={() => changeMainImage(node.image03)}
-                        onClick={() => changeMainImage(node.image03)}
-                    >
-                    <ImgixGatsbyImage
-                        src={node.image03.url}
-                        imgixParams={{ auto: ["format", "compress"]}}
-                        layout="constrained"
-                        width={740}
-                        sourceWidth={node.image03.width}
-                        sourceHeight={node.image03.height}
-                        style={{ height: "100%" }}
-                        className="c-modal__thumb"
-                        alt="Thumbnail"
-                        />
-                    </button>
-                }
-
-                { node.image04 &&
-                    <button
-                        className="c-modal__thumb-wrapper"
-                        onKeyDown={() => changeMainImage(node.image04)}
-                        onClick={() => changeMainImage(node.image04)}
-                    >
-                    <ImgixGatsbyImage
-                        src={node.image04.url}
-                        imgixParams={{ auto: ["format", "compress"]}}
-                        layout="constrained"
-                        width={740}
-                        sourceWidth={node.image04.width}
-                        sourceHeight={node.image04.height}
-                        style={{ height: "100%" }}
-                        className="c-modal__thumb"
-                        alt="Thumbnail"
-                        />
-                    </button>
-                }
-
             </ul>
             </div>
 
