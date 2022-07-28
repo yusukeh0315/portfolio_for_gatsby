@@ -45,7 +45,8 @@ const Card = ({ node }) => {
             <ul className="c-modal__thumbs-list">
 
                 { first_image &&
-                    <li className="c-modal__thumb-wrapper"
+                    <button
+                        className="c-modal__thumb-wrapper"
                         onKeyDown={() => changeMainImage(first_image)}
                         onClick={() => changeMainImage(first_image)}
                     >
@@ -59,12 +60,14 @@ const Card = ({ node }) => {
                             style={{ height: "100%" }}
                             className="c-modal__thumb"
                             alt="Thumbnail"
+
                             />
-                    </li>
+                    </button>
                 }
 
                 { node.image02 &&
-                    <li className="c-modal__thumb-wrapper"
+                    <button
+                        className="c-modal__thumb-wrapper"
                         onKeyDown={() => changeMainImage(node.image02)}
                         onClick={() => changeMainImage(node.image02)}
                     >
@@ -80,11 +83,12 @@ const Card = ({ node }) => {
                         alt="Thumbnail"
 
                         />
-                    </li>
+                    </button>
                 }
 
                 { node.image03 &&
-                    <li className="c-modal__thumb-wrapper"
+                    <button
+                        className="c-modal__thumb-wrapper"
                         onKeyDown={() => changeMainImage(node.image03)}
                         onClick={() => changeMainImage(node.image03)}
                     >
@@ -99,11 +103,12 @@ const Card = ({ node }) => {
                         className="c-modal__thumb"
                         alt="Thumbnail"
                         />
-                    </li>
+                    </button>
                 }
 
                 { node.image04 &&
-                    <li className="c-modal__thumb-wrapper"
+                    <button
+                        className="c-modal__thumb-wrapper"
                         onKeyDown={() => changeMainImage(node.image04)}
                         onClick={() => changeMainImage(node.image04)}
                     >
@@ -118,7 +123,7 @@ const Card = ({ node }) => {
                         className="c-modal__thumb"
                         alt="Thumbnail"
                         />
-                    </li>
+                    </button>
                 }
 
             </ul>
