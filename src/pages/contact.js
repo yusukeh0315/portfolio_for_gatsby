@@ -29,7 +29,7 @@ const Contact = ({ data, location }) => {
   }
 
   const checkInput = () => {
-    if(name != "" && email != "" && message != ""){
+    if(name !== "" && email !== "" && message !== ""){
       setDisabled(false);
     } else {
       setDisabled(true);
