@@ -11,7 +11,7 @@ const About = ({ data, location }) => {
     return (
       <>
       { node.skillIcon &&
-        <div className="c-card-skills__logo-wrapper"><img className="c-card-skills__logo" src={node.skillIcon.url} alt="画像：ロゴ" /></div>
+        <div className="c-card-skills__logo-wrapper"><img className="c-card-skills__logo" src={node.skillIcon.url} alt="SkillIcon" /></div>
       }
       <div className="c-card-skills__body">
         <p className="c-card-skills__title">{node.category}</p>
