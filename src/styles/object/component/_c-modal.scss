@@ -223,6 +223,11 @@ body.fixed {
             cursor: pointer;
         }
     }
+
+    &__close--sp {
+        display: none;
+    }
+
 }
 
 @include global.media(tb) {
@@ -333,7 +338,7 @@ body.fixed {
         }
 
         &__inner {
-            padding: 60px 20px 20px 20px;
+            padding: 20px 20px 20px 20px;
         }
 
         &__thumbs-list {
@@ -360,6 +365,20 @@ body.fixed {
 
         &__text {
             height: 25vh;
+        }
+
+        &__close {
+            display: none;
+        }
+
+        &__close--sp {
+            display: block;
+            position: absolute;
+            bottom: 0px;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            // margin: 0 20px;
         }
     }
 }

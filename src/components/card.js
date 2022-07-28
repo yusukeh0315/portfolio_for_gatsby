@@ -138,7 +138,7 @@ const Card = ({ node }) => {
                 <div dangerouslySetInnerHTML={{ __html:
                     node.content
                 }} />
-            </p><a className="js-modal__close c-modal__close" href><span>×</span></a>
+            </p>
             </div>
         </div>
 

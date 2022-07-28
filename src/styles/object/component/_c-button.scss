@@ -1,5 +1,32 @@
 @use "../../global" as global;
 
+@include global.media(sp) {
+    .c-modal-close-button{
+        display: inline-block;
+        width: 95%;
+        // max-width: 100%;
+        padding: 10px 10px 10px 10px;
+        border: 1px solid global.$color-black;
+        background-color: global.$color-white;
+        color: global.$color-black;
+        font-weight: bold;
+        font-weight: normal;
+        // font-size: rem(16);
+        line-height: 20px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        transition: .25s;
+
+        &:hover, &:focus, &:active {
+            border: 1px solid global.$color-white;
+            background-color: global.$color-black;
+            color: global.$color-white;
+        }
+    }
+}
+
+
 // button
 .c-submit-button {
     display: inline-block;
