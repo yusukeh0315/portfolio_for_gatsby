@@ -39,7 +39,7 @@ const Card = ({ node }) => {
                     sourceHeight={srcUrl.height}
                     style={{ height: "100%" }}
                     className="c-modal__img"
-                    alt="写真：実績"
+                    alt="MainImage"
                 />
             </a>
             <ul className="c-modal__thumbs-list">
@@ -58,7 +58,7 @@ const Card = ({ node }) => {
                             sourceHeight={first_image.height}
                             style={{ height: "100%" }}
                             className="c-modal__thumb"
-                            alt="サムネイル"
+                            alt="Thumbnail"
                             />
                     </li>
                 }
@@ -77,7 +77,7 @@ const Card = ({ node }) => {
                         sourceHeight={node.image02.height}
                         style={{ height: "100%" }}
                         className="c-modal__thumb"
-                        alt="サムネイル"
+                        alt="Thumbnail"
 
                         />
                     </li>
@@ -97,7 +97,7 @@ const Card = ({ node }) => {
                         sourceHeight={node.image03.height}
                         style={{ height: "100%" }}
                         className="c-modal__thumb"
-                        alt="サムネイル"
+                        alt="Thumbnail"
                         />
                     </li>
                 }
@@ -116,7 +116,7 @@ const Card = ({ node }) => {
                         sourceHeight={node.image04.height}
                         style={{ height: "100%" }}
                         className="c-modal__thumb"
-                        alt="サムネイル"
+                        alt="Thumbnail"
                         />
                     </li>
                 }
@@ -130,7 +130,6 @@ const Card = ({ node }) => {
 
                 {node.skills.map( skill => (
                     <Link className="c-skill-lable" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
-                // <span>{skill.category} </span>
                 ))}
 
             </p>
