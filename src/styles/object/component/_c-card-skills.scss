@@ -72,13 +72,30 @@
     }
 }
 
+@include global.media(tb) {
+    .c-card-skills {
+        height: 250px;
+
+        &__nolink{
+            height: 250px;
+
+        }
+
+    }
+}
+
 @include global.media(sp) {
     .c-card-skills {
+        height: auto;
+
+        &__nolink{
+            height: auto;
+
+        }
 
         &__logo-wrapper {
             &--skill {
                 padding-bottom: 0.5rem;
-
             }
         }
 
