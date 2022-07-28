@@ -62,13 +62,21 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300`,
-          `Noto+Sans+JP:wght@100;300;400;500;700;900`,
-        ],
-        display: 'swap',
+        fonts: {
+          google: [
+            {
+              family: `Lato`,
+              variants: [`100`, `300`, `400`, `700`, `900`]
+            },
+            {
+              family: `Noto Sans JP`,
+              subsets: [`japanese`],
+              variants: [`100`, `300`, `400`, `500`, `700`, `900`]
+            },
+          ],
+        },
       },
     },
   ],
