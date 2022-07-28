@@ -29,7 +29,7 @@ const Card = ({ node }) => {
 
         <div className={inner_class_name}>
             <div className="c-modal__images">
-            <a className="c-modal__img-wrapper" target="_blank" rel="noopener noreferrer" href={url}>
+            <a className="c-modal__img-wrapper u-effect-fadein" target="_blank" rel="noopener noreferrer" href={url}>
                 <ImgixGatsbyImage
                     src={srcUrl.url}
                     imgixParams={{ auto: ["format", "compress"]}}
@@ -45,7 +45,10 @@ const Card = ({ node }) => {
             <ul className="c-modal__thumbs-list">
 
                 { first_image &&
-                    <li className="c-modal__thumb-wrapper">
+                    <li className="c-modal__thumb-wrapper"
+                        onKeyDown={() => changeMainImage(first_image)}
+                        onClick={() => changeMainImage(first_image)}
+                    >
                         <ImgixGatsbyImage
                             src={first_image.url}
                             imgixParams={{ auto: ["format", "compress"]}}
@@ -56,14 +59,15 @@ const Card = ({ node }) => {
                             style={{ height: "100%" }}
                             className="c-modal__thumb"
                             alt="サムネイル"
-                            onKeyDown={() => changeMainImage(first_image)}
-                            onClick={() => changeMainImage(first_image)}
                             />
                     </li>
                 }
 
                 { node.image02 &&
-                    <li className="c-modal__thumb-wrapper">
+                    <li className="c-modal__thumb-wrapper"
+                        onKeyDown={() => changeMainImage(node.image02)}
+                        onClick={() => changeMainImage(node.image02)}
+                    >
                     <ImgixGatsbyImage
                         src={node.image02.url}
                         imgixParams={{ auto: ["format", "compress"]}}
@@ -74,14 +78,16 @@ const Card = ({ node }) => {
                         style={{ height: "100%" }}
                         className="c-modal__thumb"
                         alt="サムネイル"
-                        onKeyDown={() => changeMainImage(node.image02)}
-                        onClick={() => changeMainImage(node.image02)}
+
                         />
                     </li>
                 }
 
                 { node.image03 &&
-                    <li className="c-modal__thumb-wrapper">
+                    <li className="c-modal__thumb-wrapper"
+                        onKeyDown={() => changeMainImage(node.image03)}
+                        onClick={() => changeMainImage(node.image03)}
+                    >
                     <ImgixGatsbyImage
                         src={node.image03.url}
                         imgixParams={{ auto: ["format", "compress"]}}
@@ -92,14 +98,15 @@ const Card = ({ node }) => {
                         style={{ height: "100%" }}
                         className="c-modal__thumb"
                         alt="サムネイル"
-                        onKeyDown={() => changeMainImage(node.image03)}
-                        onClick={() => changeMainImage(node.image03)}
                         />
                     </li>
                 }
 
                 { node.image04 &&
-                    <li className="c-modal__thumb-wrapper">
+                    <li className="c-modal__thumb-wrapper"
+                        onKeyDown={() => changeMainImage(node.image04)}
+                        onClick={() => changeMainImage(node.image04)}
+                    >
                     <ImgixGatsbyImage
                         src={node.image04.url}
                         imgixParams={{ auto: ["format", "compress"]}}
@@ -110,8 +117,6 @@ const Card = ({ node }) => {
                         style={{ height: "100%" }}
                         className="c-modal__thumb"
                         alt="サムネイル"
-                        onKeyDown={() => changeMainImage(node.image04)}
-                        onClick={() => changeMainImage(node.image04)}
                         />
                     </li>
                 }
