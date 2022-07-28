@@ -1,14 +1,11 @@
 import React, { useState } from 'react'
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-
-import { motion } from "framer-motion"
 import Modal from "../components/modal"
 import Card from "../components/card"
-
-import { ImgixGatsbyImage } from "@imgix/gatsby"
+import WorksPanel from "../components/workspanel"
 
 const Skills = ({ data, location, pageContext }) => {
 
@@ -37,7 +34,7 @@ const Skills = ({ data, location, pageContext }) => {
                 <h2 className="p-section__title p-section__title--skill js_typing">
                 { pageContext.skillicon &&
                   <div className="c-card-skills__logo-wrapper c-card-skills__logo-wrapper--skill">
-                    <img className="c-card-skills__logo" src={pageContext.skillicon} alt="画像：ロゴ" />
+                    <img className="c-card-skills__logo" src={pageContext.skillicon} alt="SkillIcon" />
                   </div>
                 }
                 {pageContext.skillname}
@@ -45,41 +42,8 @@ const Skills = ({ data, location, pageContext }) => {
                 <p className="c-card-skills__text">{pageContext.skilldesc}</p>
               </div>
 
-              <div className="p-cards-works p-cards-works--col3">
-                {data.allMicrocmsWorks.edges.map(({ node }, index) => (
+              <WorksPanel data={data} handleOpenModal={handleOpenModal} />
 
-                  <div className="p-cards-works__item card-works" key={node.id}>
-                    <motion.a onClick={() => handleOpenModal(index)} className="c-card-works__link js-modal__open" href data-target="modal01">
-                      <figure className="c-card-works__img-wrapper">
-                        <ImgixGatsbyImage
-                          src={node.thumbnail.url}
-                          imgixParams={{ auto: ["format", "compress"]}}
-                          layout="constrained"
-                          width={319}
-                          sourceWidth={node.thumbnail.width}
-                          sourceHeight={node.thumbnail.height}
-                          style={{ height: "100%" }}
-                          className="c-card-works__img"
-                          alt="写真：実績"
-                        />
-                      </figure>
-                    </motion.a>
-                    <div className="c-card-works__body">
-                      <p className="c-card-works__title">{node.title} </p>
-
-                      <p className="c-card-works__text">
-                        {node.skills.map( skill => (
-                          <Link className="c-skill-lable" to={`/skills/${skill.categorySlug}`}>{skill.category} </Link>
-                          // <span>{skill.category} </span>
-                        ))}
-                      </p>
-
-                    </div>
-                  </div>
-
-                ))}
-
-              </div>
             </div>
           </section>
         </div>
