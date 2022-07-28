@@ -5,6 +5,9 @@ import Footer from "../components/footer"
 
 import "../styles/main.scss"
 
+import 'typeface-notosans-jp'
+import 'typeface-lato'
+
 const Layout = ({ children }) => (
     <div>
         <Header />

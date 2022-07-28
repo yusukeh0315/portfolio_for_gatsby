@@ -25,7 +25,6 @@
     "gatsby-plugin-sass": "^5.19.0",
     "gatsby-plugin-sharp": "^4.18.1",
     "gatsby-plugin-styled-components": "^5.19.0",
-    "gatsby-plugin-webfonts": "^2.2.2",
     "gatsby-source-filesystem": "^4.18.1",
     "gatsby-source-microcms": "^2.0.0",
     "gatsby-transformer-sharp": "^4.18.1",
@@ -33,7 +32,9 @@
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",
     "sass": "^1.54.0",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "typeface-lato": "^1.1.13",
+    "typeface-notosans-jp": "^1.0.1"
   },
   "devDependencies": {
     "prettier": "^2.7.1"
