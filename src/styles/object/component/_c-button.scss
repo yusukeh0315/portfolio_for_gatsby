@@ -3,8 +3,7 @@
 @include global.media(sp) {
     .c-modal-close-button{
         display: inline-block;
-        width: 95%;
-        // max-width: 100%;
+        width: 100%;
         padding: 10px 10px 10px 10px;
         border: 1px solid global.$color-black;
         background-color: global.$color-white;

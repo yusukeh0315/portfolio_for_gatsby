@@ -45,7 +45,9 @@ const Modal = ({ modalIsOpen, onClose, children }) => {
                         <div className="c-modal__content">
                             {children}
                             <a className="c-modal__close" href onClick={onClose}><span>×</span></a>
-                            <button className="c-modal__close--sp c-modal-close-button" href onClick={onClose}> Close </button>
+                            <div className="c-modal__close--sp">
+                                <button className="c-modal-close-button" href onClick={onClose}> Close </button>
+                            </div>
                         </div>
                     </motion.div>
                 </Backdrop>
