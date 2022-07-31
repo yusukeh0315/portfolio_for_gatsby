@@ -7,7 +7,7 @@ import Modal from "../components/modal"
 import Card from "../components/card"
 import WorksPanel from "../components/workspanel"
 
-import useBodyScrollLock from './hooks'
+import { useBodyScrollLock } from '../hooks/body_scroll_lock'
 
 const Service = () => {
 
