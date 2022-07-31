@@ -6,7 +6,7 @@ import {
   enableBodyScroll,
 } from "body-scroll-lock";
 
-export const useBodyScrollLock = ( {modalIsOpen} ) => {
+const useBodyScrollLock = ( {modalIsOpen} ) => {
   useEffect(() => {
 
       if (modalIsOpen) {
@@ -18,3 +18,5 @@ export const useBodyScrollLock = ( {modalIsOpen} ) => {
       return () => clearAllBodyScrollLocks();
   }, [modalIsOpen])
 }
+
+export default useBodyScrollLock;
