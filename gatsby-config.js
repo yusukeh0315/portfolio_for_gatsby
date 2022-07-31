@@ -61,5 +61,6 @@ module.exports = {
     },
     `gatsby-plugin-sass`,
     `gatsby-plugin-styled-components`,
+    `body-scroll-lock`,
   ],
 }

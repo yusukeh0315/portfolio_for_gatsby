@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useCallback, useState } from 'react'
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -6,6 +6,8 @@ import Seo from "../components/seo"
 import Modal from "../components/modal"
 import Card from "../components/card"
 import WorksPanel from "../components/workspanel"
+
+import { useBodyScrollLock } from './hooks'
 
 const Service = () => {
 
@@ -69,9 +71,11 @@ const Home = ({ data }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
 
   //どのモーダルを表示するのか操作するために関数を準備
-  const handleOpenModal = (num) => {
-      setIsOpen(num)
-  }
+  const handleOpenModal = useCallback((num) => {
+    setIsOpen(num);
+  }, []);
+
+  useBodyScrollLock({modalIsOpen});
 
   return (
     <div>

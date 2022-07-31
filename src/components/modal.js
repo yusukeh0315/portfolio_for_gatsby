@@ -42,7 +42,7 @@ const Modal = ({ modalIsOpen, onClose, children }) => {
                         animate="visible"
                         exit="exit"
                     >
-                        <div className="c-modal__content">
+                        <div className="c-modal__content" id="modal">
                             {children}
                             <a className="c-modal__close" href onClick={onClose}><span>×</span></a>
                             <div className="c-modal__close--sp">
