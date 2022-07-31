@@ -34,17 +34,43 @@ const Card = ({ node }) => {
         <div className={inner_class_name}>
             <div className="c-modal__images">
             <a className="c-modal__img-wrapper u-effect-fadein" target="_blank" rel="noopener noreferrer" href={url}>
-                <ImgixGatsbyImage
-                    src={srcUrl.url}
-                    imgixParams={{ auto: ["format", "compress"]}}
-                    layout="fixed"
-                    width={740}
-                    sourceWidth={srcUrl.width}
-                    sourceHeight={srcUrl.height}
-                    style={{ height: "100%" }}
-                    className="c-modal__img"
-                    alt="MainImage"
-                />
+                { thumbnailImages.map((image) => {
+                    return (
+                        <>
+                            <ImgixGatsbyImage
+                                src={image.url}
+                                imgixParams={{ auto: ["format", "compress"]}}
+                                layout="fixed"
+                                width={740}
+                                sourceWidth={image.width}
+                                sourceHeight={image.height}
+                                style={{
+                                    height: "100%",
+                                    transition: "1.5s",
+                                    opacity: "0.0"
+                                }}
+                                className="c-modal__img"
+                                alt="MainImage"
+                            />
+                            <ImgixGatsbyImage
+                                src={image.url}
+                                imgixParams={{ auto: ["format", "compress"]}}
+                                layout="fixed"
+                                width={740}
+                                sourceWidth={image.width}
+                                sourceHeight={image.height}
+                                style={{
+                                    height: "100%",
+                                    transition: "1.5s",
+                                    opacity: image.url === srcUrl.url ? "1.0" : "0.0"
+                                }}
+                                className="c-modal__img"
+                                alt="MainImage"
+                            />
+                        </>
+                    )
+                })}
+
             </a>
             <ul className="c-modal__thumbs-list">
 

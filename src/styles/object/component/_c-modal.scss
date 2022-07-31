@@ -146,11 +146,13 @@ body.fixed {
     }
 
     &__img-wrapper {
+        position: relative;
         height: 75%;
         width: 100% !important;
     }
 
     &__img {
+        position: absolute;
         width: 100% !important;
         height: 100% !important;
         overflow-y: scroll !important;
