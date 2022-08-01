@@ -45,7 +45,8 @@
     &__link {
         display: inline-block;
         position: relative;
-        font-weight: 300;
+        font-weight: 100;
+        font-family: global.$font-base-en;
         font-size: global.rem(20);
         text-decoration: none;
 
