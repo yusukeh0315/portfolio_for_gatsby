@@ -47,7 +47,8 @@ const Card = ({ node }) => {
                                 style={{
                                     height: "100%",
                                     transition: "1.5s",
-                                    opacity: "0.0"
+                                    opacity: "0.0",
+                                    zIndex: "10"
                                 }}
                                 className="c-modal__img"
                                 alt="MainImage"
@@ -62,7 +63,8 @@ const Card = ({ node }) => {
                                 style={{
                                     height: "100%",
                                     transition: "1.5s",
-                                    opacity: image.url === srcUrl.url ? "1.0" : "0.0"
+                                    opacity: image.url === srcUrl.url ? "1.0" : "0.0",
+                                    zIndex: image.url === srcUrl.url ? "20" : "10"
                                 }}
                                 className="c-modal__img"
                                 alt="MainImage"
