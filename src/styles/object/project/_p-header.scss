@@ -9,7 +9,7 @@
     text-decoration: none;
 
     &__link {
-        font-weight: 100;
+        font-weight: 300;
         font-size: global.rem(24);
         font-family: global.$font-base-en;
         &:hover, &:focus, &:active, &:visited, &:link {
@@ -45,7 +45,7 @@
     &__link {
         display: inline-block;
         position: relative;
-        font-weight: 100;
+        font-weight: 300;
         font-family: global.$font-base-en;
         font-size: global.rem(20);
         text-decoration: none;
