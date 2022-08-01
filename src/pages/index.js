@@ -79,7 +79,7 @@ const Home = ({ data }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout page='index'>
 
         <Seo />
 

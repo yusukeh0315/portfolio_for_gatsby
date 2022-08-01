@@ -8,9 +8,9 @@ import "../styles/main.scss"
 import 'typeface-notosans-jp'
 import 'typeface-lato'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, page }) => (
     <div>
-        <Header />
+        <Header page={page}/>
 
         <div className="u-effect-fadein">{children}</div>
 

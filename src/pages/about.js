@@ -47,7 +47,7 @@ const About = ({ data, location }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout page='about'>
         <Seo
           pagetitle="About"
           pagedesc="エンジニアの略歴、スキル"

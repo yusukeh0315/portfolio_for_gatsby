@@ -38,7 +38,7 @@ const Contact = ({ data, location }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout page='contact'>
         <Seo
           pagetitle="Contact"
           pagedesc="お問い合わせ"

@@ -24,7 +24,7 @@ const Works = ({ data, location }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout page='works'>
         <Seo
           pagetitle="Works"
           pagedesc="事業実績など"
