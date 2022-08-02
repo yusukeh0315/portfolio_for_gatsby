@@ -46,7 +46,7 @@ const Card = ({ node }) => {
                                 sourceHeight={image.height}
                                 style={{
                                     height: "100%",
-                                    transition: "1.5s",
+                                    transition: "0.5s",
                                     opacity: "0.0",
                                     zIndex: "10"
                                 }}
@@ -62,7 +62,7 @@ const Card = ({ node }) => {
                                 sourceHeight={image.height}
                                 style={{
                                     height: "100%",
-                                    transition: "1.5s",
+                                    transition: "0.5s",
                                     opacity: image.url === srcUrl.url ? "1.0" : "0.0",
                                     zIndex: image.url === srcUrl.url ? "20" : "10"
                                 }}
