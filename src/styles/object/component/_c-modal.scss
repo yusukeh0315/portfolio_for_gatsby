@@ -293,8 +293,12 @@ body.fixed {
 
             object-fit: cover;
             object-position: top;
+        }
+
+        &__thumb > img {
             &:hover {
-                opacity: .5;
+                transition: 1s;
+                opacity: 1.0 !important;
             }
         }
 
