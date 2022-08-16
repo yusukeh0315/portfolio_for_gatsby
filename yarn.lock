@@ -6224,14 +6224,13 @@ gatsby-parcel-config@^0.9.2:
     "@parcel/transformer-raw" "2.6.0"
     "@parcel/transformer-react-refresh-wrap" "2.6.0"
 
-gatsby-plugin-google-analytics@^4.20.0:
+gatsby-plugin-google-gtag@^4.20.0:
   version "4.20.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-4.20.0.tgz#b57b066d014c624f9ecbe60e8a741cae470b8821"
-  integrity sha512-AKcj+KkGM1CqKLpc6ZWq2uxe8w5tGuJOYcAZ+uBO/9UNoXpqTs/g8TrB5KCFs7muEWohq5tL+CjCYekvf1/wtw==
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-gtag/-/gatsby-plugin-google-gtag-4.20.0.tgz#47351a0e5cde0d7a476eeca091b10aedb525c301"
+  integrity sha512-+YK6UDmA76frkUganVi/CY6r7vBewxK3gnbRqRlNsxQWQe/WUGzk3OmBLHjca6WFlaLywGZ9bsNs8UxL9Ku1Ew==
   dependencies:
     "@babel/runtime" "^7.15.4"
-    minimatch "3.0.4"
-    web-vitals "^1.1.2"
+    minimatch "^3.1.2"
 
 gatsby-plugin-image@^2.18.1:
   version "2.18.1"
@@ -11465,11 +11464,6 @@ weak-lru-cache@^1.2.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/weak-lru-cache/-/weak-lru-cache-1.2.2.tgz#fdbb6741f36bae9540d12f480ce8254060dccd19"
   integrity sha512-DEAoo25RfSYMuTGc9vPJzZcZullwIqRDSI9LOy+fkCJPi6hykCnfKaXTuPBDuXAUcqHXyOgFtHNp/kB2FjYHbw==
-
-web-vitals@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-1.1.2.tgz#06535308168986096239aa84716e68b4c6ae6d1c"
-  integrity sha512-PFMKIY+bRSXlMxVAQ+m2aw9c/ioUYfDgrYot0YUa+/xa0sakubWhSDyxAKwzymvXVdF4CZI71g06W+mqhzu6ig==
 
 webidl-conversions@^3.0.0:
   version "3.0.1"
