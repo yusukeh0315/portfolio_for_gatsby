@@ -13,7 +13,7 @@ const Card = ({ node }) => {
         is_single_page = false
     } else {
         inner_class_name = "c-modal__inner c-modal__inner--single-page";
-        first_image = null;
+        first_image = node.image01;
         is_single_page = true
     }
 
@@ -34,7 +34,10 @@ const Card = ({ node }) => {
         <div className={inner_class_name}>
             <div className="c-modal__images">
             <a className="c-modal__img-wrapper u-effect-fadein" target="_blank" rel="noopener noreferrer" href={url}>
-                { thumbnailImages.map((image) => {
+                {thumbnailImages.map((image) => {
+                    if (image === null) {
+                        return null;
+                    }
                     return (
                         <>
                             <ImgixGatsbyImage
