@@ -63,31 +63,11 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `body-scroll-lock`,
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: "gatsby-plugin-sitemap",
       options: {
-        query: `
-        {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-            allSitePage {
-              nodes {
-                path
-              }
-            }
-          }
-        }`,
-        serialize: ({ site, allSitePage }) => {
-          return allSitePage.nodes.map(node => {
-            return {
-              url: `${site.siteMetadata.siteUrl}${node.path}`,
-              changefreq: `weekly`,
-              priority: 0.5,
-            }
-          })
-        }
-      }
+        output: `/sitemap.xlm`,
+        createLinkInHead: true,
+      },
     },
   ],
 }
