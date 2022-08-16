@@ -18,9 +18,9 @@
         aspect-ratio: inherit;
         object-fit: cover;
         object-position: top;
+        transition: 0.5s !important;
 
         &:hover {
-            transition: 0.5s;
             opacity: 0.8 !important;
             transform: scale(1.1, 1.1);
         }
