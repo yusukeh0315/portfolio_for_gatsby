@@ -78,5 +78,6 @@ module.exports = {
         },
       },
     },
+    `react-scroll`,
   ],
 }
