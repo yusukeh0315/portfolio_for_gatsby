@@ -54,6 +54,7 @@ const Home = ({ data }) => {
               data={data}
               handleOpenModal={handleOpenModal}
               is_home={true}
+              is_crowdsourcing={true}
             />
           </div>
         </section>
@@ -94,6 +95,7 @@ export const query = graphql`
         node {
           id
           title
+          display
           skills {
             category
             categorySlug

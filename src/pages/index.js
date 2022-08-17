@@ -65,15 +65,12 @@ const Home = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMicrocmsWorks(
-      sort: {fields: workId, order: ASC}
-      skip: 0
-      limit: 6
-    ) {
+    allMicrocmsWorks(sort: { fields: workId, order: ASC }, skip: 0, limit: 6) {
       edges {
         node {
           id
           title
+          display
           skills {
             category
             categorySlug
