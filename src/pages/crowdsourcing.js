@@ -8,6 +8,8 @@ import Card from "../components/card"
 import WorksPanel from "../components/workspanel"
 import Service from "../components/service"
 import FirstView from "../components/firstview"
+import Profile from "../components/profile"
+import Skills from "../components/skills"
 
 import { useBodyScrollLock } from '../hooks/body_scroll_lock'
 
@@ -26,17 +28,26 @@ const Home = ({ data }) => {
 
   return (
     <div>
-      <Layout page="index">
+      <Layout page="crowdsourcing">
         <Seo />
 
+        <span id="top"></span>
         <FirstView />
 
+        <span id="service"></span>
         <Service />
+
+        <span id="about"></span>
+        <Profile />
+
+        <Skills data={data} category_link={false} />
 
         <section className="l-main-works">
           <div className="l-main-works__inner">
             <div className="p-section__title-wrapper">
-              <h2 className="p-section__title js_typing">Works</h2>
+              <h2 className="p-section__title js_typing" id="works">
+                Works
+              </h2>
             </div>
 
             <WorksPanel
@@ -55,7 +66,7 @@ const Home = ({ data }) => {
             modalIsOpen={modalIsOpen === index}
             onClose={() => setIsOpen(false)}
           >
-            <Card node={node} />
+            <Card node={node} category_link={false} />
           </Modal>
         )
       })}
@@ -65,11 +76,20 @@ const Home = ({ data }) => {
 
 export const query = graphql`
   query {
-    allMicrocmsWorks(
-      sort: {fields: workId, order: ASC}
-      skip: 0
-      limit: 6
-    ) {
+    allMicrocmsSkills(sort: { fields: skillId, order: ASC }) {
+      edges {
+        node {
+          category
+          categorySlug
+          skillIcon {
+            url
+          }
+          skillDesc
+          skillLevel
+        }
+      }
+    }
+    allMicrocmsWorks(sort: { fields: workId, order: ASC }, skip: 0) {
       edges {
         node {
           id

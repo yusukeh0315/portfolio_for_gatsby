@@ -9,6 +9,7 @@
     text-decoration: none;
 
     &__link {
+        cursor: pointer;
         font-weight: 300;
         font-size: global.rem(24);
         font-family: global.$font-base-en;
@@ -49,6 +50,7 @@
         font-family: global.$font-base-en;
         font-size: global.rem(20);
         text-decoration: none;
+        cursor: pointer;
 
         &:hover, &:focus, &:active, &:visited, &:link {
             color: global.$color-black;
