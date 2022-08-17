@@ -24,7 +24,7 @@ const Works = ({ data, location }) => {
 
   return (
     <div>
-      <Layout page='works'>
+      <Layout page="works">
         <Seo
           pagetitle="Works"
           pagedesc="事業実績など"
@@ -38,26 +38,29 @@ const Works = ({ data, location }) => {
                 <h2 className="p-section__title js_typing">Works</h2>
               </div>
 
-              <WorksPanel data={data} handleOpenModal={handleOpenModal} />
-
+              <WorksPanel
+                data={data}
+                handleOpenModal={handleOpenModal}
+                is_home={false}
+                is_crowdsourcing={false}
+              />
             </div>
           </section>
         </div>
-
       </Layout>
 
       {/* modal*/}
       {data.allMicrocmsWorks.edges.map(({ node }, index) => {
-
         return (
-          <Modal modalIsOpen={modalIsOpen === index} onClose={() => setIsOpen(false)}>
+          <Modal
+            modalIsOpen={modalIsOpen === index}
+            onClose={() => setIsOpen(false)}
+          >
             <Card node={node} />
           </Modal>
         )
       })}
-
     </div>
-
   )
 }
 

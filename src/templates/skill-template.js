@@ -36,18 +36,26 @@ const Skills = ({ data, location, pageContext }) => {
             <div className="l-works__inner">
               <div className="p-section__title-wrapper">
                 <h2 className="p-section__title p-section__title--skill js_typing">
-                { pageContext.skillicon &&
-                  <div className="c-card-skills__logo-wrapper c-card-skills__logo-wrapper--skill">
-                    <img className="c-card-skills__logo" src={pageContext.skillicon} alt="SkillIcon" />
-                  </div>
-                }
-                {pageContext.skillname}
+                  {pageContext.skillicon && (
+                    <div className="c-card-skills__logo-wrapper c-card-skills__logo-wrapper--skill">
+                      <img
+                        className="c-card-skills__logo"
+                        src={pageContext.skillicon}
+                        alt="SkillIcon"
+                      />
+                    </div>
+                  )}
+                  {pageContext.skillname}
                 </h2>
                 <p className="c-card-skills__text">{pageContext.skilldesc}</p>
               </div>
 
-              <WorksPanel data={data} handleOpenModal={handleOpenModal} />
-
+              <WorksPanel
+                data={data}
+                handleOpenModal={handleOpenModal}
+                is_home={false}
+                is_crowdsourcing={false}
+              />
             </div>
           </section>
         </div>
@@ -55,16 +63,16 @@ const Skills = ({ data, location, pageContext }) => {
 
       {/* modal*/}
       {data.allMicrocmsWorks.edges.map(({ node }, index) => {
-
         return (
-          <Modal modalIsOpen={modalIsOpen === index} onClose={() => setIsOpen(false)}>
+          <Modal
+            modalIsOpen={modalIsOpen === index}
+            onClose={() => setIsOpen(false)}
+          >
             <Card node={node} />
           </Modal>
         )
       })}
-
     </div>
-
   )
 }
 

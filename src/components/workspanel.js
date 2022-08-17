@@ -9,13 +9,15 @@ const WorksPanel = ({ data, handleOpenModal, is_home=false, is_crowdsourcing=fal
 
         <div className="p-cards-works p-cards-works--col3">
             {data.allMicrocmsWorks.edges.map(({ node }, index) => {
-                if (is_crowdsourcing === true && node.display[0] === "vitworks") {
-                  console.log(is_crowdsourcing, node.display)
-                  return null
-                }
-                if (
-                  is_crowdsourcing === false && node.display[0] === "crowdsourcing") {
-                  return null
+
+                if (is_crowdsourcing) {
+                    if (node.display === 1) {
+                      return null
+                    }
+                } else {
+                    if (node.display === 2) {
+                      return null
+                    }
                 }
 
                 return (

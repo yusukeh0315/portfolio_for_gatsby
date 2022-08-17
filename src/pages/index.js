@@ -43,6 +43,7 @@ const Home = ({ data }) => {
               data={data}
               handleOpenModal={handleOpenModal}
               is_home={true}
+              is_crowdsourcing={false}
             />
           </div>
         </section>
