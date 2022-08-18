@@ -15,7 +15,7 @@ module.exports = {
     title: `VIT Works`,
     description: `ITを活用した様々なソリューションを提供するVIT Worksのサイト`,
     lang: `ja`,
-    siteUrl: `https://vitdata.net/`,
+    siteUrl: `https://vitworks.net/`,
     local: `ja_JP`,
     fbappid: `2139031849601255`,
   },
