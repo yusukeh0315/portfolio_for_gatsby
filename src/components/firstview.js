@@ -15,7 +15,7 @@ const FirstView = () => {
         </div>
         <p className="p-fv__text">
           ITを活用した様々なソリューションを提供します。
-          <br /> WEBサイトのデザイン、制作や業務効率化はおまかせください。
+          <br /> Webサイトのデザイン、制作や業務効率化はおまかせください。
         </p>
       </div>
     </section>
