@@ -59,23 +59,23 @@ const Skills = ({ data, category_link=true }) => {
           <table className="p-skill-table">
             <tr>
               <td className="p-skill-table__1col">1:</td>
-              <td>知識がある、軽く使用した程度</td>
+              <td>初心者</td>
             </tr>
             <tr>
               <td className="p-skill-table__1col">2:</td>
-              <td>実務レベルで使用できるがもう少し習熟が必要</td>
+              <td>勉強中</td>
             </tr>
             <tr>
               <td className="p-skill-table__1col">3:</td>
-              <td>実務レベルの実装が可能</td>
+              <td>普通</td>
             </tr>
             <tr>
               <td className="p-skill-table__1col">4:</td>
-              <td>既存実務をカスタマイズして実装が可能</td>
+              <td>上級</td>
             </tr>
             <tr>
               <td className="p-skill-table__1col">5:</td>
-              <td>経験を体系化し先進的なやり方を工夫・開発が可能</td>
+              <td>エキスパート</td>
             </tr>
           </table>
         </div>
