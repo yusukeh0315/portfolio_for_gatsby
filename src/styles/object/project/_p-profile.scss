@@ -5,7 +5,8 @@
 
     &__name {
         margin-bottom: 1rem;
-        font-size: global.rem(18);
+        font-size: global.rem(24);
+        font-weight: 300;
         line-height: calc(27/18);
     }
 
@@ -22,6 +23,16 @@
     &__business_dsc {
         font-size: global.rem(16);
         line-height: calc(24/16);
+    }
+}
+
+.p-profile-table {
+    max-width: 100%;
+    font-size: global.rem(16);
+    line-height: calc(24/16);
+
+    &__1col {
+        width: 5rem;
     }
 }
 
@@ -49,5 +60,9 @@
             font-size: global.rem(16);
             line-height: calc(21/16);
         }
+    }
+    .p-profile-table {
+        font-size: global.rem(16);
+        line-height: calc(21/16);
     }
 }
