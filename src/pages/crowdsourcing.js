@@ -13,7 +13,7 @@ import Skills from "../components/skills"
 
 import { useBodyScrollLock } from '../hooks/body_scroll_lock'
 
-const Home = ({ data }) => {
+const Home = ({ data, location }) => {
 
   // モーダルの表示状態と切り替える為にState(props)を準備
   // false = 非表示、数値 = 表示しているModalの番目とする
@@ -29,7 +29,11 @@ const Home = ({ data }) => {
   return (
     <div>
       <Layout page="crowdsourcing">
-        <Seo />
+        <Seo
+          pagetitle="Portfolio"
+          pagedesc="ポートフォリオ"
+          pagepath={location.pathname}
+        />
 
         <span id="top"></span>
         <FirstView />

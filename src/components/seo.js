@@ -18,9 +18,13 @@ const Seo = props => {
         }
     `)
 
-    const title = props.pagetitle
+    let title = props.pagetitle
         ? `${props.pagetitle} | ${data.site.siteMetadata.title}`
         : data.site.siteMetadata.title
+
+    if (props.pagetitle === "Portfolio") {
+        title = props.pagetitle
+    }
 
     const description = props.pagedesc || data.site.siteMetadata.description
 
