@@ -1,0 +1,79 @@
+@use "../../global" as global;
+
+$col_num: 3;
+$card_margin: 60px;
+
+.p-cards-works {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-cards-works--col3 {
+    margin-bottom: -60px;
+
+    & > .p-cards-works__item {
+        // 1行目個別の設定
+        flex-direction: column;
+
+        // カラム数、カード間マージンから、カードの幅を算出
+        width: calc(#{percentage(calc(100 / $col_num) * 0.01)} - #{$card_margin} * calc(#{$col_num - 1} / #{$col_num}));
+        height: auto;
+        margin-right: $card_margin;
+        margin-bottom: 60px;
+
+        // 右端のカードのマージンを0に設定
+        &:nth-of-type(#{$col_num}n) {
+            margin-right: 0;
+        }
+    }
+}
+
+@include global.media(tb) {
+    $col_num: 2;
+    $card_margin: 60px;
+
+    .p-cards-works--col3 {
+        margin-bottom: -30px;
+
+        & > .p-cards-works__item {
+            // 1行目個別の設定
+            flex-direction: column;
+
+            // カラム数、カード間マージンから、カードの幅を算出
+            width: calc(#{percentage(calc(100 / $col_num) * 0.01)} - #{$card_margin} * calc(#{$col_num - 1} / #{$col_num}));
+            height: auto;
+            margin-right: $card_margin;
+            margin-bottom: 30px;
+
+            &:nth-of-type(3n) {
+                margin-right: $card_margin;
+            }
+
+            // 右端のカードのマージンを0に設定
+            &:nth-of-type(#{$col_num}n) {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+@include global.media(sp) {
+    $col_num: 1;
+    $card_margin: 60px;
+
+    .p-cards-works--col3 {
+        & > .p-cards-works__item {
+            width: calc(#{percentage(calc(100 / $col_num) * 0.01)} - #{$card_margin} * calc(#{$col_num - 1} / #{$col_num}));
+            margin-right: $card_margin;
+            margin-bottom: 60px;
+
+            &:nth-of-type(2n) {
+                margin-right: $card_margin;
+            }
+
+            &:nth-of-type(#{$col_num}n) {
+                margin-right: 0;
+            }
+        }
+    }
+}

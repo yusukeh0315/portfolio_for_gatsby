@@ -1,0 +1,17 @@
+@use "../../global" as global;
+
+.c-require-label {
+    display: inline-block;
+    width: 56px;
+    max-width: 100%;
+    margin-left: 15px;
+    padding: 2px;
+    border: none;
+    background-color: global.$color-red;
+    color: global.$color-white;
+    font-weight: normal;
+    // font-size: rem(16);
+    line-height: 20px;
+    text-decoration: none;
+    text-align: center;
+}
