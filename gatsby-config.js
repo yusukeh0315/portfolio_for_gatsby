@@ -23,27 +23,26 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images/`,
-      },
-    },
-    `gatsby-plugin-react-helmet`,
-    // クラウドソーシングサイトでは実装させず、かつソースコード共通化のためコメントアウト
     // {
-    //   resolve: `gatsby-plugin-manifest`,
+    //   resolve: `gatsby-source-filesystem`,
     //   options: {
-    //     name: `VIT Works`,
-    //     short_name: `VIT Works`,
-    //     start_url: `/`,
-    //     background_color: `#ffffff`,
-    //     theme_color: `#0C4579`,
-    //     display: `standalone`,
-    //     icon: `src/images/icon.png`,
+    //     name: `images`,
+    //     path: `${__dirname}/src/images/`,
     //   },
     // },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `VIT Works`,
+        short_name: `VIT Works`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#0C4579`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+      },
+    },
     `gatsby-plugin-offline`,
     {
       resolve: "gatsby-source-microcms",
