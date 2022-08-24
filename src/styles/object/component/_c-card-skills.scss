@@ -1,0 +1,117 @@
+@use "../../global" as global;
+
+.c-card-skills {
+    display: flex;
+    height: 180px;
+    padding: 1rem;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
+
+    &__nolink{
+        display: flex;
+        height: 180px;
+        padding: 1rem;
+    }
+
+    &:hover{
+        background: global.$color-hovergray;
+        border-radius: 8px;
+    }
+
+    &__logo-wrapper {
+        flex-basis: 15%;
+        padding: 0 10px;
+
+        &--skill {
+            flex-basis: 8%;
+            padding: 0;
+        }
+    }
+
+    &__logo {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+    }
+
+    &__body {
+        display: flex;
+        flex-basis: 85%;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 4px;
+        font-weight: 300;
+        font-size: global.rem(22);
+        line-height: calc(26/22);
+        font-family: global.$font-base-en;
+    }
+
+    &__point {
+        display: flex;
+        margin-bottom: 4px;
+        font-weight: bold;
+        font-size: global.rem(20);
+        line-height: calc(30/20);
+        letter-spacing: .1em;
+
+        .point-on {
+            color: global.$color-black;
+        }
+        .point-off {
+            color: global.$color-lightgray;
+        }
+    }
+
+    &__text {
+        font-size: global.rem(18);
+        line-height: calc(27/18);
+    }
+}
+
+@include global.media(tb) {
+    .c-card-skills {
+        height: 250px;
+
+        &__nolink{
+            height: 250px;
+
+        }
+
+    }
+}
+
+@include global.media(sp) {
+    .c-card-skills {
+        height: auto;
+
+        &__nolink{
+            height: auto;
+
+        }
+
+        &__logo-wrapper {
+            &--skill {
+                padding-bottom: 0.5rem;
+            }
+        }
+
+        &__title {
+            font-size: global.rem(20);
+            line-height: calc(24/20);
+        }
+
+        &__point {
+            font-size: global.rem(18);
+            line-height: calc(27/18);
+        }
+
+        &__text {
+            font-size: global.rem(16);
+            line-height: calc(21/16);
+        }
+    }
+}

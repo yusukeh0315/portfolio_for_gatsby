@@ -1,0 +1,79 @@
+@use "../../global" as global;
+
+.c-card-works {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__img-wrapper {
+        aspect-ratio: 1;
+    }
+
+    &__img {
+        aspect-ratio: inherit;
+        box-shadow: 2px 2px 4px global.$color-gray;
+    }
+
+    &__img > img {
+        aspect-ratio: inherit;
+        object-fit: cover;
+        object-position: top;
+        transition: 0.5s !important;
+
+        &:hover {
+            opacity: 0.8 !important;
+            transform: scale(1.1, 1.1);
+        }
+    }
+
+    &__link {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+
+    &__title {
+        margin-top: 5px;
+        margin-bottom: 5px;
+        font-weight: normal;
+        font-size: global.rem(18);
+        line-height: calc(27/18);
+    }
+
+    &__text {
+        font-weight: normal;
+        font-size: global.rem(16);
+        line-height: calc(24/16);
+    }
+}
+
+
+@include global.media(tb) {
+    .c-card-works {
+        &__img > img {
+            &:hover {
+                transition: 0s;
+                opacity: 1.0 !important;
+                transform: scale(1.0, 1.0);
+            }
+        }
+    }
+}
+
+@include global.media(sp) {
+    .c-card-works {
+        &__title {
+            margin-top: 12px;
+            margin-bottom: 5px;
+            font-weight: normal;
+            font-size: global.rem(16);
+            line-height: calc(24/16);
+        }
+
+        &__text {
+            font-weight: normal;
+            font-size: global.rem(16);
+            line-height: calc(21/16);
+        }
+    }
+}

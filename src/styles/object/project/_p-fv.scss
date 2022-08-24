@@ -1,0 +1,48 @@
+@use "../../global" as global;
+
+.p-fv {
+    &__title-wrapper {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-right: auto;
+        margin-bottom: 60px;
+        margin-left: 100px;
+    }
+
+    &__title {
+        font-weight: 100;
+        font-size: global.rem(60);
+        font-family: global.$font-base-en;
+    }
+
+    &__title-point {
+        color: #0c4579;
+    }
+
+    &__text {
+        margin-left: 100px;
+        font-weight: normal;
+        font-size: global.rem(16);
+        line-height: calc(24 / 16);
+    }
+}
+
+@include global.media(sp) {
+    .p-fv {
+        &__title-wrapper {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        &__title {
+            font-size: global.rem(30);
+        }
+
+        &__text {
+            margin-right: auto;
+            margin-left: auto;
+            font-size: global.rem(16);
+        }
+    }
+}

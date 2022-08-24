@@ -1,0 +1,57 @@
+@use "../../global" as global;
+
+$col_num: 2;
+$card_margin: 30px;
+
+.p-cards-skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.p-cards-skills--col2 {
+    margin-bottom: -40px;
+
+    & > .p-cards-skills__item {
+        // カラム数、カード間マージンから、カードの幅を算出
+        width: calc(#{percentage(calc(100 / $col_num) * 0.01)} - #{$card_margin} * calc(#{$col_num - 1} / #{$col_num}));
+
+        //flex-direction: column;
+        height: auto;
+        margin-right: $card_margin;
+        margin-bottom: 40px;
+
+        // 右端のカードのマージンを0に設定
+        &:nth-of-type(#{$col_num}n) {
+            margin-right: 0;
+        }
+    }
+}
+
+@include global.media(sp) {
+    $col_num: 1;
+    $card_margin: 30px;
+
+    .p-cards-skills {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .p-cards-skills--col2 {
+        margin-bottom: -40px;
+
+        & > .p-cards-skills__item {
+            // カラム数、カード間マージンから、カードの幅を算出
+            width: calc(#{percentage(calc(100 / $col_num) * 0.01)} - #{$card_margin} * calc(#{$col_num - 1} / #{$col_num}));
+
+            //flex-direction: column;
+            height: auto;
+            margin-right: $card_margin;
+            margin-bottom: 40px;
+
+            // 右端のカードのマージンを0に設定
+            &:nth-of-type(#{$col_num}n) {
+                margin-right: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+// ==========================================================================
+// mixins
+// ==========================================================================
+
+@use "./variables" as global;
+
+
+// Inner Setting
+@mixin inner($inner-width) {
+    max-width: $inner-width;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// Z-index Setting
+@mixin z-index($key) {
+    @if map-has-key(global.$layer, $key) {
+        z-index: map-get(global.$layer, $key);
+    }
+
+    @else {
+        @error "[ERR]$layer does not have #{$key}.";
+    }
+}
+
+// Responsive Movie
+@mixin rwd-iframe($width: 16, $height: 9) {
+    position: relative;
+    padding-top: percentage(calc($height / $width));
+
+    > iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+// Responsive Image
+@mixin rwd-image($width: 16, $height: 9) {
+    position: relative;
+    padding-top: percentage(calc($height / $width));
+
+    > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+    }
+}
+
+// Breakpoint
+@mixin media($breakpoint) {
+    @if map-has-key(global.$breakpoints, $breakpoint) {
+        @media #{map-get(global.$breakpoints, $breakpoint)} {
+            @content;
+        }
+    }
+
+    @else {
+        @error "[ERR]$breakpoints does not have #{$breakpoint}.";
+    }
+}
+
+// Link Color Setting
+@mixin link-color($normal, $hover: $normal) {
+    color: $normal;
+    text-decoration: none;
+    transition: .3s;
+
+    &:hover, &:focus, &:active {
+        color: lighten($hover, 40%);
+        text-decoration: none;
+    }
+}
+
+

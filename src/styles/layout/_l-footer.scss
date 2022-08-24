@@ -1,0 +1,14 @@
+@use "../global" as global;
+
+.l-footer {
+    height: 80px;
+
+    &__inner {
+        @include global.inner(global.$width-base);
+        display: flex;
+        align-items: center;
+        height: 100%;
+        padding: 0 20px;
+    }
+
+}

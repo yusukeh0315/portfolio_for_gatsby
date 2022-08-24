@@ -1,0 +1,393 @@
+@use "../../global" as global;
+/*!******************************
+Modal
+*********************************/
+
+.c-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .6);
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__img {
+        width: 500px;
+        height: auto;
+
+        object-fit: cover;
+    }
+}
+
+body.fixed {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.c-modal {
+    @include global.z-index(modal);
+    display: none;
+    position: fixed;
+    top: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+
+    // 黒背景の設定
+    &__bg {
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, .2);
+    }
+
+    &__backdrop {
+        @include global.z-index(modal);
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000000e1;
+        display: flex;
+        align-items: center;
+        justfy-content: center;
+    }
+
+    // ウィンドウの設定
+    &__content {
+        z-index: 30;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 70vw;
+        height: 80vh;
+        border-radius: 5px;
+        background: #ffffff;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        position: relative;
+        height: 100%;
+        padding: 60px;
+
+        &--single-page {
+            .c-modal__img-wrapper {
+                height: 100%;
+            }
+
+            .c-modal__thumbs-list {
+                height: 0;
+            }
+        }
+    }
+
+    &__images {
+        display: flex;
+        flex-basis: 50%;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    &__thumbs-list {
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        height: 20%;
+    }
+
+    &__thumb-wrapper {
+        aspect-ratio: 1;
+        position: relative;
+        width: 100%;
+        margin-top: 20px;
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 0;
+        border: none;
+        display: block;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__thumb {
+        aspect-ratio: inherit;
+        box-shadow: 2px 2px 4px global.$color-gray;
+    }
+
+    &__thumb > img {
+        aspect-ratio: inherit;
+        object-fit: cover;
+        object-position: top;
+
+        &:hover {
+            transition: .5s;
+            opacity: .5 !important;
+        }
+    }
+
+    &__img-wrapper {
+        position: relative;
+        height: 75%;
+        width: 100% !important;
+    }
+
+    &__img {
+        position: absolute !important;
+        width: 100% !important;
+        height: 100% !important;
+        overflow-y: scroll !important;
+        box-shadow: 2px 2px 4px #979797;
+        object-fit: cover !important;
+        object-position: top !important;
+        -ms-overflow-style: none !important; /* これを追加 */
+        scrollbar-width: none !important;
+
+        &::-webkit-scrollbar {
+            display: none !important;
+        }
+
+        & > img {
+            object-position: top !important;
+            height: auto  !important;
+            width: 100% !important;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-basis: 50%;
+        flex-direction: column;
+        height: 100%;
+        padding-left: 40px;
+    }
+
+    &__title {
+        margin-bottom: 30px;
+        font-weight: 300;
+        font-size: global.rem(24);
+        line-height: calc(30/24);
+    }
+
+    &__item {
+        font-weight: 300;
+        font-size: global.rem(18);
+        line-height: calc(22/18);
+        font-family: global.$font-base-en;
+    }
+
+    &__text {
+        margin-top: 20px;
+        overflow-y: auto;
+        font-size: global.rem(16);
+        line-height: calc(26/16);
+
+        -ms-overflow-style: none; /* これを追加 */
+        scrollbar-width: none;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .item {
+            display: inline-block;
+            padding-top: 10px;
+            font-size: global.rem(18);
+            text-decoration: underline;
+        }
+    }
+
+    // 閉じるボタン
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: global.$color-black;
+        font-weight: bold;
+        font-size: global.rem(18);
+        &:hover, &:focus, &:active, &:visited, &:link {
+            color: global.$color-black;
+            cursor: pointer;
+        }
+    }
+
+    &__close--sp {
+        display: none;
+    }
+
+}
+
+@include global.media(tb) {
+    .c-modal {
+        // ウィンドウの設定
+        &__content {
+            width: 90%;
+            height: 90vh;
+        }
+
+        &__inner {
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 60px;
+        }
+
+        &__images {
+            display: flex;
+            flex-basis: auto;
+            flex-direction: column;
+            height: 50%;
+            width: 100% !important;
+        }
+
+        &__thumbs-list {
+            display: flex;
+            align-items: flex-start;
+            width: 100%;
+            height: 20%;
+        }
+
+        &__thumb-wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-top: 20px;
+            margin-right: 50px;
+            box-shadow: 2px 2px 4px global.$color-gray;
+            cursor: pointer;
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &:before {
+                display: block;
+                padding-top: 0; /* アスペクト比(横に対する縦の長さ) */
+                content: "";
+            }
+        }
+
+        &__thumb {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+
+            object-fit: cover;
+            object-position: top;
+        }
+
+        &__thumb > img {
+            &:hover {
+                transition: 1s;
+                opacity: 1.0 !important;
+            }
+        }
+
+        &__img-wrapper {
+            width: 100% !important;
+            height: 75%;
+        }
+
+        &__img {
+            width: 100%;
+        }
+
+        &__body {
+            flex-basis: auto;
+            height: 50%;
+            padding-top: 60px;
+            padding-left: 0;
+        }
+
+        &__title {
+            margin-bottom: 5px;
+            font-size: global.rem(20);
+            line-height: calc(25/20);
+        }
+
+        &__skills {
+            margin-bottom: 10px;
+            font-size: global.rem(18);
+            line-height: calc(22/18);
+        }
+
+        &__text {
+            height: 100%;
+            font-size: global.rem(16);
+            line-height: calc(21/16);
+        }
+    }
+}
+
+@include global.media(sp) {
+    .c-modal {
+        // ウィンドウの設定
+        &__content {
+            width: 90%;
+            height: 95vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__inner {
+            padding: 20px 20px 20px 20px;
+        }
+
+        &__thumbs-list {
+            width: 100%;
+        }
+
+        &__thumb-wrapper {
+            margin-right: 15px;
+            min-width: 0;
+        }
+
+        &__thumb > div {
+            min-width: 0;
+        }
+
+        &__thumb > img {
+            min-width: 0;
+        }
+
+        &__body {
+            padding-top: 30px;
+            padding-left: 0;
+        }
+
+        &__text {
+            height: 25vh;
+        }
+
+        &__close {
+            display: none;
+        }
+
+        &__close--sp {
+            width: 100%;
+            display: block;
+            padding: 0 20px 20px 20px;
+
+        }
+    }
+}

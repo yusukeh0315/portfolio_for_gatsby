@@ -1,0 +1,14 @@
+@use "../../global" as global;
+
+.p-skill-table{
+    line-height: 1.5;
+
+    & > tr > td {
+        padding-bottom: 0.3rem;
+    }
+
+    &__1col {
+        padding-left: 1rem;
+        width: 3em;
+    }
+}

@@ -1,0 +1,43 @@
+@use "../../global" as global;
+
+.c-skill-lable {
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 2px 5px 2px 5px;
+    margin: 0 5px 5px 0;
+    border: 1px solid global.$color-black;
+    background-color: global.$color-white;
+    color: global.$color-black;
+    font-weight: bold;
+    font-weight: normal;
+    line-height: 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.25s;
+    border-radius: 5px;
+
+    &:hover, &:focus, &:active {
+        border: 1px solid global.$color-gray;
+        background-color: global.$color-white;
+        color: global.$color-gray;
+    }
+}
+
+.c-skill-lable--nolink {
+    font-size: 0.8rem;
+    display: inline-block;
+    padding: 2px 5px 2px 5px;
+    margin: 0 5px 5px 0;
+    border: 1px solid global.$color-black;
+    background-color: global.$color-white;
+    color: global.$color-black;
+    font-weight: bold;
+    font-weight: normal;
+    line-height: 20px;
+    text-decoration: none;
+    text-align: center;
+    cursor: default;
+    transition: 0.25s;
+    border-radius: 5px;
+}
