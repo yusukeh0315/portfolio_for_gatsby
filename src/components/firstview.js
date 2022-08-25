@@ -9,7 +9,6 @@ const FirstView = () => {
           <h1 className="p-fv__title">
             <span className="js_typing">
               Via IT to solve your problems
-              <span className="p-fv__title-point"> IT</span>
             </span>
           </h1>
         </div>
