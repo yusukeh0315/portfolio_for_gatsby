@@ -8,7 +8,7 @@ const FirstView = () => {
         <div className="p-fv__title-wrapper">
           <h1 className="p-fv__title">
             <span className="js_typing">
-              Via IT to solve your problems<span className="p-fv__title-point"> V</span>ia
+              Via IT to solve your problems
               <span className="p-fv__title-point"> IT</span>
             </span>
           </h1>
