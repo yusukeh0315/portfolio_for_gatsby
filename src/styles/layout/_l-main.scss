@@ -122,3 +122,19 @@
         }
     }
 }
+
+.l-work {
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 160px 20px 80px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-work {
+        &__inner {
+            padding-top: 190px;
+        }
+    }
+}
