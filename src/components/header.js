@@ -104,7 +104,9 @@ const Header = ({ page }) => {
     return (
       <header className="l-header">
         <div className="l-header__inner">
-          {page.match(/crowdsourcing/)
+          {page === "crowdsourcing" ||
+          page === "crowdsourcing_works" ||
+          page === "crowdsourcing_about"
             ? singlePageHeader()
             : multiPageHeader()}
         </div>
