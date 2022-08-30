@@ -66,37 +66,34 @@ const Header = ({ page }) => {
             <nav className="p-header-nav">
               <ul className="p-header-nav__list">
                 <li className="p-header-nav__item">
-                  <Scroll
-                    to="service"
-                    smooth={true}
-                    duration={500}
-                    offset={-50}
-                    className="p-header-nav__link"
+                  <Link
+                    to={`/`}
+                    className={`p-header-nav__link ${
+                      page === "crowdsourcing" ? "current" : ""
+                    }`}
                   >
-                    Service
-                  </Scroll>
+                    Home
+                  </Link>
                 </li>
                 <li className="p-header-nav__item">
-                  <Scroll
-                    to="about"
-                    smooth={true}
-                    duration={500}
-                    offset={40}
-                    className="p-header-nav__link"
+                  <Link
+                    to={`/about/`}
+                    className={`p-header-nav__link ${
+                      page === "crowdsourcing_about" ? "current" : ""
+                    }`}
                   >
                     About
-                  </Scroll>
+                  </Link>
                 </li>
                 <li className="p-header-nav__item">
-                  <Scroll
-                    to="works"
-                    smooth={true}
-                    duration={500}
-                    offset={-100}
-                    className="p-header-nav__link"
+                  <Link
+                    to={`/works/`}
+                    className={`p-header-nav__link ${
+                      page === "crowdsourcing_works" ? "current" : ""
+                    }`}
                   >
                     Works
-                  </Scroll>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -107,8 +104,9 @@ const Header = ({ page }) => {
     return (
       <header className="l-header">
         <div className="l-header__inner">
-
-          {page === "crowdsourcing" ? singlePageHeader() : multiPageHeader() }
+          {page.match(/crowdsourcing/)
+            ? singlePageHeader()
+            : multiPageHeader()}
         </div>
       </header>
     )}
