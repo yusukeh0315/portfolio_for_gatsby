@@ -33,6 +33,7 @@
     "gatsby-source-filesystem": "^4.18.1",
     "gatsby-source-microcms": "^2.0.0",
     "gatsby-transformer-sharp": "^4.18.1",
+    "html-to-text": "^8.2.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-helmet": "^6.1.0",

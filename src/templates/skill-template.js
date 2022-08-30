@@ -7,9 +7,13 @@ import WorksPanel from "../components/workspanel"
 
 const Skills = ({ data, location, pageContext }) => {
 
+  const page_name = data.site.siteMetadata.title.match(/Portfolio/)
+    ? "crowdsourcing_works"
+    : "works"
+
   return (
     <div>
-      <Layout page="works">
+      <Layout page="works" page={page_name}>
         <Seo
           pagetitle={pageContext.skillname}
           pagedesc={`${pageContext.skillname}のレベルと実績について`}
@@ -49,10 +53,10 @@ const Skills = ({ data, location, pageContext }) => {
 }
 
 export const query = graphql`
-  query($skillid: String!) {
+  query ($skillid: String!) {
     allMicrocmsWorks(
-      sort: {fields: workId, order: ASC}
-      filter: {skills: {elemMatch: {id: {eq: $skillid }}}}
+      sort: { fields: workId, order: ASC }
+      filter: { skills: { elemMatch: { id: { eq: $skillid } } } }
       ) {
       edges {
         node {
@@ -91,10 +95,20 @@ export const query = graphql`
           }
           site_url
           display
+          display
         }
       }
     }
-
+    site {
+      siteMetadata {
+        title
+        lang
+        description
+        siteUrl
+        local
+        fbappid
+      }
+    }
   }
 `
 

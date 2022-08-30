@@ -6,10 +6,16 @@ import { ImgixGatsbyImage } from "@imgix/gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const BlogPost = ({ data, location, category_link = true }) => {
+import { convert } from "html-to-text"
+
+const Work = ({ data, location, category_link = true }) => {
   let url, inner_class_name, first_image, is_single_page
 
-  if (data.microcmsWorks.image02 && data.microcmsWorks.image03 && data.microcmsWorks.image04) {
+  if (
+    data.microcmsWorks.image02 &&
+    data.microcmsWorks.image03 &&
+    data.microcmsWorks.image04
+  ) {
     inner_class_name = "c-modal__inner"
     first_image = data.microcmsWorks.image01
     is_single_page = false
@@ -36,12 +42,21 @@ const BlogPost = ({ data, location, category_link = true }) => {
     data.microcmsWorks.image04,
   ]
 
+  const page_name = data.site.siteMetadata.title.match(/Portfolio/)
+    ? "crowdsourcing_works"
+    : "works"
+
   return (
     <div>
-      <Layout page="works">
+      <Layout page={page_name}>
         <Seo
-          pagetitle="Works"
-          pagedesc="事業実績など"
+          pagetitle={data.microcmsWorks.title}
+          pagedesc={`${convert(data.microcmsWorks.content, {
+          selectors: [
+            { selector: "a", options: { ignoreHref: true } },
+            { selector: "img", format: "skip" },
+          ],
+          }).slice(0, 70)}…`}
           pagepath={location.pathname}
         />
 
@@ -163,7 +178,7 @@ const BlogPost = ({ data, location, category_link = true }) => {
 }
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     microcmsWorks(id: { eq: $id }) {
       title
       content
@@ -200,7 +215,17 @@ export const query = graphql`
         width
       }
     }
+    site {
+      siteMetadata {
+        title
+        lang
+        description
+        siteUrl
+        local
+        fbappid
+      }
+    }
   }
 `
 
-export default BlogPost
+export default Work
