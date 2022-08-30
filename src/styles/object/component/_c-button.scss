@@ -24,6 +24,7 @@
 .c-submit-button {
     display: inline-block;
     width: 255px;
+    height: 40px;
     max-width: 100%;
     padding: 10px 10px 10px 10px;
     border: 1px solid global.$color-black;
@@ -31,7 +32,7 @@
     color: global.$color-black;
     font-weight: bold;
     font-weight: normal;
-    // font-size: rem(16);
+    font-size: global.rem(16);
     line-height: 20px;
     text-decoration: none;
     text-align: center;

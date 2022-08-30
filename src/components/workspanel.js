@@ -2,9 +2,8 @@ import React  from 'react';
 import { Link } from "gatsby"
 
 import { ImgixGatsbyImage } from "@imgix/gatsby"
-import { motion } from "framer-motion"
 
-const WorksPanel = ({ data, handleOpenModal, is_home=false, is_crowdsourcing=false }) => {
+const WorksPanel = ({ data, is_home=false, is_crowdsourcing=false }) => {
     return (
 
         <div className="p-cards-works p-cards-works--col3">
@@ -43,7 +42,7 @@ const WorksPanel = ({ data, handleOpenModal, is_home=false, is_crowdsourcing=fal
 
                     {!is_home && (
                       <div className="c-card-works__body">
-                        <p className="c-card-works__title">{node.title} </p>
+                        <p className="c-card-works__title">{node.title}{" "}</p>
 
                         <p className="c-card-works__text">
                           {node.skills.map(skill => (

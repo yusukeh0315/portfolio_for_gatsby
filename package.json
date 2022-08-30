@@ -45,6 +45,9 @@
   "devDependencies": {
     "prettier": "^2.7.1"
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/yusukeh0315/portfolio_for_gatsby.git"

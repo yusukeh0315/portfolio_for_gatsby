@@ -9,7 +9,7 @@ const Skills = ({ data, location, pageContext }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout page="works">
         <Seo
           pagetitle={pageContext.skillname}
           pagedesc={`${pageContext.skillname}のレベルと実績について`}
@@ -90,6 +90,7 @@ export const query = graphql`
             height
           }
           site_url
+          display
         }
       }
     }

@@ -196,15 +196,15 @@ body.fixed {
 
     &__text {
         margin-top: 20px;
-        overflow-y: auto;
+        // overflow-y: auto;
         font-size: global.rem(16);
         line-height: calc(26/16);
 
-        -ms-overflow-style: none; /* これを追加 */
-        scrollbar-width: none;
-        &::-webkit-scrollbar {
-            display: none;
-        }
+        // -ms-overflow-style: none; /* これを追加 */
+        // scrollbar-width: none;
+        // &::-webkit-scrollbar {
+        //     display: none;
+        // }
 
         .item {
             display: inline-block;
@@ -312,7 +312,7 @@ body.fixed {
 
         &__body {
             flex-basis: auto;
-            height: 50%;
+            height: 100%;
             padding-top: 60px;
             padding-left: 0;
         }
@@ -372,10 +372,6 @@ body.fixed {
         &__body {
             padding-top: 30px;
             padding-left: 0;
-        }
-
-        &__text {
-            height: 25vh;
         }
 
         &__close {
