@@ -1,30 +1,19 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Modal from "../components/modal"
-import Card from "../components/card"
 import WorksPanel from "../components/workspanel"
-
-import { useBodyScrollLock } from '../hooks/body_scroll_lock'
 
 const Skills = ({ data, location, pageContext }) => {
 
-  // モーダルの表示状態と切り替える為にState(props)を準備
-  // false = 非表示、数値 = 表示しているModalの番目とする
-  const [modalIsOpen, setIsOpen] = useState(false);
-
-  //どのモーダルを表示するのか操作するために関数を準備
-  const handleOpenModal = useCallback((num) => {
-    setIsOpen(num);
-  }, []);
-
-  useBodyScrollLock({modalIsOpen});
+  const page_name = data.site.siteMetadata.title.match(/Portfolio/)
+    ? "crowdsourcing_works"
+    : "works"
 
   return (
     <div>
-      <Layout>
+      <Layout page={page_name}>
         <Seo
           pagetitle={pageContext.skillname}
           pagedesc={`${pageContext.skillname}のレベルと実績について`}
@@ -52,7 +41,6 @@ const Skills = ({ data, location, pageContext }) => {
 
               <WorksPanel
                 data={data}
-                handleOpenModal={handleOpenModal}
                 is_home={false}
                 is_crowdsourcing={false}
               />
@@ -60,27 +48,15 @@ const Skills = ({ data, location, pageContext }) => {
           </section>
         </div>
       </Layout>
-
-      {/* modal*/}
-      {data.allMicrocmsWorks.edges.map(({ node }, index) => {
-        return (
-          <Modal
-            modalIsOpen={modalIsOpen === index}
-            onClose={() => setIsOpen(false)}
-          >
-            <Card node={node} />
-          </Modal>
-        )
-      })}
     </div>
   )
 }
 
 export const query = graphql`
-  query($skillid: String!) {
+  query ($skillid: String!) {
     allMicrocmsWorks(
-      sort: {fields: workId, order: ASC}
-      filter: {skills: {elemMatch: {id: {eq: $skillid }}}}
+      sort: { fields: workId, order: ASC }
+      filter: { skills: { elemMatch: { id: { eq: $skillid } } } }
       ) {
       edges {
         node {
@@ -118,10 +94,20 @@ export const query = graphql`
             height
           }
           site_url
+          display
         }
       }
     }
-
+    site {
+      siteMetadata {
+        title
+        lang
+        description
+        siteUrl
+        local
+        fbappid
+      }
+    }
   }
 `
 
