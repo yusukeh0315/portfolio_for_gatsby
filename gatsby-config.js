@@ -84,7 +84,7 @@ module.exports = {
       options: {
         host: "https://vitworks.net/",
         sitemap: "https://vitworks.net/sitemap/sitemap-index.xml",
-        policy: [{ userAgent: "*", allow: "/" }],
+        policy: [{ userAgent: "*", allow: "/", disallow: ["/contact_done/"] }],
       },
     },
   ],
