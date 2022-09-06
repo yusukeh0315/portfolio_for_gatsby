@@ -13,7 +13,7 @@ const Skills = ({ data, location, pageContext }) => {
 
   return (
     <div>
-      <Layout page="works" page={page_name}>
+      <Layout page={page_name}>
         <Seo
           pagetitle={pageContext.skillname}
           pagedesc={`${pageContext.skillname}のレベルと実績について`}
