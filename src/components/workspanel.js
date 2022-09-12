@@ -1,7 +1,6 @@
 import React  from 'react';
 import { Link } from "gatsby"
 import Flip from "react-reveal/Flip"
-import Flip from "react-reveal/Flip"
 
 import { ImgixGatsbyImage } from "@imgix/gatsby"
 
