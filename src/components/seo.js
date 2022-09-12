@@ -38,10 +38,10 @@ const Seo = props => {
   const imgw = props.pageimgw || 1280
   const imgh = props.pageimgh || 640
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
+
+  let itemListContents = []
+  if (`${data.site.siteMetadata.siteUrl}` === "https://vitworks.net/") {
+    itemListContents = [
       {
         "@type": "ListItem",
         position: 1,
@@ -66,7 +66,34 @@ const Seo = props => {
         name: "Contact",
         item: `${data.site.siteMetadata.siteUrl}/contact/`,
       },
-    ],
+    ]
+  } else {
+    itemListContents = [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "VIT Works",
+        item: `${data.site.siteMetadata.siteUrl}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "About",
+        item: `${data.site.siteMetadata.siteUrl}/about/`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Works",
+        item: `${data.site.siteMetadata.siteUrl}/works/`,
+      },
+    ]
+  }
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: `${itemListContents}`,
   }
 
   return (
