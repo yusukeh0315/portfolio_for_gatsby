@@ -4,6 +4,7 @@ import React from "react"
 import { useForm } from "react-hook-form"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import TextField from "@mui/material/TextField"
 
 const Contact = ({ location }) => {
   const {
@@ -69,13 +70,10 @@ const Contact = ({ location }) => {
                 onSubmit={handleSubmit(onSubmit)}
               >
                 <div className="p-contact__item">
-                  <label className="p-contact__label" htmlFor="name">
-                    氏名<span className="c-require-label">必須</span>
-                  </label>
-                  <input
-                    className="p-contact__input"
-                    id="name"
-                    type="text"
+                  <TextField
+                    id="standard-basic"
+                    label="氏名"
+                    variant="standard"
                     name="name"
                     {...register("name", { required: true })}
                   />
@@ -86,12 +84,10 @@ const Contact = ({ location }) => {
                   )}
                 </div>
                 <div className="p-contact__item">
-                  <label className="p-contact__label" htmlFor="email">
-                    メールアドレス<span className="c-require-label">必須</span>
-                  </label>
-                  <input
-                    className="p-contact__input"
-                    id="email"
+                  <TextField
+                    id="standard-basic"
+                    label="メールアドレス"
+                    variant="standard"
                     type="email"
                     name="email"
                     {...register("email", { required: true })}
@@ -103,37 +99,31 @@ const Contact = ({ location }) => {
                   )}
                 </div>
                 <div className="p-contact__item">
-                  <label className="p-contact__label" htmlFor="tel">
-                    電話番号
-                  </label>
-                  <input
-                    className="p-contact__input"
-                    id="tel"
-                    type="tel"
+                  <TextField
+                    id="standard-basic"
+                    label="電話番号"
+                    variant="standard"
                     name="tel"
+                    type="tel"
                   />
                 </div>
                 <div className="p-contact__item">
-                  <label className="p-contact__label" htmlFor="company">
-                    会社名
-                  </label>
-                  <input
-                    className="p-contact__input"
-                    id="company"
+                  <TextField
+                    id="standard-basic"
+                    label="会社名"
+                    variant="standard"
                     type="text"
                     name="company"
                   />
                 </div>
                 <div className="p-contact__item">
-                  <label className="p-contact__label" htmlFor="message">
-                    お問い合わせ内容
-                    <span className="c-require-label">必須</span>
-                  </label>
-                  <textarea
-                    className="p-contact__message"
-                    id="message"
+                  <TextField
+                    id="standard-textarea"
+                    label="お問い合わせ内容"
+                    placeholder=""
+                    multiline
+                    variant="standard"
                     name="message"
-                    defaultValue={""}
                     {...register("message", { required: true })}
                   />
                   {errors.message && (
