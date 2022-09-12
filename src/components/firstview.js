@@ -1,5 +1,4 @@
 import React from "react"
-import ShuffleText from "react-shuffle-text"
 import Fade from "react-reveal/Fade"
 
 const FirstView = () => {
@@ -8,11 +7,9 @@ const FirstView = () => {
       <div className="l-fv__inner">
         <div className="p-fv__title-wrapper">
           <h1 className="p-fv__title">
-            <ShuffleText
-              content="Via IT to solve your problems"
-              charIncInterval={30}
-            />
-            {/* <span className="js_typing">Via IT to solve your problems</span> */}
+            <Fade big duration={1600}>
+              <span className="js_typing">Via IT to solve your problems</span>
+            </Fade>
           </h1>
         </div>
         <p className="p-fv__text">

@@ -98,7 +98,6 @@ module.exports = {
     },
     `react-hook-form`,
     `axios`,
-    `react-shuffle-text`,
     `react-reveal`,
   ],
 }
