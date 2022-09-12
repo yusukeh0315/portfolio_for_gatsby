@@ -77,7 +77,6 @@ const Contact = ({ location }) => {
                     id="name"
                     type="text"
                     name="name"
-                    placeholder="氏名"
                     {...register("name", { required: true })}
                   />
                   {errors.name && (
@@ -95,7 +94,6 @@ const Contact = ({ location }) => {
                     id="email"
                     type="email"
                     name="email"
-                    placeholder="メールアドレス"
                     {...register("email", { required: true })}
                   />
                   {errors.email && (
@@ -113,7 +111,6 @@ const Contact = ({ location }) => {
                     id="tel"
                     type="tel"
                     name="tel"
-                    placeholder="電話番号"
                   />
                 </div>
                 <div className="p-contact__item">
@@ -125,7 +122,6 @@ const Contact = ({ location }) => {
                     id="company"
                     type="text"
                     name="company"
-                    placeholder="会社名"
                   />
                 </div>
                 <div className="p-contact__item">
@@ -137,7 +133,6 @@ const Contact = ({ location }) => {
                     className="p-contact__message"
                     id="message"
                     name="message"
-                    placeholder="お問い合わせ内容"
                     defaultValue={""}
                     {...register("message", { required: true })}
                   />
