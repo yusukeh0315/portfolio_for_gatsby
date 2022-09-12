@@ -76,12 +76,9 @@ const Contact = ({ location }) => {
                     variant="standard"
                     name="name"
                     {...register("name", { required: true })}
+                    error={"name" in errors}
+                    helperText={"name" in errors ? "入力してください" : ""}
                   />
-                  {errors.name && (
-                    <div className="c-error-message">
-                      氏名を入力してください。
-                    </div>
-                  )}
                 </div>
                 <div className="p-contact__item">
                   <TextField
@@ -91,12 +88,9 @@ const Contact = ({ location }) => {
                     type="email"
                     name="email"
                     {...register("email", { required: true })}
+                    error={"email" in errors}
+                    helperText={"email" in errors ? "入力してください" : ""}
                   />
-                  {errors.email && (
-                    <div className="c-error-message">
-                      メールアドレスを入力してください。
-                    </div>
-                  )}
                 </div>
                 <div className="p-contact__item">
                   <TextField
@@ -125,12 +119,9 @@ const Contact = ({ location }) => {
                     variant="standard"
                     name="message"
                     {...register("message", { required: true })}
+                    error={"message" in errors}
+                    helperText={"message" in errors ? "入力してください" : ""}
                   />
-                  {errors.message && (
-                    <div className="c-error-message">
-                      お問い合わせ内容を入力してください。
-                    </div>
-                  )}
                 </div>
                 <input className="c-submit-button" type="submit" />
               </form>
