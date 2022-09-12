@@ -9,8 +9,8 @@ const Contact = ({ data, location }) => (
   <div>
     <Layout>
       <Seo
-        pagetitle="Contact Done"
-        pagedesc="お問い合わせ完了"
+        pagetitle="Contact NG"
+        pagedesc="お問い合わせ失敗"
         pagepath={location.pathname}
       />
 
@@ -21,18 +21,23 @@ const Contact = ({ data, location }) => (
           </div>
           {/* /.section__title-wrapper*/}
           <div className="p-contact__lead-wrapper">
-            <p className="p-contact__lead">お問い合わせありがとうございました。後ほどご連絡いたしますので、しばらくお待ちください。</p>
+            <p className="p-contact__lead">
+              大変申し訳ございません。送信に失敗しました。
+            </p>
+            <br />
+            <p className="p-contact__lead">
+              お手数ですが、再度お問い合わせを頂くか、下記のメールアドレスまでご連絡ください。
+            </p>
+            <br />
+            <p className="p-contact__lead">hasegawa@vitworks.net</p>
           </div>
           {/* /.contact__lead-wrapper*/}
           {/* /.p-contact__main*/}
           {/* /.p-contact__inner*/}
         </div>
       </section>
-
-
     </Layout>
   </div>
-
 )
 
 export default Contact

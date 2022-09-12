@@ -87,8 +87,16 @@ module.exports = {
       options: {
         host: "https://vitworks.net/",
         sitemap: "https://vitworks.net/sitemap/sitemap-index.xml",
-        policy: [{ userAgent: "*", allow: "/", disallow: ["/contact_done/"] }],
+        policy: [
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: ["/contact_done/", "/contact_ng/"],
+          },
+        ],
       },
     },
+    `react-hook-form`,
+    `axios`,
   ],
 }

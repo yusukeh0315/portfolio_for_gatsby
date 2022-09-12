@@ -1,0 +1,13 @@
+@use "../../global" as global;
+
+.c-error-message {
+  padding-top: 0.5rem;
+  color: global.$color-red;
+}
+
+@include global.media(sp) {
+  // .c-icon {
+  //   height: global.rem(26);
+  //   margin-right: 0.5rem;
+  // }
+}

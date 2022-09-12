@@ -38,6 +38,7 @@
     text-align: center;
     cursor: pointer;
     transition: .25s;
+    margin-top: 40px;
 
     &:hover, &:focus, &:active {
         border: 1px solid global.$color-white;
