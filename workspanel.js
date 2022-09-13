@@ -1,5 +1,6 @@
 import React  from 'react';
 import { Link } from "gatsby"
+import Flip from "react-reveal/Flip"
 
 import { ImgixGatsbyImage } from "@imgix/gatsby"
 
@@ -20,7 +21,11 @@ const WorksPanel = ({ data, is_home=false, is_crowdsourcing=false }) => {
                 }
 
                 return (
-                  <div className="p-cards-works__item card-works" key={node.id}>
+                  <Flip top delay={100 + index * 150} duration={800}>
+                    <div
+                      className="p-cards-works__item card-works"
+                      key={node.id}
+                    >
                     <a
                       className="c-card-works__link js-modal__open"
                       href={`/works/${node.id}`}
@@ -57,6 +62,7 @@ const WorksPanel = ({ data, is_home=false, is_crowdsourcing=false }) => {
                       </div>
                     )}
                   </div>
+                  </Flip>
                 )})}
 
         </div>
