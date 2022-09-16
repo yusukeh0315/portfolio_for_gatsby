@@ -178,8 +178,8 @@ const Work = ({ data, location, category_link = true }) => {
 }
 
 export const query = graphql`
-  query ($id: String!) {
-    microcmsWorks(id: { eq: $id }) {
+  query ($slug: String!) {
+    microcmsWorks(slug: { eq: $slug }) {
       title
       content
       id

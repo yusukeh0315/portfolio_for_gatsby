@@ -28,7 +28,7 @@ const WorksPanel = ({ data, is_home=false, is_crowdsourcing=false }) => {
                     >
                     <a
                       className="c-card-works__link js-modal__open"
-                      href={`/works/${node.id}`}
+                      href={`/works/${node.slug}`}
                     >
                       <figure className="c-card-works__img-wrapper">
                         <ImgixGatsbyImage

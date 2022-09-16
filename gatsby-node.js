@@ -66,6 +66,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 width
               }
               title
+              slug
             }
           }
         }
@@ -79,10 +80,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     workresult.data.allMicrocmsWorks.edges.forEach(({ node }) => {
       createPage({
-        path: `/works/${node.id}/`,
+        path: `/works/${node.slug}/`,
         component: path.resolve(`./src/templates/work-template.js`),
         context: {
-          id: node.id,
+          slug: node.slug,
         },
       })
     })
