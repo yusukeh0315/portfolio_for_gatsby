@@ -38,64 +38,6 @@ const Seo = props => {
   const imgw = props.pageimgw || 1280
   const imgh = props.pageimgh || 640
 
-
-  let itemListContents = []
-  if (`${data.site.siteMetadata.siteUrl}` === "https://vitworks.net/") {
-    itemListContents = [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "VIT Works",
-        item: `${data.site.siteMetadata.siteUrl}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: `${data.site.siteMetadata.siteUrl}/about/`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Works",
-        item: `${data.site.siteMetadata.siteUrl}/works/`,
-      },
-      {
-        "@type": "ListItem",
-        position: 4,
-        name: "Contact",
-        item: `${data.site.siteMetadata.siteUrl}/contact/`,
-      },
-    ]
-  } else {
-    itemListContents = [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "VIT Works",
-        item: `${data.site.siteMetadata.siteUrl}`,
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "About",
-        item: `${data.site.siteMetadata.siteUrl}/about/`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: "Works",
-        item: `${data.site.siteMetadata.siteUrl}/works/`,
-      },
-    ]
-  }
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: `${itemListContents}`,
-  }
-
   return (
     <div>
       <Helmet>
@@ -118,7 +60,6 @@ const Seo = props => {
         <meta property="og:image:height" content={imgh} />
         <meta name="twitter:card" content="summary_large_image" />
 
-        {<script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
       </Helmet>
     </div>
   )
