@@ -99,5 +99,11 @@ module.exports = {
     `react-hook-form`,
     `axios`,
     `react-reveal`,
+    {
+      resolve: `gatsby-plugin-google-tagmanager`,
+      options: {
+        id: `GTM-5TPVVX6`,
+      },
+    },
   ],
 }
