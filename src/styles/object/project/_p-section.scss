@@ -18,6 +18,19 @@
     }
 }
 
+.p-section-h3 {
+    &__title-wrapper {
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: global.rem(24);
+        font-family: global.$font-base-en;
+    }
+}
+
 @include global.media(sp) {
     .p-section {
         &__title--skill {

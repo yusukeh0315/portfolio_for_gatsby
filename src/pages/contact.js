@@ -1,17 +1,18 @@
 import axios from "axios"
 import { navigate } from "gatsby"
 import React from "react"
-import { useForm } from "react-hook-form"
+import { useForm, FormProvider } from "react-hook-form"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import TextField from "@mui/material/TextField"
+import Form from "../components/form"
 
 const Contact = ({ location }) => {
+  const methods = useForm()
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = methods
 
   const onSubmit = data => {
     const baseUrl = "https://ssgform.com/s/lYHV1IEpi02m"
@@ -20,6 +21,8 @@ const Contact = ({ location }) => {
     var params = new URLSearchParams()
     params.append("name", data["name"])
     params.append("email", data["email"])
+    params.append("tel", data["tel"])
+    params.append("company", data["company"])
     params.append("message", data["message"])
 
     axios
@@ -64,7 +67,17 @@ const Contact = ({ location }) => {
             </div>
 
             <div className="p-contact__main">
-              <form
+              <FormProvider {...methods}>
+                <form
+                  className="p-contact__form"
+                  id="form"
+                  onSubmit={handleSubmit(onSubmit)}
+                >
+                  <Form />
+                  <input className="c-submit-button" type="submit" />
+                </form>
+              </FormProvider>
+              {/* <form
                 className="p-contact__form"
                 id="form"
                 onSubmit={handleSubmit(onSubmit)}
@@ -124,7 +137,7 @@ const Contact = ({ location }) => {
                   />
                 </div>
                 <input className="c-submit-button" type="submit" />
-              </form>
+              </form> */}
             </div>
           </div>
         </section>

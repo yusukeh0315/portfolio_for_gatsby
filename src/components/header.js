@@ -35,6 +35,16 @@ const Header = ({ page }) => {
                 </li>
                 <li className="p-header-nav__item">
                   <Link
+                    to={`/estimate/`}
+                    className={`p-header-nav__link ${
+                      page === "estimate" ? "current" : ""
+                    }`}
+                  >
+                    Estimate
+                  </Link>
+                </li>
+                <li className="p-header-nav__item">
+                  <Link
                     to={`/contact/`}
                     className={`p-header-nav__link ${
                       page === "contact" ? "current" : ""
@@ -93,6 +103,16 @@ const Header = ({ page }) => {
                     }`}
                   >
                     Works
+                  </Link>
+                </li>
+                <li className="p-header-nav__item">
+                  <Link
+                    to={`/estimate/`}
+                    className={`p-header-nav__link ${
+                      page === "crowdsourcing_estimate" ? "current" : ""
+                    }`}
+                  >
+                    Estimate
                   </Link>
                 </li>
               </ul>

@@ -116,7 +116,23 @@
 }
 
 @include global.media(sp) {
-    .contact {
+    .l-contact {
+        &__inner {
+            padding-top: 190px;
+        }
+    }
+}
+
+.l-estimate {
+    &__inner {
+        @include global.inner(global.$width-inner);
+        height: 100%;
+        padding: 160px 20px 80px 20px;
+    }
+}
+
+@include global.media(sp) {
+    .l-estimate {
         &__inner {
             padding-top: 190px;
         }
