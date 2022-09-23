@@ -63,15 +63,9 @@ const Header = ({ page }) => {
         return (
           <>
             <div className="p-header-logo">
-              <Scroll
-                to="top"
-                smooth={true}
-                duration={500}
-                offset={-50}
-                className="p-header-logo__link"
-              >
+              <Link to={`/`} className="p-header-logo__link">
                 Portfolio
-              </Scroll>
+              </Link>
             </div>
             <nav className="p-header-nav">
               <ul className="p-header-nav__list">
@@ -126,7 +120,8 @@ const Header = ({ page }) => {
         <div className="l-header__inner">
           {page === "crowdsourcing" ||
           page === "crowdsourcing_works" ||
-          page === "crowdsourcing_about"
+          page === "crowdsourcing_about" ||
+          page === "crowdsourcing_estimate"
             ? singlePageHeader()
             : multiPageHeader()}
         </div>

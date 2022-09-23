@@ -56,11 +56,11 @@ const EstimateCheckbox = ({ question_title, inputQuestions }) => {
         <FormLabel id="demo-row-radio-buttons-group-label">
           {question_title}
         </FormLabel>
-        <FormGroup>
+        <FormGroup {...methods.register(`${question_title}`)}>
           {questions.map(question => {
             let disable = false
             if (
-              (question_title === "その他、必要な要件はありますか？") &&
+              question_title === "その他、必要な要件はありますか？" &&
               type === 1
             ) {
               disable = true

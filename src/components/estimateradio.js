@@ -115,16 +115,10 @@ const EstimateRadio = ({ question_title, inputQuestions }) => {
           row
           aria-labelledby="demo-row-radio-buttons-group-label"
           name="row-radio-buttons-group"
+          {...methods.register(`${question_title}`)}
         >
           {inputQuestions.map(value => {
-            let required = false
-            if (
-              question_title === "依頼したい内容は何ですか？*" ||
-              question_title === "新規に作成しますか？修正・更新しますか？*" ||
-              question_title === "どのくらいページを作成しますか？*"
-            ) {
-              required = true
-            }
+
             let disable = false
             if (
               (question_title === "ログイン機能は必要ですか？" ||
@@ -135,7 +129,7 @@ const EstimateRadio = ({ question_title, inputQuestions }) => {
                   "更新する項目、頻度はどのくらいですか？（CMSの導入、選定の参考にします）") &&
               type === 1
             ) {
-              disable = true;
+              disable = true
             } else if (
               question_title === "デザイン案はありますか？" &&
               type === 2
@@ -156,9 +150,7 @@ const EstimateRadio = ({ question_title, inputQuestions }) => {
                   />
                 }
                 label={value.label}
-                {...methods.register(`${question_title}`, {
-                  required: `${required}`,
-                })}
+                {...methods.register(`${question_title}`)}
               />
             )
           })}
