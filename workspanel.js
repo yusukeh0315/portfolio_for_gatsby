@@ -28,7 +28,7 @@ const WorksPanel = ({ data, is_home=false, is_crowdsourcing=false }) => {
                     >
                     <a
                       className="c-card-works__link js-modal__open"
-                      href={`/works/${node.id}`}
+                      href={`/works/${node.slug}`}
                     >
                       <figure className="c-card-works__img-wrapper">
                         <ImgixGatsbyImage
@@ -45,9 +45,9 @@ const WorksPanel = ({ data, is_home=false, is_crowdsourcing=false }) => {
                       </figure>
                     </a>
 
-                    {!is_home && (
-                      <div className="c-card-works__body">
-                        <p className="c-card-works__title">{node.title}{" "}</p>
+                      {!is_home && (
+                        <div className="c-card-works__body">
+                          <p className="c-card-works__title">{node.title} </p>
 
                         <p className="c-card-works__text">
                           {node.skills.map(skill => (
