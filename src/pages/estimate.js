@@ -216,12 +216,14 @@ const Estimate = ({ location }) => {
             </div>
             <div className="p-estimate__lead-wrapper">
               <p className="p-estimate__lead">
-                下記の質問に回答いただくと、Webサイト制作の概算見積もりを算出します。作成した見積をもとに詳細見積りの依頼をすることも可能です。
+                下記の質問に回答いただくと、Webサイト制作の概算見積もりを算出します。要件確認も兼ねていますので、選択しても見積もりが変わらない項目もあります。作成した見積をもとに詳細見積りの依頼をすることも可能です。
                 お気軽にお問い合わせください。
               </p>
             </div>
             <div className="p-section-h3__title-wrapper">
-              <h3 className="p-section-h3__title">Web制作見積りフォーム(*必須)</h3>
+              <h3 className="p-section-h3__title">
+                Web制作見積りフォーム(*必須)
+              </h3>
             </div>
 
             <div className="p-estimate__main">
@@ -330,12 +332,6 @@ const Estimate = ({ location }) => {
                     </PageContext.Provider>
                   </EstimateContext.Provider>
 
-                  <p>value {value}</p>
-                  <p>webValue {webValue}</p>
-                  <p>designValue {designValue}</p>
-                  <p>type {type}</p>
-                  <p>page {page}</p>
-                  <p>unit {unit}</p>
                   <p className="p-estimate__price">
                     概算お見積り額 {Number(estimatePrice()).toLocaleString()}
                     円（税込）
@@ -343,7 +339,11 @@ const Estimate = ({ location }) => {
                   <div className="p-estimate__contact">
                     <div className="p-contact__main">
                       <Form />
-                      <input className="c-submit-button" type="submit" value="詳細見積もりを依頼する"/>
+                      <input
+                        className="c-submit-button"
+                        type="submit"
+                        value="詳細見積もりを依頼する"
+                      />
                     </div>
                   </div>
                 </form>
