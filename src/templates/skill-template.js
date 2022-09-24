@@ -95,7 +95,7 @@ export const query = graphql`
           }
           site_url
           display
-          display
+          slug
         }
       }
     }
