@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Link as Scroll } from "react-scroll"
 
 const Header = ({ page }) => {
     const multiPageHeader = () => {
