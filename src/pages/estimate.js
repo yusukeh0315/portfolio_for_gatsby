@@ -15,11 +15,13 @@ export const PageContext = createContext()
 export const TypeContext = createContext()
 export const UnitContext = createContext()
 export const DesignUnitContext = createContext()
+export const CmsContext = createContext()
 
 const Estimate = ({ location }) => {
   const [value, setValue] = useState(0)
   const [webValue, setWebValue] = useState(0)
   const [designValue, setDesignValue] = useState(0)
+  const [cmsValue, setCmsValue] = useState(0)
   const [page, setPage] = useState(0)
   const [type, setType] = useState(0)
   const [unit, setUnit] = useState(0)
@@ -42,10 +44,11 @@ const Estimate = ({ location }) => {
   ]
 
   const questionTitle_02 =
-    "企画・構成設計・管理などのディレクションは必要ですか？"
+    "企画・構成設計・管理などのディレクション業務は必要ですか？"
   const question_02 = [
     { label: "不要", value: 0 },
     { label: "必要", value: 30000 },
+    { label: "わからない", value: 0 },
   ]
 
   const questionTitle_03 = "新規に作成しますか？修正・更新しますか？*"
@@ -74,8 +77,10 @@ const Estimate = ({ location }) => {
   const questionTitle_05 = "どのくらいページを作成しますか？*"
   const question_05 = [
     { label: "１～３", value: 0 },
-    { label: "４～９", value: 0 },
-    { label: "１０～４９", value: 0 },
+    { label: "４～６", value: 0 },
+    { label: "６～９", value: 0 },
+    { label: "１０～１９", value: 0 },
+    { label: "２０～３０", value: 0 },
   ]
 
   const questionTitle_06 = "ログイン機能は必要ですか？"
@@ -104,11 +109,11 @@ const Estimate = ({ location }) => {
   ]
 
   const questionTitle_10 =
-    "更新する項目、頻度はどのくらいですか？（CMSの導入、選定の参考にします）"
+    "投稿機能、更新する項目、頻度はどのくらいですか？（CMSの導入、選定の参考にします）"
   const question_10 = [
-    { label: "更新はしない", value: 0 },
-    { label: "少ない", value: 15000 },
-    { label: "多い", value: 30000 },
+    { label: "投稿、更新はしない（CMSを使用しない）", value: 0 },
+    { label: "少ない（WordPress以外のCMSを使用する）", value: 0 },
+    { label: "多い（WordPressを使用する）", value: 0 },
   ]
 
   const questionTitle_11 = "デザイン案はありますか？"
@@ -134,7 +139,7 @@ const Estimate = ({ location }) => {
     { label: "レスポンシブ対応", value: 0, checked: false },
     { label: "SEO対策", value: 0, checked: false },
     { label: "GoogleMapの設置", value: 0, checked: false },
-    { label: "問い合わせフォームの設置", value: 5000, checked: false },
+    { label: "問い合わせフォームの設置", value: 15000, checked: false },
     { label: "レンタルサーバの契約代行", value: 5000, checked: false },
     { label: "ドメイン取得の契約代行", value: 5000, checked: false },
     { label: "ホームページ公開代行", value: 5000, checked: false },
@@ -142,24 +147,42 @@ const Estimate = ({ location }) => {
 
   const estimatePrice = () => {
     let price = 0
+    const createWebValue = page * unit
+    const createDesignValue = page * unit * designUnit
+    let createCmsValue = 0
+    if (cmsValue === 0) {
+      createCmsValue = 0
+    } else if (cmsValue === 1) {
+      createCmsValue = 20000
+    } else if (cmsValue === 2) {
+      createCmsValue = page * 10000
+    }
+
     if (type === 1) {
-      price = value + designValue + page * unit - page * unit * designUnit
+      price = value + designValue + createDesignValue
     } else if (type === 2) {
-      price = value + webValue + page * unit - page * unit * designUnit
+      price = value + webValue + createWebValue + createCmsValue
     } else {
       price =
         value +
         designValue +
         webValue +
-        page * unit * 2 -
-        page * unit * designUnit
+        createWebValue +
+        createDesignValue +
+        createCmsValue
     }
-    return price * generalManagementFeeRate
+
+    price = price * generalManagementFeeRate
+
+    price = Math.ceil(price / 1000) * 1000
+
+
+    return price
   }
 
   const onSubmit = data => {
     const baseUrl = "https://ssgform.com/s/lYHV1IEpi02m"
-    console.log(data)
+    // console.log(data)
 
     var params = new URLSearchParams()
     params.append("name", data["name"])
@@ -246,84 +269,88 @@ const Estimate = ({ location }) => {
                               <DesignContext.Provider
                                 value={[designValue, setDesignValue]}
                               >
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_01}
-                                    inputQuestions={question_01}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_02}
-                                    inputQuestions={question_02}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_03}
-                                    inputQuestions={question_03}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_04}
-                                    inputQuestions={question_04}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_05}
-                                    inputQuestions={question_05}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_06}
-                                    inputQuestions={question_06}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_07}
-                                    inputQuestions={question_07}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_08}
-                                    inputQuestions={question_08}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_09}
-                                    inputQuestions={question_09}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_10}
-                                    inputQuestions={question_10}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_11}
-                                    inputQuestions={question_11}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateRadio
-                                    question_title={questionTitle_12}
-                                    inputQuestions={question_12}
-                                  />
-                                </div>
-                                <div className="p-estimate__question">
-                                  <EstimateCheckbox
-                                    question_title={questionTitle_13}
-                                    inputQuestions={question_13}
-                                  />
-                                </div>
+                                <CmsContext.Provider
+                                  value={[cmsValue, setCmsValue]}
+                                >
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_01}
+                                      inputQuestions={question_01}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_02}
+                                      inputQuestions={question_02}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_03}
+                                      inputQuestions={question_03}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_04}
+                                      inputQuestions={question_04}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_05}
+                                      inputQuestions={question_05}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_06}
+                                      inputQuestions={question_06}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_07}
+                                      inputQuestions={question_07}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_08}
+                                      inputQuestions={question_08}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_09}
+                                      inputQuestions={question_09}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_10}
+                                      inputQuestions={question_10}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_11}
+                                      inputQuestions={question_11}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateRadio
+                                      question_title={questionTitle_12}
+                                      inputQuestions={question_12}
+                                    />
+                                  </div>
+                                  <div className="p-estimate__question">
+                                    <EstimateCheckbox
+                                      question_title={questionTitle_13}
+                                      inputQuestions={question_13}
+                                    />
+                                  </div>
+                                </CmsContext.Provider>
                               </DesignContext.Provider>
                             </WebContext.Provider>
                           </DesignUnitContext.Provider>
@@ -331,7 +358,6 @@ const Estimate = ({ location }) => {
                       </TypeContext.Provider>
                     </PageContext.Provider>
                   </EstimateContext.Provider>
-
                   <p className="p-estimate__price">
                     概算お見積り額 {Number(estimatePrice()).toLocaleString()}
                     円（税込）
