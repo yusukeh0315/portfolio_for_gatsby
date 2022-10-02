@@ -78,9 +78,9 @@ const Estimate = ({ location }) => {
   const question_05 = [
     { label: "１～３", value: 0 },
     { label: "４～６", value: 0 },
-    { label: "６～９", value: 0 },
-    { label: "１０～１９", value: 0 },
-    { label: "２０～３０", value: 0 },
+    { label: "６～１０", value: 0 },
+    { label: "１１～２０", value: 0 },
+    { label: "２１～３０", value: 0 },
   ]
 
   const questionTitle_06 = "ログイン機能は必要ですか？"
