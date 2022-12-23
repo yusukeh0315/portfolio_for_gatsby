@@ -25,6 +25,7 @@ SwiperCore.use([Pagination, Autoplay])
 
 const Work = ({ data, location, category_link = true }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
+  const [display, setDisplay] = useState('none');
 
   let url, inner_class_name, first_image, is_single_page
 
@@ -46,11 +47,11 @@ const Work = ({ data, location, category_link = true }) => {
     url = data.microcmsWorks.site_url
   }
 
-  const [srcUrl, setSrcUrl] = useState(data.microcmsWorks.image01)
+  // const [srcUrl, setSrcUrl] = useState(data.microcmsWorks.image01)
 
-  const changeMainImage = imgUrl => {
-    setSrcUrl(imgUrl)
-  }
+  // const changeMainImage = imgUrl => {
+  //   setSrcUrl(imgUrl)
+  // }
 
   const thumbnailImages = [
     first_image,
@@ -84,11 +85,9 @@ const Work = ({ data, location, category_link = true }) => {
     modules: [FreeMode, Navigation, Thumbs],
   }
 
-  let display = 'block';
-
-    useLayoutEffect(() => {
-      display = "block"
-    })
+  useLayoutEffect(() => {
+    setDisplay("block")
+  })
 
   return (
     <div>
