@@ -1,5 +1,5 @@
 import { graphql, Link } from "gatsby"
-import React, { useState } from "react"
+import React, { useLayoutEffect, useState } from "react"
 
 import { ImgixGatsbyImage } from "@imgix/gatsby"
 
@@ -84,8 +84,15 @@ const Work = ({ data, location, category_link = true }) => {
     modules: [FreeMode, Navigation, Thumbs],
   }
 
+  let display = 'block';
+
+    useLayoutEffect(() => {
+      display = "block"
+    })
+
   return (
     <div>
+
       <Layout page={page_name}>
         <Seo
           pagetitle={data.microcmsWorks.title}
@@ -102,7 +109,7 @@ const Work = ({ data, location, category_link = true }) => {
           <div className="l-work__inner">
             <div className={inner_class_name}>
               <div className="c-modal__images">
-                <ul className="p-swiper-main__wrapper">
+                <ul className="p-swiper-main__wrapper" style={{display: display}}>
                   <a
                     className="c-modal__img-wrapper"
                     target="_blank"
@@ -134,10 +141,9 @@ const Work = ({ data, location, category_link = true }) => {
                     </Swiper>
                   </a>
                 </ul>
-                <ul className="p-swiper-thumb__wrapper">
+                <ul className="p-swiper-thumb__wrapper" style={{display: display}}>
                   <Swiper {...thumbsParams}>
                     {!is_single_page &&
-
                       thumbnailImages.map(image => {
                         return (
                           <SwiperSlide>
@@ -155,8 +161,7 @@ const Work = ({ data, location, category_link = true }) => {
                             </li>
                           </SwiperSlide>
                         )
-                      })
-                    }
+                      })}
                   </Swiper>
                 </ul>
               </div>
