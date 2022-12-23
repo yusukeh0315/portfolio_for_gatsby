@@ -1,22 +1,22 @@
 import React from "react"
 
-import Header from "../components/header"
 import Footer from "../components/footer"
+import Header from "../components/header"
 
 import "../styles/main.scss"
 
-import 'typeface-notosans-jp'
 import 'typeface-lato'
+import 'typeface-notosans-jp'
 
 const Layout = ({ children, page }) => (
-    <div>
-        <Header page={page}/>
+  <div>
+    <Header page={page} />
 
-        <div className="u-effect-fadein">{children}</div>
+    <div>{children}</div>
+    {/* <div className="u-effect-fadein">{children}</div> */}
 
-        <Footer />
-    </div>
-
+    <Footer />
+  </div>
 )
 
 export default Layout
