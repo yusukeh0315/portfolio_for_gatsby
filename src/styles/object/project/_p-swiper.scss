@@ -1,0 +1,84 @@
+@use "../../global" as global;
+
+.p-swiper-main {
+  &__wrapper {
+    margin-right: auto;
+    margin-left: auto;
+    height: 480px;
+    width: 480px;
+    box-shadow: 2px 2px 4px #979797;
+    // overflow-y: scroll;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #979797;
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: #dcdcdc;
+    }
+
+    @include global.media(sp) {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+
+    & img {
+      width: 480px !important;
+      object-fit: contain !important;
+      object-position: top;
+      height: 100%;
+
+      @include global.media(sp) {
+        width: 100% !important;
+        aspect-ratio: 1;
+      }
+    }
+  }
+
+  &__image {
+    // height: auto !important;
+    @include global.media(sp) {
+      width: 100% !important;
+      aspect-ratio: 1;
+    }
+  }
+}
+
+.p-swiper-thumb {
+  &__wrapper {
+    height: 100px !important;
+    margin-bottom: 100px;
+
+    & > .swiper {
+      width: 480px;
+      padding-bottom: 10px;
+      backface-visibility: visible !important;
+      overflow: visible !important;
+      @include global.media(sp) {
+        width: 100% !important;
+      }
+    }
+
+    & .swiper-slide {
+      box-shadow: 2px 2px 4px #979797;
+      height: auto !important;
+      overflow: hidden;
+      aspect-ratio: 1 !important;
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    width: 100% !important;
+    & > img {
+      object-fit: contain !important;
+      object-position: top;
+    }
+  }
+}

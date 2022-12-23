@@ -96,5 +96,6 @@ module.exports = {
         id: `GTM-5TPVVX6`,
       },
     },
+    `swiper`,
   ],
 }
