@@ -25,7 +25,7 @@ SwiperCore.use([Pagination, Autoplay])
 
 const Work = ({ data, location, category_link = true }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
-  const [display, setDisplay] = useState("hidden")
+  const [display, setDisplay] = useState("none")
 
   let url, inner_class_name, first_image, is_single_page
 
@@ -80,7 +80,7 @@ const Work = ({ data, location, category_link = true }) => {
   }
 
   useLayoutEffect(() => {
-    setDisplay("visible")
+    setDisplay("display")
   }, [setDisplay])
 
   return (
@@ -103,7 +103,7 @@ const Work = ({ data, location, category_link = true }) => {
               <div className="c-modal__images">
                 <ul
                   className="p-swiper-main__wrapper"
-                  style={{ visibility: display }}
+                  style={{ display: display }}
                 >
                   <a
                     className="c-modal__img-wrapper"
