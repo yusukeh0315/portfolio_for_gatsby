@@ -25,7 +25,7 @@ SwiperCore.use([Pagination, Autoplay])
 
 const Work = ({ data, location, category_link = true }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
-  const [display, setDisplay] = useState('none');
+  const [display, setDisplay] = useState("hidden")
 
   let url, inner_class_name, first_image, is_single_page
 
@@ -46,12 +46,6 @@ const Work = ({ data, location, category_link = true }) => {
   if (data.microcmsWorks.site_url) {
     url = data.microcmsWorks.site_url
   }
-
-  // const [srcUrl, setSrcUrl] = useState(data.microcmsWorks.image01)
-
-  // const changeMainImage = imgUrl => {
-  //   setSrcUrl(imgUrl)
-  // }
 
   const thumbnailImages = [
     first_image,
@@ -86,12 +80,11 @@ const Work = ({ data, location, category_link = true }) => {
   }
 
   useLayoutEffect(() => {
-    setDisplay("block")
-  })
+    setDisplay("visible")
+  }, [setDisplay])
 
   return (
     <div>
-
       <Layout page={page_name}>
         <Seo
           pagetitle={data.microcmsWorks.title}
@@ -108,7 +101,10 @@ const Work = ({ data, location, category_link = true }) => {
           <div className="l-work__inner">
             <div className={inner_class_name}>
               <div className="c-modal__images">
-                <ul className="p-swiper-main__wrapper" style={{display: display}}>
+                <ul
+                  className="p-swiper-main__wrapper"
+                  style={{ visibility: display }}
+                >
                   <a
                     className="c-modal__img-wrapper"
                     target="_blank"
@@ -140,7 +136,10 @@ const Work = ({ data, location, category_link = true }) => {
                     </Swiper>
                   </a>
                 </ul>
-                <ul className="p-swiper-thumb__wrapper" style={{display: display}}>
+                <ul
+                  className="p-swiper-thumb__wrapper"
+                  style={{ display: display }}
+                >
                   <Swiper {...thumbsParams}>
                     {!is_single_page &&
                       thumbnailImages.map(image => {
