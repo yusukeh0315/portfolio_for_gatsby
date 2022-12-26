@@ -80,7 +80,7 @@ const Work = ({ data, location, category_link = true }) => {
   }
 
   useLayoutEffect(() => {
-    setDisplay("display")
+    setDisplay("block")
   }, [setDisplay])
 
   return (
