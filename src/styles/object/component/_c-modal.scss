@@ -103,8 +103,8 @@ body.fixed {
         display: flex;
         flex-basis: 50%;
         flex-direction: column;
-        height: 100%;
-        max-height: 700px;
+        height: 700px;
+        // max-height: 700px;
     }
 
     &__thumbs-list {
