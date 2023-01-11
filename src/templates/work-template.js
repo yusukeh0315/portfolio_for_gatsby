@@ -123,7 +123,7 @@ const Work = ({ data, location, category_link = true }) => {
                                 src={image.url}
                                 imgixParams={{ auto: ["format", "compress"] }}
                                 layout="fixed"
-                                width={740}
+                                width={480}
                                 sourceWidth={image.width}
                                 sourceHeight={image.height}
                                 className="p-swiper-main__image"
@@ -150,7 +150,7 @@ const Work = ({ data, location, category_link = true }) => {
                                 src={image.url}
                                 imgixParams={{ auto: ["format", "compress"] }}
                                 layout="fixed"
-                                width={740}
+                                width={112.5}
                                 sourceWidth={image.width}
                                 sourceHeight={image.height}
                                 className="p-swiper-thumb__image"
