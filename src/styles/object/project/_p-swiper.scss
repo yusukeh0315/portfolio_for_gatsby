@@ -43,8 +43,11 @@
 
   &__image {
     // height: auto !important;
-    @include global.media(sp) {
-      width: 100% !important;
+    width: 100% !important;
+    & > img {
+      object-fit: contain !important;
+      object-position: top;
+      height: 100% !important;
       aspect-ratio: 1;
     }
   }
@@ -72,13 +75,20 @@
       aspect-ratio: 1 !important;
       cursor: pointer;
     }
+
+    & .swiper-slide-thumb-active {
+      opacity: 0.65;
+    }
   }
 
   &__image {
     width: 100% !important;
+
     & > img {
       object-fit: contain !important;
       object-position: top;
+      height: 100% !important;
+      aspect-ratio: 1;
     }
   }
 }
