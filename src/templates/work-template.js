@@ -26,6 +26,7 @@ SwiperCore.use([Pagination, Autoplay])
 const Work = ({ data, location, category_link = true }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null)
   const [display, setDisplay] = useState("none")
+  const [active, setActive] = useState(true)
 
   let url, inner_class_name, first_image, is_single_page
 
@@ -82,6 +83,10 @@ const Work = ({ data, location, category_link = true }) => {
   useLayoutEffect(() => {
     setDisplay("block")
   }, [setDisplay])
+
+  const removeActive = () => {
+    setActive(false)
+  }
 
   return (
     <div>
@@ -142,9 +147,9 @@ const Work = ({ data, location, category_link = true }) => {
                 >
                   <Swiper {...thumbsParams}>
                     {!is_single_page &&
-                      thumbnailImages.map(image => {
+                      thumbnailImages.map((image, index) => {
                         return (
-                          <SwiperSlide>
+                          <SwiperSlide onClick={removeActive}>
                             <li className="p-swiper-thumb__slide">
                               <ImgixGatsbyImage
                                 src={image.url}
@@ -153,7 +158,11 @@ const Work = ({ data, location, category_link = true }) => {
                                 width={112.5}
                                 sourceWidth={image.width}
                                 sourceHeight={image.height}
-                                className="p-swiper-thumb__image"
+                                className={`p-swiper-thumb__image ${
+                                  active && index === 0
+                                    ? "first-active"
+                                    : ""
+                                }`}
                                 alt="MainImage"
                               />
                             </li>
