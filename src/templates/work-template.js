@@ -149,7 +149,7 @@ const Work = ({ data, location, category_link = true }) => {
                     {!is_single_page &&
                       thumbnailImages.map((image, index) => {
                         return (
-                          <SwiperSlide onClick={removeActive}>
+                          <SwiperSlide onClick={index !== 0 ? removeActive : () => { }}>
                             <li className="p-swiper-thumb__slide">
                               <ImgixGatsbyImage
                                 src={image.url}
