@@ -1,35 +1,39 @@
 @use "../global" as global;
 
 html {
-    box-sizing: border-box;
-    font-size: global.$baseFontSize + px;
+  box-sizing: border-box;
+  font-size: global.$baseFontSize + px;
 }
 
 body {
-    background-color: global.$color-white;
-    color: global.$color-black;
-    font-family: global.$font-base-ja;
-
-    -webkit-text-size-adjust: 100%;
-       -moz-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
-            text-size-adjust: 100%;
+  font-family: global.$font-base-ja;
+  color: global.$color-black;
+  background-color: global.$color-white;
+  text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 a {
-    text-decoration: none;
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0%);
 }
 
 button {
-    -webkit-tap-highlight-color:rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0%);
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
-input[type="button"],input[type="text"],input[type="submit"],input[type="email"],input[type="tel"],textarea {
-   -webkit-appearance: none;
-   border-radius: 0;
+input[type="button"],
+input[type="text"],
+input[type="submit"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  appearance: none;
+  border-radius: 0;
 }

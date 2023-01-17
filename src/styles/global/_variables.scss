@@ -5,8 +5,8 @@
 // ==========================================================================
 
 // font
-$font-base-ja: "Noto Sans CJK JP","Noto Sans JP","Lato","Avenir","Helvetica Neue","Helvetica","Arial","Hiragino Sans","ヒラギノ角ゴシック",YuGothic,"Yu Gothic","メイリオ", Meiryo,"ＭＳ Ｐゴシック","MS PGothic" ;
-$font-base-en: "Lato","Noto Sans CJK JP","Noto Sans JP","Avenir","Helvetica Neue","Helvetica","Arial","Hiragino Sans","ヒラギノ角ゴシック",YuGothic,"Yu Gothic","メイリオ", Meiryo,"ＭＳ Ｐゴシック","MS PGothic" ;
+$font-base-ja: "Noto Sans CJK JP","Noto Sans JP","Lato","Avenir","Helvetica Neue","Helvetica","Arial","Hiragino Sans","ヒラギノ角ゴシック",yugothic,"Yu Gothic","メイリオ", meiryo,"ＭＳ Ｐゴシック","MS PGothic" ;
+$font-base-en: "Lato","Noto Sans CJK JP","Noto Sans JP","Avenir","Helvetica Neue","Helvetica","Arial","Hiragino Sans","ヒラギノ角ゴシック",yugothic,"Yu Gothic","メイリオ", meiryo,"ＭＳ Ｐゴシック","MS PGothic" ;
 $baseFontSize: 16;
 
 // width
@@ -14,23 +14,22 @@ $width-base: 1280px;
 $width-inner: 1120px;
 
 // color
-$color-white: #ffffff;
+$color-white: #FFFFFF;
 $color-black: #333333;
 $color-lightgray: #DFDFDF;
-$color-hovergray: #f6f6f6;
+$color-hovergray: #F6F6F6;
 $color-gray: #979797;
-$color-red: #eb5757;
+$color-red: #EB5757;
 
 // z-index
 $layer: (
-    modal : 100,
-    header : 20,
-    tooltip : 10,
-    default : 1);
+  modal : 100,
+  header : 20,
+  tooltip : 10,
+  default : 1);
 
 // breakpoint
 $breakpoints: (
-    sp: "only screen and (max-width: 767px)",
-    tb: "only screen and (max-width:1023px)",
+  sp: "only screen and (max-width: 767px)",
+  tb: "only screen and (max-width:1023px)",
 );
-

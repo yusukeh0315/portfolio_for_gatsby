@@ -1,41 +1,44 @@
 @use "../../global" as global;
 
 .p-section {
-    &__title-wrapper {
-        margin-bottom: 40px;
+
+  &__title-wrapper {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-family: global.$font-base-en;
+    font-size: global.rem(42);
+    font-weight: 100;
+
+    &--skill {
+      display: flex;
+      margin-bottom: 1rem;
     }
-
-    &__title {
-        font-weight: 100;
-        font-size: global.rem(42);
-        font-family: global.$font-base-en;
-
-        &--skill {
-            display: flex;
-            margin-bottom: 1rem;
-
-        }
-    }
+  }
 }
 
 .p-section-h3 {
-    &__title-wrapper {
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
 
-    &__title {
-        font-weight: 300;
-        font-size: global.rem(24);
-        font-family: global.$font-base-en;
-    }
+  &__title-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    font-family: global.$font-base-en;
+    font-size: global.rem(24);
+    font-weight: 300;
+  }
 }
 
 @include global.media(sp) {
-    .p-section {
-        &__title--skill {
-            display: block;
-            margin-bottom: 1rem;
-        }
+
+  .p-section {
+
+    &__title--skill {
+      display: block;
+      margin-bottom: 1rem;
     }
+  }
 }

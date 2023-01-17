@@ -1,156 +1,189 @@
 @use "../global" as global;
 
 .l-fv {
-    height: 100vh;
+  height: 100vh;
 
-    &__inner {
-        @include global.inner(global.$width-base);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        height: 100%;
-        padding: 0 20px;
-    }
+  &__inner {
+    @include global.inner(global.$width-base);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 0 20px;
+  }
 }
 
 @include global.media(sp) {
-    .l-fv {
-        height: 100vh;
-    }
+
+  .l-fv {
+    height: 100vh;
+  }
 }
 
 .l-service {
-    $col_num: 3;
-    $card_margin: 60px;
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 60px 20px;
-    }
+  $col_num: 3;
+  $card_margin: 60px;
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 60px 20px;
+  }
 }
 
 @include global.media(sp) {
-    .l-service {
-        $col_num: 1;
-        $card_margin: 60px;
-        &__inner {
-            padding: 40px 60px;
-        }
+
+  .l-service {
+    $col_num: 1;
+    $card_margin: 60px;
+
+    &__inner {
+      padding: 40px 60px;
     }
+  }
 }
 
 .l-main-works {
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 40px 20px;
-    }
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 40px 20px;
+  }
 }
 
 @include global.media(sp) {
-    .main-works {
-        &__inner {
-            padding: 40px 60px;
-        }
+
+  .main-works {
+
+    &__inner {
+      padding: 40px 60px;
     }
+  }
 }
 
 .l-about {
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 160px 20px 80px 20px;
-    }
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 160px 20px 80px;
+  }
 }
 
 @include global.media(sp) {
-    .l-about {
-        &__inner {
-            @include global.inner(global.$width-inner);
-            height: 100%;
-            padding-top: 190px;
-        }
+
+  .l-about {
+
+    &__inner {
+      @include global.inner(global.$width-inner);
+
+      height: 100%;
+      padding-top: 190px;
     }
+  }
 }
 
 .l-skills {
 
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 0 20px 160px 20px;
-    }
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 0 20px 160px;
+  }
 }
 
 @include global.media(sp) {
-    .l-skills {
 
-        &__inner {
-            padding: 0 20px 80px 20px;
-        }
+  .l-skills {
+
+    &__inner {
+      padding: 0 20px 80px;
     }
+  }
 }
 
 .l-works {
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 160px 20px 80px 20px;
-    }
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 160px 20px 80px;
+  }
 }
 
 @include global.media(sp) {
-    .l-works {
-        &__inner {
-            padding-top: 190px;
-        }
+
+  .l-works {
+
+    &__inner {
+      padding-top: 190px;
     }
+  }
 }
 
 .l-contact {
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 160px 20px 80px 20px;
-    }
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 160px 20px 80px;
+  }
 }
 
 @include global.media(sp) {
-    .l-contact {
-        &__inner {
-            padding-top: 190px;
-        }
+
+  .l-contact {
+
+    &__inner {
+      padding-top: 190px;
     }
+  }
 }
 
 .l-estimate {
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 160px 20px 80px 20px;
-    }
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 160px 20px 80px;
+  }
 }
 
 @include global.media(sp) {
-    .l-estimate {
-        &__inner {
-            padding-top: 190px;
-        }
+
+  .l-estimate {
+
+    &__inner {
+      padding-top: 190px;
     }
+  }
 }
 
 .l-work {
-    &__inner {
-        @include global.inner(global.$width-inner);
-        height: 100%;
-        padding: 160px 20px 80px 20px;
-    }
+
+  &__inner {
+    @include global.inner(global.$width-inner);
+
+    height: 100%;
+    padding: 160px 20px 80px;
+  }
 }
 
 @include global.media(sp) {
-    .l-work {
-        &__inner {
-            padding-top: 190px;
-        }
+
+  .l-work {
+
+    &__inner {
+      padding-top: 190px;
     }
+  }
 }

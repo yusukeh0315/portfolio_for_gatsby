@@ -1,15 +1,15 @@
 @use "../../global" as global;
 
 .p-footer {
-    margin-left: auto;
-    font-weight: 300;
-    font-size: global.rem(16);
-    font-family: global.$font-base-en;
+  margin-left: auto;
+  font-family: global.$font-base-en;
+  font-size: global.rem(16);
+  font-weight: 300;
 }
 
-
 @include global.media(sp) {
-    .p-footer {
-        font-size: global.rem(16);
-    }
+
+  .p-footer {
+    font-size: global.rem(16);
+  }
 }

@@ -1,26 +1,29 @@
 @use "../global" as global;
 
 .l-header {
-    @include global.z-index(header);
-    position: fixed;
-    width: 100%;
-    height: 80px;
-    background-color: rgba(255, 255, 255, .8);
+  @include global.z-index(header);
 
-    &__inner {
-        @include global.inner(global.$width-base);
-        display: flex;
-        height: 100%;
-        padding: 0 20px;
-    }
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  background-color: rgba(255, 255, 255, 80%);
+
+  &__inner {
+    @include global.inner(global.$width-base);
+
+    display: flex;
+    height: 100%;
+    padding: 0 20px;
+  }
 }
 
 @include global.media(sp) {
-    .l-header {
-        height: 150px;
 
-        &__inner {
-            flex-direction: column;
-        }
+  .l-header {
+    height: 150px;
+
+    &__inner {
+      flex-direction: column;
     }
+  }
 }

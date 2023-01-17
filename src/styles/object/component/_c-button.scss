@@ -1,67 +1,72 @@
 @use "../../global" as global;
 
 @include global.media(sp) {
-    .c-modal-close-button{
-        display: inline-block;
-        width: 100%;
-        padding: 10px 10px 10px 10px;
-        border: 1px solid global.$color-black;
-        background-color: global.$color-white;
-        color: global.$color-black;
-        font-weight: bold;
-        font-weight: normal;
-        // font-size: rem(16);
-        line-height: 20px;
-        text-decoration: none;
-        text-align: center;
-        cursor: pointer;
-        transition: .25s;
-    }
-}
 
-
-// button
-.c-submit-button {
+  .c-modal-close-button {
     display: inline-block;
-    width: 255px;
-    height: 40px;
-    max-width: 100%;
-    padding: 10px 10px 10px 10px;
-    border: 1px solid global.$color-black;
-    background-color: global.$color-white;
-    color: global.$color-black;
+    width: 100%;
+    padding: 10px;
     font-weight: bold;
     font-weight: normal;
-    font-size: global.rem(16);
     line-height: 20px;
-    text-decoration: none;
+    color: global.$color-black;
     text-align: center;
+    text-decoration: none;
     cursor: pointer;
-    transition: .25s;
-    margin-top: 40px;
+    background-color: global.$color-white;
+    border: 1px solid global.$color-black;
+    transition: 0.25s;
+  }
+}
 
-    &:hover, &:focus, &:active {
-        border: 1px solid global.$color-white;
-        background-color: global.$color-black;
-        color: global.$color-white;
+// button
+
+.c-submit-button {
+  display: inline-block;
+  width: 255px;
+  max-width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin-top: 40px;
+  font-size: global.rem(16);
+  font-weight: bold;
+  font-weight: normal;
+  line-height: 20px;
+  color: global.$color-black;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: global.$color-white;
+  border: 1px solid global.$color-black;
+  transition: 0.25s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: global.$color-white;
+    background-color: global.$color-black;
+    border: 1px solid global.$color-white;
+  }
+
+  &--disabled {
+    color: global.$color-gray;
+    cursor: default;
+    background-color: global.$color-hovergray;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: global.$color-gray;
+      cursor: default;
+      background-color: global.$color-hovergray;
+      border: 1px solid global.$color-black;
     }
-
-    &--disabled {
-        background-color: global.$color-hovergray;
-        color: global.$color-gray;
-        cursor: default;
-
-        &:hover, &:focus, &:active {
-            border: 1px solid global.$color-black;
-            background-color: global.$color-hovergray;
-            color: global.$color-gray;
-            cursor: default;
-        }
-    }
+  }
 }
 
 @include global.media(sp) {
-    .c-submit-button {
-        width: 100%;
-    }
+
+  .c-submit-button {
+    width: 100%;
+  }
 }

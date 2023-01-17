@@ -1,25 +1,27 @@
 @use "../../global" as global;
 
 .p-swiper-main {
+
   &__wrapper {
-    margin-right: auto;
-    margin-left: auto;
-    height: 480px;
     width: 480px;
-    box-shadow: 2px 2px 4px #979797;
-    // overflow-y: scroll;
-    overflow-y: hidden;
+    height: 480px;
+    margin-right: auto;
     margin-bottom: 20px;
+    margin-left: auto;
+    overflow-y: hidden;
+    box-shadow: 2px 2px 4px #979797;
 
     &::-webkit-scrollbar {
       width: 4px;
     }
+
     &::-webkit-scrollbar-thumb {
       background: #979797;
       border-radius: 5px;
     }
+
     &::-webkit-scrollbar-track {
-      background: #dcdcdc;
+      background: #DCDCDC;
     }
 
     @include global.media(sp) {
@@ -34,6 +36,7 @@
     object-fit: cover !important;
     height: auto !important;
     aspect-ratio: 1;
+
     & > img {
       width: 100% !important;
       object-fit: cover !important;
@@ -44,6 +47,7 @@
 }
 
 .p-swiper-thumb {
+
   &__wrapper {
     height: 100px !important;
     margin-bottom: 100px;
@@ -53,17 +57,18 @@
       padding-bottom: 10px;
       backface-visibility: visible !important;
       overflow: visible !important;
+
       @include global.media(sp) {
         width: 100% !important;
       }
     }
 
     & .swiper-slide {
-      box-shadow: 2px 2px 4px #979797;
       height: auto !important;
-      overflow: hidden;
       aspect-ratio: 1 !important;
+      overflow: hidden;
       cursor: pointer;
+      box-shadow: 2px 2px 4px #979797;
     }
 
     & .swiper-slide-thumb-active {

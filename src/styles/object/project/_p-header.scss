@@ -8,10 +8,11 @@
   text-decoration: none;
 
   &__link {
-    cursor: pointer;
-    font-weight: 300;
-    font-size: global.rem(24);
     font-family: global.$font-base-en;
+    font-size: global.rem(24);
+    font-weight: 300;
+    cursor: pointer;
+
     &:hover,
     &:focus,
     &:active,
@@ -23,6 +24,7 @@
 }
 
 @include global.media(sp) {
+
   .p-header-logo {
     margin-left: auto;
   }
@@ -47,11 +49,11 @@
   }
 
   &__link {
-    display: inline-block;
     position: relative;
-    font-weight: 300;
+    display: inline-block;
     font-family: global.$font-base-en;
     font-size: global.rem(20);
+    font-weight: 300;
     text-decoration: none;
     cursor: pointer;
 
@@ -67,25 +69,23 @@
       position: absolute;
       bottom: -10px;
       left: 0;
-      transform: scale(0, 1);
       width: 100%;
       height: 1px;
-      background: global.$color-black;
       content: "";
+      background: global.$color-black;
       transition: transform 0.3s;
-
+      transform: scale(0, 1);
       transform-origin: right top;
     }
 
     &:hover::after {
       transform: scale(1, 1);
-
       transform-origin: left top;
     }
 
     &.current {
-      display: inline-block;
       position: relative;
+      display: inline-block;
 
       &::before {
         position: absolute;
@@ -93,19 +93,21 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background: global.$color-black;
         content: "";
+        background: global.$color-black;
       }
     }
   }
 }
 
 @include global.media(sp) {
+
   .p-header-nav {
     flex-direction: column;
 
     &__item {
       margin-right: 0;
+
       &:last-child {
         margin-right: 0;
       }
