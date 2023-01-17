@@ -1,17 +1,15 @@
 import axios from "axios"
 import { navigate } from "gatsby"
 import React from "react"
-import { useForm, FormProvider } from "react-hook-form"
+import { FormProvider, useForm } from "react-hook-form"
+import Form from "../components/form"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import Form from "../components/form"
 
 const Contact = ({ location }) => {
   const methods = useForm()
   const {
-    register,
     handleSubmit,
-    formState: { errors },
   } = methods
 
   const onSubmit = data => {

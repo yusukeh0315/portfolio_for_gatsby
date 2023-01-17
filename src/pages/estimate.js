@@ -1,12 +1,12 @@
 import axios from "axios"
-import React, { createContext, useState } from "react"
 import { navigate } from "gatsby"
-import { useForm, FormProvider } from "react-hook-form"
-import Layout from "../components/layout"
-import Form from "../components/form"
-import Seo from "../components/seo"
-import EstimateRadio from "../components/estimateradio"
+import React, { createContext, useState } from "react"
+import { FormProvider, useForm } from "react-hook-form"
 import EstimateCheckbox from "../components/estimatecheckbox"
+import EstimateRadio from "../components/estimateradio"
+import Form from "../components/form"
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 export const EstimateContext = createContext()
 export const WebContext = createContext()
@@ -28,9 +28,7 @@ const Estimate = ({ location }) => {
   const [designUnit, setDesignUnit] = useState(0)
   const methods = useForm()
   const {
-    register,
     handleSubmit,
-    formState: { errors },
   } = methods
 
   // 一般管理費

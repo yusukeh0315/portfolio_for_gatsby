@@ -1,25 +1,17 @@
-import React, { useState, useContext } from "react"
-import { useFormContext } from "react-hook-form"
+import FormControl from "@mui/material/FormControl"
+import FormControlLabel from "@mui/material/FormControlLabel"
+import FormHelperText from "@mui/material/FormHelperText"
+import FormLabel from "@mui/material/FormLabel"
 import Radio from "@mui/material/Radio"
 import RadioGroup from "@mui/material/RadioGroup"
-import FormControlLabel from "@mui/material/FormControlLabel"
-import FormControl from "@mui/material/FormControl"
-import FormLabel from "@mui/material/FormLabel"
-import FormHelperText from "@mui/material/FormHelperText"
+import React, { useContext, useState } from "react"
+import { useFormContext } from "react-hook-form"
 
-import { EstimateContext } from "../pages/estimate"
-import { PageContext } from "../pages/estimate"
-import { TypeContext } from "../pages/estimate"
-import { UnitContext } from "../pages/estimate"
-import { DesignUnitContext } from "../pages/estimate"
-import { WebContext } from "../pages/estimate"
-// import { DesignContext } from "../pages/estimate"
-import { CmsContext } from "../pages/estimate"
+import { CmsContext, DesignUnitContext, EstimateContext, PageContext, TypeContext, UnitContext, WebContext } from "../pages/estimate"
 
 const EstimateRadio = ({ question_title, inputQuestions }) => {
   const {
     register,
-    handleSubmit,
     formState: { errors },
   } = useFormContext()
   const [value, setValue] = useContext(EstimateContext)
@@ -28,8 +20,7 @@ const EstimateRadio = ({ question_title, inputQuestions }) => {
   const [, setUnit] = useContext(UnitContext)
   const [, setDesignUnit] = useContext(DesignUnitContext)
   const [webValue, setWebValue] = useContext(WebContext)
-  const [cmsValue, setCmsValue] = useContext(CmsContext)
-  // const [designValue, setDesignValue] = useContext(DesignContext)
+  const [, setCmsValue] = useContext(CmsContext)
   const [currentValue, setCurrentValue] = useState(0)
   const [question, setQuestion] = useState(inputQuestions)
 
