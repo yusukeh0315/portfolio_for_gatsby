@@ -27,29 +27,18 @@
       height: auto;
       aspect-ratio: 1;
     }
-
-    & img {
-      width: 480px !important;
-      object-fit: contain !important;
-      object-position: top;
-      height: 100%;
-
-      @include global.media(sp) {
-        width: 100% !important;
-        aspect-ratio: 1;
-      }
-    }
   }
 
   &__image {
     width: 100% !important;
-    // height: 100% !important;
+    object-fit: cover !important;
+    height: auto !important;
     aspect-ratio: 1;
     & > img {
       width: 100% !important;
       object-fit: cover !important;
       object-position: top;
-      // height: 100% !important;
+      height: auto !important;
     }
   }
 }
@@ -88,14 +77,12 @@
 
   &__image {
     width: 100% !important;
-    // height: 100% !important;
     aspect-ratio: 1;
 
     & > img {
       width: 100% !important;
       object-fit: cover !important;
       object-position: top;
-      // height: 100% !important;
     }
   }
 }
