@@ -43,13 +43,13 @@
 
   &__image {
     width: 100% !important;
-    height: 100% !important;
+    // height: 100% !important;
     aspect-ratio: 1;
     & > img {
       width: 100% !important;
       object-fit: cover !important;
       object-position: top;
-      height: 100% !important;
+      // height: 100% !important;
     }
   }
 }
@@ -88,14 +88,14 @@
 
   &__image {
     width: 100% !important;
-    height: 100% !important;
+    // height: 100% !important;
     aspect-ratio: 1;
 
     & > img {
       width: 100% !important;
       object-fit: cover !important;
       object-position: top;
-      height: 100% !important;
+      // height: 100% !important;
     }
   }
 }
