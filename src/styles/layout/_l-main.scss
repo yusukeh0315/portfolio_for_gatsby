@@ -1,21 +1,26 @@
 @use "../global" as global;
 
-body {
-  animation: fadeIn 5s ease 0s 1 normal;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .l-fv {
   height: 100vh;
+  animation: fadeIn 8s cubic-bezier(0.4, 0, 1, 1) 0s 1 normal;
+
+  @keyframes fadeIn {
+
+    0% {
+      opacity: 0;
+      animation-timing-function: ease-in;
+    }
+
+    80% {
+      opacity: 1;
+      animation-timing-function: linear;
+    }
+
+    100% {
+      opacity: 1;
+      animation-timing-function: ease-out;
+    }
+  }
 
   &__inner {
     @include global.inner(global.$width-base);
